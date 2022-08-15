@@ -15,17 +15,19 @@ export const Login = () => {
 				"email": email,
 				"password": password,
 			}),
-			Headers: {
+			headers: {
 				"Content-Type": "application/json"
 			}
 		};
 
-		fetch('https://3001-mevctrader-proyectopsiq-9tai7vq698y.ws-us60.gitpod.io/api/token', opts)
+		fetch(process.env.BACKEND_URL+'/api/token', opts)
 			.then(resp => {
 				if(resp.status==200) return resp.json();
 				else alert("otro error en el servidor");
 			})
-			.then()
+			.then(data =>{
+				console.log(data);
+			})
 			.catch(error => {
 				console.log("error en el servidor: ", error)
 			});
