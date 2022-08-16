@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
 import psiqueImageUrl from "../../img/Psique1.png";
+import { Carrusel } from "../component/carrusel";
 import "../../styles/home.css";
 
 export const Home = () => {
@@ -10,6 +11,7 @@ export const Home = () => {
   return (
     <div className="text-center mt-5">
       <h1>Hola PsiQUE!!</h1>
+      <Carrusel/>
       <p>
         <img src={psiqueImageUrl} />
       </p>
