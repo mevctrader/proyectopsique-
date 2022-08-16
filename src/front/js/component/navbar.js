@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 import psiqueImageUrl from "../../img/Psique2.png";
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
+
   return (
+    //    <nav className="navbar navbar-light bg-light">
+    //      <div className="container">
+    //        <Link to="/">
+    //          <img className="navbar-brand mb-0 h1" src={psiqueImageUrl} />
+    //       </Link>
+    //        <div className="ml-auto">
+    //          <Link to="/demo">
+    //            <button className="btn btn-primary">
+    //              Check the Context in action
+    //            </button>
+    //          </Link>
+    //        </div>
+    //      </div>
+    //    </nav>
     <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
+      <div class="container-fluid row">
         <a class="navbar-brand" href="#">
           <img src={psiqueImageUrl} alt="" width="100" height="50" />
         </a>
@@ -20,19 +37,6 @@ export const Navbar = () => {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="container-fluid">
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Buscar
-            </button>
-          </form>
-        </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
@@ -42,7 +46,7 @@ export const Navbar = () => {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                Blog
+                Link
               </a>
             </li>
             <li class="nav-item dropdown">
@@ -53,31 +57,34 @@ export const Navbar = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Registro
+                Dropdown
               </a>
               <ul class="dropdown-menu">
                 <li>
                   <a class="dropdown-item" href="#">
-                    Login
+                    Action
                   </a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">
-                    SignUp
+                    Another action
                   </a>
                 </li>
                 <li>
                   <hr class="dropdown-divider" />
                 </li>
+                <li>
+                  <a class="dropdown-item" href="#">
+                    Something else here
+                  </a>
+                </li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">
-                Test
-              </a>
+              <a class="nav-link disabled">Disabled</a>
             </li>
           </ul>
-          {/* <form class="d-flex" role="search">
+          <form class="d-flex" role="search">
             <input
               class="form-control me-2"
               type="search"
@@ -87,7 +94,7 @@ export const Navbar = () => {
             <button class="btn btn-outline-success" type="submit">
               Search
             </button>
-          </form> */}
+          </form>
         </div>
       </div>
     </nav>

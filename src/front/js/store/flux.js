@@ -20,6 +20,49 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+			syncTokenFromSessionStore: () =>{
+				const token = sessionStorage.getItem("token");
+				console.log("aplication just loaded session storage token");
+				if(token && token !="" && token != undefined) setStore({ token: token});
+ 
+			},
+			logout: () =>{
+				sessionStorage.removeItem("token");
+				console.log("Log out");
+				setStore({ token: null});
+ 
+			},
+			login: async (email,password) => 
+			{
+				const opts={
+					method: "POST",
+					body: JSON.stringify({
+						"email": email,
+						"password": password,
+					}),
+					headers: {
+						"Content-Type": "application/json"
+					}
+				};
+				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
+				//console.log(baseurl);
+				try{
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-ls1gk6iznn3.ws-us61.gitpod.io/api/token', opts)
+					if(resp.status!==200) 
+					{
+						alert("error en el servidor");
+						return false;
+					}
+					const data = await resp.json();
+					console.log("This from backend:",data);
+					sessionStorage.setItem("token",data.access_token);
+					setStore({ token: data.access_token})
+					return true;
+				}
+				catch(error){
+					console.log("Ha habido un error al ingresar al login");
+				}
+			},
 
 			getMessage: async () => {
 				try{
