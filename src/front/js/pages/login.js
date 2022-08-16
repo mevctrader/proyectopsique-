@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
+//import {unstable_HistoryRouter } from "react-router-dom";
 import psiqueImageUrl from "../../img/Psique1.png";
 import "../../styles/home.css";
 
@@ -9,47 +10,26 @@ export const Login = () => {
   const [password, setPassword] = useState("");
 
   const handleClick = () => {
-    const opts = {
-      method: "POST",
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
+		actions.login(email,password); /*.then(() => {
+			history.push("/");
+		})*/
+	}
 
-    fetch(process.env.BACKEND_URL + "/api/token", opts)
-      .then((resp) => {
-        if (resp.status == 200) return resp.json();
-        else alert("otro error en el servidor");
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log("error en el servidor: ", error);
-      });
-  };
-  return (
-    <div className="text-center">
-      <h1>Login</h1>
-      <div>
-        <input
-          type="text"
-          placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button onClick={handleClick}>Entrar</button>
-      </div>
-    </div>
-  );
+	//if(store.token && store.token !="" && store.token != undefined) history.push("/");
+
+	return (
+		<div className="text-center">
+			<h1>Login</h1>
+			{
+				store.token && store.token!="" && store.token!=undefined ? (store.token) :
+				(
+					<div>
+						<input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+						<input type="password"  placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+						<button onClick={handleClick}>Entrar</button>
+					</div>
+				)
+			}
+		</div>
+	);
 };
