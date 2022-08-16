@@ -19,7 +19,7 @@ export const Navbar = () => {
     //      </div>
     //    </nav>
     <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
+      <div class="container-fluid row">
         <a class="navbar-brand" href="#">
           <img src={psiqueImageUrl} alt="" width="100" height="50" />
         </a>
