@@ -47,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
 				//console.log(baseurl);
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-ls1gk6iznn3.ws-us61.gitpod.io/api/token', opts)
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-2n44qzsyy6f.ws-us61.gitpod.io/api/token', opts)
 					if(resp.status!==200) 
 					{
 						alert("error en el servidor");
