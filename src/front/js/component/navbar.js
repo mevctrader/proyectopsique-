@@ -4,20 +4,6 @@ import psiqueImageUrl from "../../img/Psique2.png";
 
 export const Navbar = () => {
   return (
-    //    <nav className="navbar navbar-light bg-light">
-    //      <div className="container">
-    //        <Link to="/">
-    //          <img className="navbar-brand mb-0 h1" src={psiqueImageUrl} />
-    //       </Link>
-    //        <div className="ml-auto">
-    //          <Link to="/demo">
-    //            <button className="btn btn-primary">
-    //              Check the Context in action
-    //            </button>
-    //          </Link>
-    //        </div>
-    //      </div>
-    //    </nav>
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -34,6 +20,19 @@ export const Navbar = () => {
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="container-fluid">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Buscar
+            </button>
+          </form>
+        </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
@@ -43,7 +42,7 @@ export const Navbar = () => {
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                Link
+                Blog
               </a>
             </li>
             <li class="nav-item dropdown">
@@ -54,34 +53,31 @@ export const Navbar = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                Registro
               </a>
               <ul class="dropdown-menu">
                 <li>
                   <a class="dropdown-item" href="#">
-                    Action
+                    Login
                   </a>
                 </li>
                 <li>
                   <a class="dropdown-item" href="#">
-                    Another action
+                    SignUp
                   </a>
                 </li>
                 <li>
                   <hr class="dropdown-divider" />
                 </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
+              <a class="nav-link active" href="#">
+                Test
+              </a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
+          {/* <form class="d-flex" role="search">
             <input
               class="form-control me-2"
               type="search"
@@ -91,7 +87,7 @@ export const Navbar = () => {
             <button class="btn btn-outline-success" type="submit">
               Search
             </button>
-          </form>
+          </form> */}
         </div>
       </div>
     </nav>
