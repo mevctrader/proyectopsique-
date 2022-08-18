@@ -11,10 +11,10 @@ import Blog from "./pages/blog";
 import Videos from "./pages/videos";
 import Foro from "./pages/foro";
 import Test from "./pages/test";
-
-import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Navbar } from "./component/navbar";
 import { carrusel } from "./component/carrusel";
+
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
