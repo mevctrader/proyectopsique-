@@ -40,7 +40,7 @@ export const Navbar = () => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/">
-                Home
+                Inicio
               </Link>
             </li>
             <li className="nav-item">
