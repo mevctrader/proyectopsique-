@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import psiqueImageUrl from "../../img/Psique2.png";
+import psiqueImageUrl from "../../img/Psiento1.png";
 
 export const Carrusel = () => (
   <div

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import psiqueImageUrl from "../../img/Psique2.png";
+import psiqueImageUrl from "../../img/Psiento1.png";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
@@ -10,7 +10,7 @@ export const Navbar = () => {
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img src={psiqueImageUrl} alt="" width="100" height="50" />
+          <img src={psiqueImageUrl} alt="" width="140" height="40" />
         </a>
         <button
           className="navbar-toggler"
