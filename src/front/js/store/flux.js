@@ -28,7 +28,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			logout: () =>{
 				sessionStorage.removeItem("token");
-				console.log("Log out");
+				//console.log("Log out");
 				setStore({ token: null});
  
 			},
@@ -47,14 +47,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
 				//console.log(baseurl);
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-2n44qzsyy6f.ws-us61.gitpod.io/api/token', opts)
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-j19tkfeh7ze.ws-us62.gitpod.io/api/token', opts)
 					if(resp.status!==200) 
 					{
 						alert("error en el servidor");
 						return false;
 					}
 					const data = await resp.json();
-					console.log("This from backend:",data);
+					//console.log("This from backend:",data);
 					sessionStorage.setItem("token",data.access_token);
 					setStore({ token: data.access_token})
 					return true;
@@ -67,7 +67,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getMessage: async () => {
 				try{
 					// fetching data from the backend
-					const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
+					//const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
+					const resp = await fetch("https://3001-mevctrader-proyectopsiq-j19tkfeh7ze.ws-us62.gitpod.io/api/hello")
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves

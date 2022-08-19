@@ -21,7 +21,7 @@ export const Login = () => {
 		<div className="text-center">
 			<h1>Login</h1>
 			{
-				store.token && store.token!="" && store.token!=undefined ? (store.token) :
+				store.token && store.token!="" && store.token!=undefined ? ("ha iniciado") :
 				(
 					<div>
 						<input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />

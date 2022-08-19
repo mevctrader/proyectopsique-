@@ -71,7 +71,7 @@ export const Navbar = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Registro
+                Usuario
               </a>
               <ul className="dropdown-menu">
                 {!store.token ? (
@@ -83,7 +83,7 @@ export const Navbar = () => {
                     onClick={() => actions.logout()}
                     className="btn btn-primary"
                   >
-                    Log out
+                    Cerrar Sesión
                   </button>
                 )}
                 <li>
