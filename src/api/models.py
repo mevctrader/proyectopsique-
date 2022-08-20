@@ -21,7 +21,7 @@ class User(db.Model):
     sapellido = db.Column(db.String(20), nullable=True)
     identificacion_id = db.Column(db.Integer, db.ForeignKey('identificacion.id'))
     identificacions = db.relationship("Identificacion")
-    cedula = db.Column(db.numeric(), nullable=False)
+    cedula = db.Column(db.Integer, nullable=False)
     genero_id = db.Column(db.Integer, db.ForeignKey('genero.id'))
     generos = db.relationship("Genero")
     fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)

@@ -34,7 +34,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			login: async (email,password) => 
 			{
-				const opts={
+				const opt={
 					method: "POST",
 					body: JSON.stringify({
 						"email": email,
@@ -47,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
 				//console.log(baseurl);
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-7z7pmpdplb1.ws-us62.gitpod.io/api/token', opts)
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-7z7pmpdplb1.ws-us62.gitpod.io/api/token', opt)
 					if(resp.status!==200) 
 					{
 						alert("error en el servidor");
@@ -67,8 +67,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 			getMessage: async () => {
 				try{
 					// fetching data from the backend
+					const store = getStore();
+					const opts = {
+						headers: {
+							"Authorization": "Bearer " + store.token
+						}
+					}
 					//const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const resp = await fetch("https://3001-mevctrader-proyectopsiq-7z7pmpdplb1.ws-us62.gitpod.io/api/hello")
+					const resp = await fetch("https://3001-mevctrader-proyectopsiq-7z7pmpdplb1.ws-us62.gitpod.io/api/hello", opts)
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves

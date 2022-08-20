@@ -11,16 +11,14 @@ export const Login = () =>
 	let navigate = useNavigate();
 
   	const handleClick = () => {
-		actions.login(email,password).then(() => {
-			navigate('/');
-		})
+		actions.login(email,password);
 	}
-
+	if(store.token && store.token!="" && store.token != undefined) navigate('/');
 	return (
 		<div className="text-center">
 			<h1>Login</h1>
 			{
-				store.token && store.token!="" && store.token!=undefined ? ("ha iniciado") :
+				store.token && store.token != "" && store.token != undefined ? (store.token) :
 				(
 					<div>
 						<input type="text" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
