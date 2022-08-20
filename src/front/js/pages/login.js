@@ -1,21 +1,20 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-//import {unstable_HistoryRouter } from "react-router-dom";
-import psiqueImageUrl from "../../img/Psique1.png";
 import "../../styles/home.css";
+import { useNavigate } from 'react-router-dom';
 
-export const Login = () => {
-  const { store, actions } = useContext(Context);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export const Login = () => 
+{
+	const { store, actions } = useContext(Context);
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	let navigate = useNavigate();
 
-  const handleClick = () => {
-		actions.login(email,password); /*.then(() => {
-			history.push("/");
-		})*/
+  	const handleClick = () => {
+		actions.login(email,password).then(() => {
+			navigate('/');
+		})
 	}
-
-	//if(store.token && store.token !="" && store.token != undefined) history.push("/");
 
 	return (
 		<div className="text-center">
