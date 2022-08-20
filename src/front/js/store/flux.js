@@ -47,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
 				//console.log(baseurl);
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-j19tkfeh7ze.ws-us62.gitpod.io/api/token', opts)
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-7z7pmpdplb1.ws-us62.gitpod.io/api/token', opts)
 					if(resp.status!==200) 
 					{
 						alert("error en el servidor");
@@ -68,7 +68,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				try{
 					// fetching data from the backend
 					//const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const resp = await fetch("https://3001-mevctrader-proyectopsiq-j19tkfeh7ze.ws-us62.gitpod.io/api/hello")
+					const resp = await fetch("https://3001-mevctrader-proyectopsiq-7z7pmpdplb1.ws-us62.gitpod.io/api/hello")
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves
