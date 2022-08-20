@@ -1,3 +1,48 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+
+#blog .btn {
+    background-color: green;
+    border: 1px solid green;
+}
+
+#navbar {
+    background-color: #CAE894;
+}
+
+#menu-1 {
+    color: black;
+}
+#menu-2 {
+    color: black;
+}
+#menu-3 {
+    color: black;
+}
+#menu-4 {
+    color: black;
+}
+#menu-5 {
+    color: black;
+}
+#menu-6 {
+    color: black;
+}
+#menu-7 {
+    color: black;
+}
+
+#general .nav-link:not(.active), #depresion .nav-link:not(.active),#ansiedad .nav-link:not(.active),#otros .nav-link:not(.active) {
+    background-color: red;
+}
+
+#general:enabled {
+    background-color: #FB9A4B;
+}
+
+
+#buscar {
+    border: 2px solid #7562D7;
+    color: #7562D7;
+}
