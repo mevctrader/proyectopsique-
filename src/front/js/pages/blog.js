@@ -48,7 +48,7 @@ const Blog = () => {
                   en dia, miles de personas la padecen. En España se estima que
                   entre el 5 y el 10% de la poblacion podria tener depresion, es
                   decir, de 2 a 4 millones de personas, no obstante esta cifra
-                  podria ascender ...
+                  podria ascender...
                 </p>
                 <br></br>
                 <hr></hr>
