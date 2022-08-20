@@ -50,7 +50,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const resp = await fetch('https://3001-mevctrader-proyectopsiq-7z7pmpdplb1.ws-us62.gitpod.io/api/token', opt)
 					if(resp.status!==200) 
 					{
-						alert("estos datos no existen");
+						alert("Los datos ingresados no existen");
 						return false;
 					}
 					const data = await resp.json();
