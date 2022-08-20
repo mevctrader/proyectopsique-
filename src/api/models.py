@@ -5,7 +5,7 @@ from sqlalchemy import Column, ForeignKey, Integer, String, Numeric, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import create_engine
-from eralchemy import render_er
+#from eralchemy import render_er
 
 db = SQLAlchemy()
 Base = declarative_base()
@@ -21,9 +21,10 @@ class User(db.Model):
     sapellido = db.Column(db.String(20), nullable=True)
     identificacion_id = db.Column(db.Integer, db.ForeignKey('identificacion.id'))
     identificacions = db.relationship("Identificacion")
+    cedula = db.Column(db.numeric(), nullable=False)
     genero_id = db.Column(db.Integer, db.ForeignKey('genero.id'))
     generos = db.relationship("Genero")
-    fecha_registro = db.Column(db.DateTime, nullable=False , unique=True)
+    fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)
     is_active = db.Column(db.Boolean, unique=False, nullable=False) 
 
     def __repr__(self):
@@ -45,8 +46,8 @@ class User(db.Model):
 class Identificacion(db.Model):
     __tablename__ = 'identificacion'
     id = db.Column(db.Integer, primary_key=True)
-    code = db.Column(db.String(120), nullable=False)
-    name = db.Column(db.String(120), unique=True, nullable=True)
+    code = db.Column(db.String(10), nullable=False)
+    name = db.Column(db.String(20), unique=True, nullable=True)
 
     def serialize(self):
         return {
@@ -58,8 +59,8 @@ class Identificacion(db.Model):
 class Genero(db.Model):
     __tablename__ = 'genero'
     id = db.Column(db.Integer, primary_key=True)
-    code = db.Column(db.String(120), nullable=False)
-    name = db.Column(db.String(120), unique=True, nullable=True)
+    code = db.Column(db.String(10), nullable=False)
+    name = db.Column(db.String(10), unique=True, nullable=True)
 
     def serialize(self):
         return {
@@ -89,7 +90,7 @@ class Test_Respuesta(db.Model):
     testps = db.relationship("Test_Pregunta")
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     users = db.relationship("User")
-    fecha_registro = db.Column(db.DateTime, nullable=False , unique=True)
+    fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)
 
     def serialize(self):
         return {
@@ -106,7 +107,7 @@ class Foros(db.Model):
     name = db.Column(db.String(250), unique=True, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     users = db.relationship("User")
-    fecha_registro = db.Column(db.DateTime, nullable=False , unique=True)
+    fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)
 
     def serialize(self):
         return {
@@ -115,9 +116,9 @@ class Foros(db.Model):
             # do not serialize the password, its a security breach
         }
 ## Draw from SQLAlchemy base
-try:
-    result = render_er(Base, 'diagram.png')
-    print("Success! Check the diagram.png file")
-except Exception as e:
-    print("There was a problem genering the diagram")
-    raise e
+#try:
+    #result = render_er(Base, 'diagram.png')
+    #print("Success! Check the diagram.png file")
+#except Exception as e:
+    #print("There was a problem genering the diagram")
+    #raise e
