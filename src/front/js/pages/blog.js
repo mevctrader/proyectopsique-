@@ -107,7 +107,7 @@ const Blog = () => {
         </div>
       </div>
       <div className="col-lg-2 card mx-1 flex-grow-1 mb-3 p-0">
-        <div>
+        <div className="title rounded-top">
           {" "}
           <h5 className="card-title px-2 pt-1">La depresion y sus sintomas</h5>{" "}
         </div>
@@ -116,7 +116,7 @@ const Blog = () => {
           className="img-fluid"
           alt="..."
         />
-        <div className="card-body">
+        <div className="card-body rounded-bottom">
           <p className="card-text">
             {" "}
             Es evidente que la depresion es una patologia muy presente hoy en
