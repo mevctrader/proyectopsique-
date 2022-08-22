@@ -7,7 +7,7 @@ export const Navbar = () => {
   const { store, actions } = useContext(Context);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+    <nav id="navbar" className="navbar navbar-expand-lg">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <img src={psiqueImageUrl} alt="" width="140" height="40" />
@@ -31,40 +31,40 @@ export const Navbar = () => {
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-outline-success" type="submit">
+            <button id="buscar" className="btn rounded" type="submit">
               Buscar
             </button>
           </form>
         </div>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul id="menu" className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">
+              <Link id="menu-1" className="nav-link" aria-current="page" to="/">
                 Inicio
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/blog">
+              <Link id="menu-2" className="nav-link" to="/blog">
                 Blog
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/videos">
+              <Link id="menu-3" className="nav-link" to="/videos">
                 Videos
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/foro">
+              <Link id="menu-4" className="nav-link" to="/foro">
                 Foro
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" to="/test">
+              <Link id="menu-5" className="nav-link" to="/test">
                 Test
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <a
+              <a id="menu-7"
                 className="nav-link dropdown-toggle"
                 href="#"
                 role="button"
@@ -75,7 +75,7 @@ export const Navbar = () => {
               </a>
               <ul className="dropdown-menu">
                 {!store.token ? (
-                  <Link to="/login">
+                  <Link id="menu-6" to="/login">
                     <button className="btn btn-primary">Log in</button>
                   </Link>
                 ) : (
@@ -88,7 +88,7 @@ export const Navbar = () => {
                 )}
                 <li>
                   <a className="dropdown-item" href="#">
-                    SignUp
+                    Registrarse
                   </a>
                 </li>
                 <li>

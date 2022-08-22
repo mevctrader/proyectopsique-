@@ -1,3 +1,45 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+
+#blog {
+    background: rgb(165,148,249);
+    background: radial-gradient(circle, rgba(165,148,249,0.4) 0%, rgba(117,98,215,0.4) 37%); 
+}
+
+.crop-text-2 {
+    -webkit-line-clamp: 4;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.title, .card-body {
+    background-color: #CAE894;
+}
+
+#blog .btn {
+    background-color: #A594F9;
+    border: 1px solid #A594F9;
+}
+
+#footer {
+    background-color: #5A6A7B;
+}
+
+#navbar {
+    background-color: #CAE894;
+}
+
+#menu-1, #menu-2, #menu-3, #menu-4, #menu-5, #menu-6, #menu-7 {
+    color: black;
+}
+#menu-1:active, #menu-2:active, #menu-3:active, #menu-4:active, #menu-5:active, #menu-6:active, #menu-7:active {
+    text-decoration: underline;
+}
+
+#buscar {
+    border: 2px solid #7562D7;
+    color: #7562D7;
+}

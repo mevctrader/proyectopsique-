@@ -1,236 +1,141 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { BlogPost } from "../component/blogpost";
+import { PostGroup4 } from "../component/Post Depresion/postdepresion1";
 
 const Blog = () => {
   return (
-    <div className="display: flex flex-direction: row">
-      <div className="card mb-5 ms-3" style={{ width: "18rem" }}>
-        <div>
-          {" "}
-          <h5 className="card-title">La depresion y sus sintomas</h5>{" "}
+    <div
+      id="blog"
+      className="row wrap m-0 container-fluid justify-content-center p-0"
+    >
+      <div className="row justify-content-center mt-3 px-2">
+        <div className="col-auto">
+          <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li className="nav-item" role="presentation">
+              <button
+                className="nav-link active"
+                id="general"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-general"
+                type="button"
+                role="tab"
+                aria-controls="pills-general"
+                aria-selected="true"
+              >
+                General
+              </button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button
+                className="nav-link"
+                id="depresion"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-depresion"
+                type="button"
+                role="tab"
+                aria-controls="pills-depresion"
+                aria-selected="false"
+              >
+                Depresión
+              </button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button
+                className="nav-link"
+                id="ansiedad"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-ansiedad"
+                type="button"
+                role="tab"
+                aria-controls="pills-ansiedad"
+                aria-selected="false"
+              >
+                Ansiedad
+              </button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button
+                className="nav-link"
+                id="otros"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-otro"
+                type="button"
+                role="tab"
+                aria-controls="pills-otro"
+                aria-selected="false"
+              >
+                Otros
+              </button>
+            </li>
+          </ul>
         </div>
-        <img
-          src="https://www.saludterapia.com/images/saludterapia/glosario/psicologia/psicologia.jpg"
-          className="card-img-top w-100"
-          alt="..."
-        />
-        <div className="card-body">
-          <p className="card-text">
-            {" "}
-            Es evidente que la depresion es una patologia muy presente hoy en
-            dia, miles de personas la padecen. En España se estima que entre el
-            5 y el 10% de la poblacion podria tener depresion, es decir, de 2 a
-            4 millones de personas, no obstante esta cifra podria ascender...{" "}
-          </p>
-          <button
-            id="boton2"
-            className="btn btn-primary"
-            type="button"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Leer más
-          </button>
+        <div className="tab-content" id="pills-tabContent">
           <div
-            className="modal fade"
-            id="exampleModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
+            className="tab-pane fade show active"
+            id="pills-general"
+            role="tabpanel"
+            aria-labelledby="pills-general-tab"
+            tabIndex="0"
           >
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <p className="h1 text-center">Write your post!</p>
-                <hr></hr>
-                <p className="px-2">
-                  Es evidente que la depresion es una patologia muy presente hoy
-                  en dia, miles de personas la padecen. En España se estima que
-                  entre el 5 y el 10% de la poblacion podria tener depresion, es
-                  decir, de 2 a 4 millones de personas, no obstante esta cifra
-                  podria ascender...
-                </p>
-                <br></br>
-                <hr></hr>
-                <div className="row pe-3 mb-2 justify-content-end p">
-                  <button
-                    className="btn btn-primary w-auto col-4 mx-1"
-                    data-bs-dismiss="modal"
-                  >
-                    Cerrar
-                  </button>
-                </div>
+            <div id="depresion" className="content">
+              <div className="row">
+                <h2>Salud mental</h2>
+                <PostGroup4 />
+                <h2>Sistemas de apoyo</h2>
+                <PostGroup4 />
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div className="card mb-5 ms-3" style={{ width: "18rem" }}>
-        <div>
-          {" "}
-          <h5 className="card-title">La depresion y sus sintomas</h5>{" "}
-        </div>
-        <img
-          src="https://www.saludterapia.com/images/saludterapia/glosario/psicologia/psicologia.jpg"
-          className="card-img-top w-100"
-          alt="..."
-        />
-        <div className="card-body">
-          <p className="card-text">
-            {" "}
-            Es evidente que la depresion es una patologia muy presente hoy en
-            dia, miles de personas la padecen. En España se estima que entre el
-            5 y el 10% de la poblacion podria tener depresion, es decir, de 2 a
-            4 millones de personas, no obstante esta cifra podria ascender ...{" "}
-          </p>
-          <a href="#" className="btn btn-primary">
-            Leer mas
-          </a>
-        </div>
-      </div>
-
-      <div className="card mb-5 ms-3" style={{ width: "18rem" }}>
-        <div>
-          {" "}
-          <h5 className="card-title">La depresion y sus sintomas</h5>{" "}
-        </div>
-        <img
-          src="https://www.saludterapia.com/images/saludterapia/glosario/psicologia/psicologia.jpg"
-          className="card-img-top w-100"
-          alt="..."
-        />
-        <div className="card-body">
-          <p className="card-text">
-            {" "}
-            Es evidente que la depresion es una patologia muy presente hoy en
-            dia, miles de personas la padecen. En España se estima que entre el
-            5 y el 10% de la poblacion podria tener depresion, es decir, de 2 a
-            4 millones de personas, no obstante esta cifra podria ascender ...{" "}
-          </p>
-          <a href="#" className="btn btn-primary">
-            Leer mas
-          </a>
-        </div>
-      </div>
-
-      <div className="card mb-5 ms-3" style={{ width: "18rem" }}>
-        <div>
-          {" "}
-          <h5 className="card-title">La depresion y sus sintomas</h5>{" "}
-        </div>
-        <img
-          src="https://www.saludterapia.com/images/saludterapia/glosario/psicologia/psicologia.jpg"
-          className="card-img-top w-100"
-          alt="..."
-        />
-        <div className="card-body">
-          <p className="card-text">
-            {" "}
-            Es evidente que la depresion es una patologia muy presente hoy en
-            dia, miles de personas la padecen. En España se estima que entre el
-            5 y el 10% de la poblacion podria tener depresion, es decir, de 2 a
-            4 millones de personas, no obstante esta cifra podria ascender ...{" "}
-          </p>
-          <a href="#" className="btn btn-primary">
-            Leer mas
-          </a>
-        </div>
-      </div>
-
-      <div className="card mb-5 ms-3" style={{ width: "18rem" }}>
-        <div>
-          {" "}
-          <h5 className="card-title">La depresion y sus sintomas</h5>{" "}
-        </div>
-        <img
-          src="https://www.saludterapia.com/images/saludterapia/glosario/psicologia/psicologia.jpg"
-          className="card-img-top w-100"
-          alt="..."
-        />
-        <div className="card-body">
-          <p className="card-text">
-            {" "}
-            Es evidente que la depresion es una patologia muy presente hoy en
-            dia, miles de personas la padecen. En España se estima que entre el
-            5 y el 10% de la poblacion podria tener depresion, es decir, de 2 a
-            4 millones de personas, no obstante esta cifra podria ascender ...{" "}
-          </p>
-          <a href="#" className="btn btn-primary">
-            Leer mas
-          </a>
-        </div>
-      </div>
-
-      <div className="card mb-5 ms-3" style={{ width: "18rem" }}>
-        <div>
-          {" "}
-          <h5 className="card-title">La depresion y sus sintomas</h5>{" "}
-        </div>
-        <img
-          src="https://www.saludterapia.com/images/saludterapia/glosario/psicologia/psicologia.jpg"
-          className="card-img-top w-100"
-          alt="..."
-        />
-        <div className="card-body">
-          <p className="card-text">
-            {" "}
-            Es evidente que la depresion es una patologia muy presente hoy en
-            dia, miles de personas la padecen. En España se estima que entre el
-            5 y el 10% de la poblacion podria tener depresion, es decir, de 2 a
-            4 millones de personas, no obstante esta cifra podria ascender ...{" "}
-          </p>
-          <a href="#" className="btn btn-primary">
-            Leer mas
-          </a>
-        </div>
-      </div>
-
-      <div className="card mb-5 ms-3" style={{ width: "18rem" }}>
-        <div>
-          {" "}
-          <h5 className="card-title">La depresion y sus sintomas</h5>{" "}
-        </div>
-        <img
-          src="https://www.saludterapia.com/images/saludterapia/glosario/psicologia/psicologia.jpg"
-          className="card-img-top w-100"
-          alt="..."
-        />
-        <div className="card-body">
-          <p className="card-text">
-            {" "}
-            Es evidente que la depresion es una patologia muy presente hoy en
-            dia, miles de personas la padecen. En España se estima que entre el
-            5 y el 10% de la poblacion podria tener depresion, es decir, de 2 a
-            4 millones de personas, no obstante esta cifra podria ascender ...{" "}
-          </p>
-          <a href="#" className="btn btn-primary">
-            Leer mas
-          </a>
-        </div>
-      </div>
-
-      <div className="card mb-5 ms-3" style={{ width: "18rem" }}>
-        <div>
-          {" "}
-          <h5 className="card-title">La depresion y sus sintomas</h5>{" "}
-        </div>
-        <img
-          src="https://www.saludterapia.com/images/saludterapia/glosario/psicologia/psicologia.jpg"
-          className="card-img-top w-100"
-          alt="..."
-        />
-        <div className="card-body">
-          <p className="card-text">
-            {" "}
-            Es evidente que la depresion es una patologia muy presente hoy en
-            dia, miles de personas la padecen. En España se estima que entre el
-            5 y el 10% de la poblacion podria tener depresion, es decir, de 2 a
-            4 millones de personas, no obstante esta cifra podria ascender ...{" "}
-          </p>
-          <a href="#" className="btn btn-primary">
-            Leer mas
-          </a>
+          <div
+            className="tab-pane fade"
+            id="pills-depresion"
+            role="tabpanel"
+            aria-labelledby="pills-depresion-tab"
+            tabIndex="0"
+          >
+            <div
+              className="row"
+            >
+              <h2>Depresion</h2>
+              <PostGroup4 />
+              <h2>Sintomas y como manejarlos</h2>
+              <PostGroup4 />
+            </div>
+          </div>
+          <div
+            className="tab-pane fade"
+            id="pills-ansiedad"
+            role="tabpanel"
+            aria-labelledby="pills-ansiedad-tab"
+            tabIndex="0"
+          >
+            <div
+              className="row"
+            >
+              <h2>Ansiedad</h2>
+              <PostGroup4 />
+              <h2>Sintomas y como manejarlos</h2>
+              <PostGroup4 />
+            </div>
+          </div>
+          <div
+            className="tab-pane fade"
+            id="pills-otro"
+            role="tabpanel"
+            aria-labelledby="pills-otro-tab"
+            tabIndex="0"
+          >
+            <div
+              className="row"
+            >
+              <h2>Otros</h2>
+              <PostGroup4 />
+              <h2>Sintomas y como manejarlos</h2>
+              <PostGroup4 />
+            </div>
+          </div>
         </div>
       </div>
     </div>
