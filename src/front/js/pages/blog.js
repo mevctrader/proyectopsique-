@@ -1,7 +1,5 @@
 import React from "react";
-import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BlogPost } from "../component/blogpost";
 import { PostGroup4 } from "../component/Post Depresion/postdepresion1";
 
 const Blog = () => {
