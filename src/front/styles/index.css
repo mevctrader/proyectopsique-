@@ -39,15 +39,6 @@
     text-decoration: underline;
 }
 
-#general .nav-link:not(.active), #depresion .nav-link:not(.active),#ansiedad .nav-link:not(.active),#otros .nav-link:not(.active) {
-    background-color: red;
-}
-
-#general:enabled {
-    background-color: #FB9A4B;
-}
-
-
 #buscar {
     border: 2px solid #7562D7;
     color: #7562D7;
