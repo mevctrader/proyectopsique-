@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import psiqueImageUrl from "../../img/Psiento1.png";
 import psiqueImageUrl1 from "../../img/youngman.jpg";
+import psiqueImageUrl2 from "../../img/secondimg.jpg";
+import psiqueImageUrl3 from "../../img/thirdimg.jpg";
 
 export const Carrusel = () => (
   <div
@@ -39,14 +41,14 @@ export const Carrusel = () => (
         </div>
       </div>
       <div className="carousel-item">
-        <img src={psiqueImageUrl} className="d-block w-100" alt="..." />
+        <img src={psiqueImageUrl2} className="d-block w-100" alt="..." />
         <div className="carousel-caption d-none d-md-block">
           <h5>Second slide label</h5>
           <p>Some representative placeholder content for the second slide.</p>
         </div>
       </div>
       <div className="carousel-item">
-        <img src={psiqueImageUrl} className="d-block w-100" alt="..." />
+        <img src={psiqueImageUrl3} className="d-block w-100" alt="..." />
         <div className="carousel-caption d-none d-md-block">
           <h5>Third slide label</h5>
           <p>Some representative placeholder content for the third slide.</p>
