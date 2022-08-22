@@ -9,7 +9,12 @@ export const Footer = () => (
           href="/"
           className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"
         >
-          <img className="bi align-self-center" src={psiqueImageUrl} width="110" height="30" />
+          <img
+            className="bi align-self-center"
+            src={psiqueImageUrl}
+            width="110"
+            height="30"
+          />
         </a>
         <span className="mb-md-0 text-white">© 2022 @PsientoWell</span>
       </div>
