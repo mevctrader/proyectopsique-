@@ -41,14 +41,13 @@ const postinfo = [
 ];
 
 export const PostGroup4 = () => {
-  console.log(postinfo);
   return (
-    <div className="row wrap m-0 container-fluid p-0 g-0">
+    <div className="row wrap m-0 p-0 g-0">
         {
             postinfo.map(postinfo => (
-                <div className="col-lg-2 flex-grow-1 p-0 mx-2 g-0" key={postinfo.id}>
+                <div className="col-md-2 col-sm-1 flex-grow-1 p-0 px-md-1 mx-md-2 g-0" key={postinfo.id}>
                     <BlogPost className="p-0 m-0 g-0" title={postinfo.title} imageSource={postinfo.image} text={postinfo.text} modalId={postinfo.modal} modalTargeter={postinfo.modaltargeter}/>
-          </div>
+                </div>
         ))}
     </div>
   );

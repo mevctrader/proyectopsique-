@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 export const BlogPost = (props) => {
   return (
-    <div className="row wrap container-fluid p-0 m-0">
+    <div className="row wrap container p-0 m-0">
       <div className="card mb-3 p-0">
         <div className="title card-title rounded-top mb-0">
           <h5 className="card-title px-2 pt-1">{props.title}</h5>
@@ -17,7 +17,7 @@ export const BlogPost = (props) => {
             data-bs-toggle="modal"
             data-bs-target={props.modalTargeter}
           >
-            Leer más.
+            Leer más
           </button>
           <div
             className="modal fade bd-example-modal-lg"

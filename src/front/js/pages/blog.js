@@ -6,8 +6,8 @@ import { PostGroup4 } from "../component/Post Depresion/postdepresion1";
 
 const Blog = () => {
   return (
-    <div id="blog" className="row wrap m-0 container-fluid p-0">
-      <div className="row justify-content-center mt-3">
+    <div id="blog" className="row wrap m-0 container-fluid justify-content-center p-0">
+      <div className="row justify-content-center mt-3 px-2">
         <div className="col-auto">
           <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li className="nav-item" role="presentation">
