@@ -13,17 +13,10 @@ const Foro = () => {
 </div>
 <div>
 <Form>
-<Form.Group className=" w-50 p-5 mb-2  " controlId="exampleForm.ControlInput1">
-        <Form.Label>Nueva Publicacion</Form.Label>
-        <Form.Control type="email" placeholder="texto" />
-
-       <div> <button type="button" className="btn btn-primary mt-3">Enviar</button>
-
-       </div>
-      </Form.Group>
       <Form.Group className="justify-content w-50 p-5 mb-2" controlId="exampleForm.ControlTextarea1">
-        <Form.Label>Comentarios</Form.Label>
+        <Form.Label>Nueva Publicación</Form.Label>
         <Form.Control as="textarea" rows={3} />
+        <div> <button type="button" className="btn btn-primary mt-3">Enviar</button> </div>
       </Form.Group>
     </Form>
     </div>
