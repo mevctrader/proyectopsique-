@@ -124,13 +124,12 @@ class Post(db.Model):
 class Comentarios(db.Model):
     __tablename__ = 'comentarios'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(250), unique=True, nullable=True)
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
     posts = db.relationship("Post")
-    cantidad_comentarios = db.Column(db.Integer, nullable=False)
     fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)
     observ_comentarios = db.Column(db.String(250), nullable=True)
-    usuarios_comentarios = db.Column(db.String(20), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    users = db.relationship("User")
 
     def serialize(self):
         return {
