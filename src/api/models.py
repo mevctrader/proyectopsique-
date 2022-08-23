@@ -53,7 +53,6 @@ class Identificacion(db.Model):
         return {
             "id": self.id,
             "name_identif": self.name,
-            # do not serialize the password, its a security breach
         }
 
 class Genero(db.Model):
@@ -66,7 +65,6 @@ class Genero(db.Model):
         return {
             "id": self.id,
             "name_gn": self.name,
-            # do not serialize the password, its a security breach
         }
 
 class Test_Pregunta(db.Model):
@@ -78,7 +76,6 @@ class Test_Pregunta(db.Model):
         return {
             "id": self.id,
             "name_pg": self.name,
-            # do not serialize the password, its a security breach
         }
 
 class Test_Respuesta(db.Model):
@@ -97,13 +94,22 @@ class Test_Respuesta(db.Model):
             "id": self.id,
             "name_rp": self.name,
             "testp_id": self.testp_id,
-            # do not serialize the password, its a security breach
         }
 
-class Foros(db.Model):
-    __tablename__ = 'foros'
+class Topicos(db.Model):
+    __tablename__ = 'topicos'
     id = db.Column(db.Integer, primary_key=True)
-    code = db.Column(db.String(50), nullable=False)
+    name = db.Column(db.String(250), unique=True, nullable=True)
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "name_topicos": self.name,
+        }
+
+class Post(db.Model):
+    __tablename__ = 'post'
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), unique=True, nullable=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     users = db.relationship("User")
@@ -112,8 +118,27 @@ class Foros(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "email": self.email,
-            # do not serialize the password, its a security breach
+            "name_post": self.name,
+        }
+
+class Comentarios(db.Model):
+    __tablename__ = 'comentarios'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(250), unique=True, nullable=True)
+    post_id = db.Column(db.Integer, db.ForeignKey('post.id'))
+    posts = db.relationship("Post")
+    cantidad_comentarios = db.Column(db.Integer, nullable=False)
+    fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)
+    observ_comentarios = db.Column(db.String(250), nullable=True)
+    usuarios_comentarios = db.Column(db.String(20), nullable=True)
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "name_comment": self.name,
+            "cantidad_comentarios": self.cantidad_comentarios,
+            "observ_comentarios": self.observ_comentarios,
+            "usuarios_comentarios": self.usuarios_comentarios,
         }
 ## Draw from SQLAlchemy base
 #try:
