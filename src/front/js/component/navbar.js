@@ -87,9 +87,12 @@ export const Navbar = () => {
                   </button>
                 )}
                 <li>
-                  <a className="dropdown-item" href="#">
+                  {/*<a className="dropdown-item" href="#">
                     Registrarse
-                  </a>
+                </a>*/}
+                <Link id="menu-7" to="/registro">
+                    <button className="btn btn-success">Registrarse</button>
+                  </Link>
                 </li>
                 <li>
                   <hr className="dropdown-divider" />
