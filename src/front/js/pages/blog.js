@@ -1,6 +1,9 @@
 import React from "react";
 // import "bootstrap/dist/css/bootstrap.min.css";
-import { PostGroup4 } from "../component/Post Depresion/postdepresion1";
+import { Depresion } from "../component/Post Depresion/postdepresion1";
+import { General } from "../component/Post Depresion/general";
+import { Ansiedad } from "../component/Post Depresion/ansiedad";
+import { Otros } from "../component/Post Depresion/otros";
 
 const Blog = () => {
   return (
@@ -80,7 +83,7 @@ const Blog = () => {
             <div id="depresion" className="content">
               <div className="row">
                 <h2>Salud mental</h2>
-                <PostGroup4 />
+                <General />
               </div>
             </div>
           </div>
@@ -95,7 +98,7 @@ const Blog = () => {
               className="row"
             >
               <h2>Depresion</h2>
-              <PostGroup4 /> 
+              <Depresion /> 
             </div>
           </div>
           <div
@@ -109,7 +112,7 @@ const Blog = () => {
               className="row"
             >
               <h2>Ansiedad</h2>
-              <PostGroup4 />
+              <Ansiedad />
             </div>
           </div>
           <div
@@ -123,7 +126,7 @@ const Blog = () => {
               className="row"
             >
               <h2>Otros</h2>
-              <PostGroup4 />
+              <Otros />
             </div>
           </div>
         </div>

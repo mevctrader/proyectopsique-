@@ -8,7 +8,7 @@ import image4 from "../../../img/Psiento1.png";
 const postinfo = [
   {
     id: 1,
-    title: "La depresión y sus sintomas",
+    title: "Insomnio",
     image: "https://www.saludterapia.com/images/saludterapia/glosario/psicologia/psicologia.jpg",
     text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, molestias quae. Atque ipsum, et nobis aliquam voluptas eos sapiente sit natus obcaecati, ipsam est explicabo nihil repellendus placeat. Rem, quasi. Iste harum veniam magnam distinctio amet rerum dignissimos facilis inventore impedit deserunt reiciendis iusto voluptas autem voluptatum, necessitatibus ea cupiditate voluptates cum quidem quibusdam suscipit nemo tempore? Quia, pariatur esse? Iure magnam tempora laboriosam distinctio ullam, possimus culpa? Fuga molestiae dicta ipsum enim amet itaque iste qui ea, dignissimos, culpa aliquid minus illum, vel iure corporis aperiam at ullam porro.",
     modal: "modal1",
@@ -40,7 +40,7 @@ const postinfo = [
   }
 ];
 
-export const Depresion = () => {
+export const Otros = () => {
   return (
     <div className="row wrap m-0 p-0 g-0">
         {
