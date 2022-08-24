@@ -54,10 +54,10 @@ export const Carrusel = () => (
       <div className="carousel-item active">
         <img
           src={psiqueImageUrl1}
-          className="d-block"
+          className="d-block mx-auto"
           alt="..."
           width={"auto"}
-          height={"600px"}
+          height={"620px"}
         />
         <div className="carousel-caption d-none d-md-block">
           <h5>SALUD MENTAL</h5>
@@ -67,10 +67,10 @@ export const Carrusel = () => (
       <div className="carousel-item">
         <img
           src={psiqueImageUrl4}
-          className="d-block"
+          className="d-block mx-auto"
           alt="..."
           width={"auto"}
-          height={"600px"}
+          height={"620px"}
         />
         <div className="carousel-caption d-none d-md-block">
           <h5>PSICOLOGÍA EN LÍNEA</h5>
@@ -80,10 +80,10 @@ export const Carrusel = () => (
       <div className="carousel-item">
         <img
           src={psiqueImageUrl3}
-          className="d-block"
+          className="d-block mx-auto"
           alt="..."
           width={"auto"}
-          height={"600px"}
+          height={"620px"}
         />
         <div className="carousel-caption d-none d-md-block">
           <h5>AYUDAME</h5>
