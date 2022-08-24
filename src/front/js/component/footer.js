@@ -31,12 +31,17 @@ export const Footer = () => (
           <a
             className="text-muted"
             href="https://www.instagram.com/psientowell/"
+            target="_blank"
           >
             <img className="bi" width="24" height="24" src={instagramLogo} />
           </a>
         </li>
         <li className="ms-3">
-          <a className="text-muted" href="https://twitter.com/PsientoWell">
+          <a
+            className="text-muted"
+            href="https://twitter.com/PsientoWell"
+            target="_blank"
+          >
             <img className="bi" width="24" height="24" src={twitterLogo} />
           </a>
         </li>
