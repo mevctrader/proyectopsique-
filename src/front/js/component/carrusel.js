@@ -54,7 +54,7 @@ export const Carrusel = () => (
       <div className="carousel-item active">
         <img
           src={psiqueImageUrl1}
-          className="d-block w-100"
+          className="d-block"
           alt="..."
           width={"auto"}
           height={"600px"}

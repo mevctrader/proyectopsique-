@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 
 const Foro = () => {
   return (
-    <div className="d-flex flex-row">
+    <div id="foro-div" className="d-flex flex-row">
       <div className="d-flex flex-row col-12">
         <div className="col-6 list-group justify-content w-25 p-5">
           <a className="list-group-item list-group-item-action disabled">Topicos</a>

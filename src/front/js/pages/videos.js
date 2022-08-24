@@ -2,7 +2,8 @@ import React from "react";
 
 const Videos = () => {
   return (
-    <div
+    <div id="registro-div">
+      <div
       id="carouselExampleIndicators"
       className="carousel slide"
       data-bs-ride="true"
@@ -85,6 +86,7 @@ const Videos = () => {
         <span className="carousel-control-next-icon" aria-hidden="true"></span>
         <span className="visually-hidden">Next</span>
       </button>
+    </div>
     </div>
   );
 };

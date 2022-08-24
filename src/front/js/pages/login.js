@@ -15,7 +15,7 @@ export const Login = () =>
 	}
 	if(store.token && store.token!="" && store.token != undefined) navigate('/');
 	return (
-		<div className="text-center">
+		<div id="login-div" className="text-center">
 			<h1>Login</h1>
 			{
 				store.token && store.token != "" && store.token != undefined ? (store.token) :

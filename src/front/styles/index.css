@@ -2,6 +2,10 @@
     General Styles used on every website (Don't Repeat Yourself)
 */
 
+#blog, #foro-div, #login-div, #registro-div, #test-div, #home-div {
+    min-height: 87vh;
+}
+
 #blog {
     background: rgb(165,148,249);
     background: radial-gradient(circle, rgba(165,148,249,0.4) 0%, rgba(117,98,215,0.4) 37%); 
