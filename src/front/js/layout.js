@@ -13,7 +13,8 @@ import Foro from "./pages/foro";
 import Test from "./pages/test";
 import { Footer } from "./component/footer";
 import { Navbar } from "./component/navbar";
-import { carrusel } from "./component/carrusel";
+//import { carrusel } from "./component/carrusel";
+import { Registro } from "./pages/registro";
 
 //create your first component
 const Layout = () => {
@@ -30,6 +31,7 @@ const Layout = () => {
             <Route element={<Home />} path="/" />
             <Route element={<Demo />} path="/demo" />
             <Route element={<Login />} path="/login" />
+            <Route element={<Registro />} path="/registro" />
             <Route element={<Single />} path="/single/:theid" />
             <Route element={<h1>Not found!</h1>} />
             <Route element={<Blog />} path="/blog" />

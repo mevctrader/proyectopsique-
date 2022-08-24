@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import psiqueImageUrl from "../../img/Psiento1.png";
 
 export const Footer = () => (
-  <div id="footer" className="container-fluid align-content-center">
+  <div
+    id="footer"
+    className="container-fluid align-content-center"
+    fixed="bottom"
+  >
     <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
       <div className="col-md-4 d-flex align-items-center">
         <a

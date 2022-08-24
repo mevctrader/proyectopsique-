@@ -1,5 +1,26 @@
 import React, { Component } from "react";
 import psiqueImageUrl from "../../img/Psiento1.png";
+import psiqueImageUrl1 from "../../img/youngman.jpg";
+import psiqueImageUrl2 from "../../img/secondimg.jpg";
+import psiqueImageUrl3 from "../../img/thirdimg.jpg";
+import psiqueImageUrl4 from "../../img/fiveimg.jpg";
+
+function TextControlsExample() {
+  return (
+    <Form>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="email" placeholder="name@example.com" />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Example textarea</Form.Label>
+        <Form.Control as="textarea" rows={3} />
+      </Form.Group>
+    </Form>
+  );
+}
+
+export default TextControlsExample;
 
 export const Carrusel = () => (
   <div
@@ -31,23 +52,41 @@ export const Carrusel = () => (
     </div>
     <div className="carousel-inner">
       <div className="carousel-item active">
-        <img src={psiqueImageUrl} className="d-block w-100" alt="..." />
+        <img
+          src={psiqueImageUrl1}
+          className="d-block w-100"
+          alt="..."
+          width={"auto"}
+          height={"600px"}
+        />
         <div className="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
+          <h5>SALUD MENTAL</h5>
           <p>Some representative placeholder content for the first slide.</p>
         </div>
       </div>
       <div className="carousel-item">
-        <img src={psiqueImageUrl} className="d-block w-100" alt="..." />
+        <img
+          src={psiqueImageUrl4}
+          className="d-block w-100"
+          alt="..."
+          width={"auto"}
+          height={"600px"}
+        />
         <div className="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
+          <h5>PSICOLOGÍA EN LÍNEA</h5>
           <p>Some representative placeholder content for the second slide.</p>
         </div>
       </div>
       <div className="carousel-item">
-        <img src={psiqueImageUrl} className="d-block w-100" alt="..." />
+        <img
+          src={psiqueImageUrl3}
+          className="d-block w-100"
+          alt="..."
+          width={"auto"}
+          height={"600px"}
+        />
         <div className="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
+          <h5>AYUDAME</h5>
           <p>Some representative placeholder content for the third slide.</p>
         </div>
       </div>
