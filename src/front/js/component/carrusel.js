@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import psiqueImageUrl from "../../img/Psiento1.png";
-import psiqueImageUrl1 from "../../img/youngman.jpg";
+import psiqueImageUrl1 from "../../img/psi2.png";
 import psiqueImageUrl2 from "../../img/secondimg.jpg";
-import psiqueImageUrl3 from "../../img/thirdimg.jpg";
-import psiqueImageUrl4 from "../../img/fiveimg.jpg";
+import psiqueImageUrl3 from "../../img/psi3.png";
+import psiqueImageUrl4 from "../../img/psi5.png";
 
 function TextControlsExample() {
   return (
@@ -67,7 +67,7 @@ export const Carrusel = () => (
       <div className="carousel-item">
         <img
           src={psiqueImageUrl4}
-          className="d-block w-100"
+          className="d-block"
           alt="..."
           width={"auto"}
           height={"600px"}
@@ -80,7 +80,7 @@ export const Carrusel = () => (
       <div className="carousel-item">
         <img
           src={psiqueImageUrl3}
-          className="d-block w-100"
+          className="d-block"
           alt="..."
           width={"auto"}
           height={"600px"}
