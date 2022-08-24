@@ -73,21 +73,29 @@ export const Navbar = () => {
               >
                 Usuario
               </a>
-              <div className="dropdown-menu dropdown-menu-end">
-              <ul>
+              <ul className="dropdown-menu dropdown-menu-end">
                 {!store.token ? (
                   <Link id="menu-6" to="/login">
-                    <button className="btn btn-primary mb-1">Log in</button>
+                    <button className="btn btn-primary ms-2 mb-1">Log in</button>
                   </Link>
                 ) : (
                   <button
                     onClick={() => actions.logout()}
-                    className="btn btn-primary col-12"
+                    className="btn btn-primary ms-2"
                   >
                     Cerrar Sesión
                   </button>
                 )}
-                
+                <li>
+                  {/*<a className="dropdown-item" href="#">
+                    Registrarse
+                </a>*/}
+                <Link id="menu-7" to="/registro">
+                    <button className="btn btn-success ms-2">Registrarse</button>
+                  </Link>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
