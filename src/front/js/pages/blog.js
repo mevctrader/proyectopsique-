@@ -81,8 +81,6 @@ const Blog = () => {
               <div className="row">
                 <h2>Salud mental</h2>
                 <PostGroup4 />
-                <h2>Sistemas de apoyo</h2>
-                <PostGroup4 />
               </div>
             </div>
           </div>
@@ -97,9 +95,7 @@ const Blog = () => {
               className="row"
             >
               <h2>Depresion</h2>
-              <PostGroup4 />
-              <h2>Sintomas y como manejarlos</h2>
-              <PostGroup4 />
+              <PostGroup4 /> 
             </div>
           </div>
           <div
@@ -114,8 +110,6 @@ const Blog = () => {
             >
               <h2>Ansiedad</h2>
               <PostGroup4 />
-              <h2>Sintomas y como manejarlos</h2>
-              <PostGroup4 />
             </div>
           </div>
           <div
@@ -129,8 +123,6 @@ const Blog = () => {
               className="row"
             >
               <h2>Otros</h2>
-              <PostGroup4 />
-              <h2>Sintomas y como manejarlos</h2>
               <PostGroup4 />
             </div>
           </div>
