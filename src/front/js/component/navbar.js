@@ -73,15 +73,15 @@ export const Navbar = () => {
               >
                 Usuario
               </a>
-              <ul className="dropdown-menu">
+              <ul className="dropdown-menu dropdown-menu-end">
                 {!store.token ? (
                   <Link id="menu-6" to="/login">
-                    <button className="btn btn-primary">Log in</button>
+                    <button className="btn btn-primary ms-2 mb-1">Log in</button>
                   </Link>
                 ) : (
                   <button
                     onClick={() => actions.logout()}
-                    className="btn btn-primary"
+                    className="btn btn-primary ms-2"
                   >
                     Cerrar Sesión
                   </button>
@@ -91,11 +91,8 @@ export const Navbar = () => {
                     Registrarse
                 </a>*/}
                 <Link id="menu-7" to="/registro">
-                    <button className="btn btn-success">Registrarse</button>
+                    <button className="btn btn-success ms-2">Registrarse</button>
                   </Link>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
                 </li>
               </ul>
             </li>

@@ -27,7 +27,7 @@ export const Registro = () =>{
     if(store.token && store.token!="" && store.token != undefined) navigate('/');
 
     return(
-    <Form>
+    <Form id="registro-div">
         <Container>
             <Row className="mb-3">
                 <Form.Group as={Col}  sm={2} controlId="formGridIdentificacion">
