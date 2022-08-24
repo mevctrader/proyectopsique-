@@ -98,7 +98,7 @@ class Topicos(db.Model):
 class Post(db.Model):
     __tablename__ = 'post'
     id = db.Column(db.Integer, primary_key=True)
-    titulo = db.Column(db.String(50), unique=True, nullable=False)
+    titulo_post = db.Column(db.String(50), unique=True, nullable=False)
     descripcion_post = db.Column(db.String(250), unique=True, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     users = db.relationship("User")
@@ -109,7 +109,7 @@ class Post(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "titulo": self.titulo,
+            "titulo_post": self.titulo_post,
             "descripcion_post": self.descripcion_post,
             "topico_id": self.topico_id,
             "user_id": self.user_id,
