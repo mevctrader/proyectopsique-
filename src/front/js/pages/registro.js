@@ -19,10 +19,12 @@ export const Registro = () =>{
     const [usuario, setUsuario] = useState("");
     const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+    const [confirmarpassword, setConfPassword] = useState("");
+
 	let navigate = useNavigate();
 
     const handleClick = () => {
-		actions.registro(identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password);
+		actions.registro(identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password,confirmarpassword);
 	}
 
     if(store.token && store.token!="" && store.token != undefined) navigate('/');
@@ -54,7 +56,7 @@ export const Registro = () =>{
                 </Form.Group>
 
                 <Form.Group as={Col} sm={2} controlId="formGridSnombre">
-                    <Form.Label>Segundo</Form.Label>
+                    <Form.Label>Segundo Nombre</Form.Label>
                     <Form.Control value={snombre} onChange={(e) => setSnombre(e.target.value)} type="text" placeholder="Enter Segundo Nombre" />
                 </Form.Group>
 
@@ -86,8 +88,13 @@ export const Registro = () =>{
                 </Form.Group>
 
                 <Form.Group as={Col} sm={2} controlId="formGridPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>Contraseña</Form.Label>
                     <Form.Control value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
+                </Form.Group>
+
+                <Form.Group as={Col} sm={2} controlId="formGridConfirPassword">
+                    <Form.Label>Confirmar Contraseña</Form.Label>
+                    <Form.Control value={confirmarpassword} onChange={(e) => setConfPassword(e.target.value)} type="password" placeholder="Password" />
                 </Form.Group>
             </Row>
             
