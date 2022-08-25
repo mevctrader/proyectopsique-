@@ -25,7 +25,7 @@ export default TextControlsExample;
 export const Carrusel = () => (
   <div
     id="carouselExampleCaptions"
-    className="carousel slide"
+    className="carousel slide text-dark"
     data-bs-ride="false"
   >
     <div className="carousel-indicators">
@@ -59,7 +59,10 @@ export const Carrusel = () => (
           width={"auto"}
           height={"620px"}
         />
-        <div className="carousel-caption d-none d-md-block">
+        <div
+          id="texto-carrusel-1"
+          className="carousel-caption d-none d-md-block"
+        >
           <h5>SALUD MENTAL</h5>
           <p>Some representative placeholder content for the first slide.</p>
         </div>
