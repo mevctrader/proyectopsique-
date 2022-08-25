@@ -36,13 +36,13 @@ class User(db.Model):
     cedula = db.Column(db.Integer, nullable=False)
     genero = db.Column(db.String(30), nullable=False)
     fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)
-    roles = db.Column(db.String(20), unique=False, nullable=False) 
-    is_active = db.Column(db.Boolean, unique=False, nullable=False) 
+    roles = db.Column(db.String(20), unique=False, nullable=True) 
+    is_active = db.Column(db.Boolean, unique=False, nullable=True) 
 
     def __repr__(self):
         return f'<User {self.email}>'
 
-    def __init__(self, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero_id, roles):
+    def __init__(self, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero):
         self.email = email
         self.password = password
         self.nombre_usuario = nombre_usuario
@@ -53,11 +53,10 @@ class User(db.Model):
         self.tipo_documento_id = tipo_documento_id
         self.cedula = cedula
         self.genero = genero
-        self.roles = roles
 
     @classmethod
-    def new_registro_user(cls, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero, roles):
-        new_registro_user = cls(email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero, roles)
+    def new_registro_user(cls, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero):
+        new_registro_user = cls(email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero)
         db.session.add(new_registro_user)
         try:
             db.session.commit()
@@ -66,7 +65,7 @@ class User(db.Model):
             print(error)
             return None
 
-    def update(self, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero, roles):
+    def update(self, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero):
         self.email = email
         self.password = password
         self.nombre_usuario = nombre_usuario
@@ -77,7 +76,6 @@ class User(db.Model):
         self.tipo_documento_id = tipo_documento_id
         self.cedula = cedula
         self.genero = genero
-        self.roles = roles
         try:
             db.session.commit()
             return self
@@ -98,6 +96,7 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "password": self.password,
             "nombre_usuario": self.nombre_usuario,
             "pnombre": self.pnombre,
             "snombre": self.snombre,
@@ -105,8 +104,7 @@ class User(db.Model):
             "sapellido": self.sapellido,
             "tipo_documento_id": self.tipo_documento_id,
             "cedula": self.cedula,
-            "genero": self.genero,
-            "roles": self.roles,
+            "genero": self.genero
             # do not serialize the password, its a security breach
         }
 
