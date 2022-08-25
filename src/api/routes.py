@@ -34,3 +34,19 @@ def get_hello():
     }
 
     return jsonify(dictonary)
+
+
+@api.route("/registro", methods=["POST"])
+def registro_post():
+    body = request.json
+    if "autor" not in body:
+        return 'No tiene autor!', 400
+    if "nombre" not in body:
+        return 'No tiene nombre', 400
+    else:
+        new_row = Diario.new_diary(body["nombre"], body["autor"])
+        if new_row == None:
+            return 'Un error ha ocurrido, upps!', 500
+        else:
+            return jsonify(new_row.serialize()), 200
+
