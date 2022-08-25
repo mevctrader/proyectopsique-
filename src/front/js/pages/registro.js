@@ -16,6 +16,7 @@ export const Registro = () =>{
     const [papellido, setPapellido] = useState("");
 	const [sapellido, setSapellido] = useState("");
     const [genero, setGenero] = useState("");
+    const [usuario, setUsuario] = useState("");
     const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	let navigate = useNavigate();
@@ -31,7 +32,7 @@ export const Registro = () =>{
         <Container>
             <Row className="mb-3">
                 <Form.Group as={Col}  sm={2} controlId="formGridIdentificacion">
-                <Form.Label>Identificación:</Form.Label>
+                <Form.Label>Tipo de Documento:</Form.Label>
                 <Form.Select value={identificacion} onChange={(e) => setIdentificacion(e.target.value)} defaultValue="Seleccione...">
                     <option value={""}>SELECCIONE</option>
                     <option value={"V"}>VENEZOLANO</option>
@@ -67,23 +68,24 @@ export const Registro = () =>{
                     <Form.Control type="text" value={sapellido} onChange={(e) => setSapellido(e.target.value)} placeholder="Enter Segundo Apellido" />
                 </Form.Group>
 
-                <Form.Group as={Col} sm={2} controlId="formGridGenero">
-                <Form.Label>Género:</Form.Label>
-                <Form.Select value={genero} onChange={(e) => setGenero(e.target.value)} defaultValue="Seleccione...">
-                    <option value={""}>SELECCIONE</option>
-                    <option value={"1"}>FEMENINO</option>
-                    <option value={"2"}>MASCULINO</option>
-                </Form.Select>
-                </Form.Group>
-
             </Row>
             <Row className="mb-3">
-                <Form.Group as={Col} controlId="formGridEmail">
+                <Form.Group as={Col} sm={2} controlId="formGridGenero">
+                <Form.Label>Género:</Form.Label>
+                <Form.Control type="text" value={genero} onChange={(e) => setGenero(e.target.value)} placeholder="Enter el Genero" />
+                </Form.Group>
+
+                <Form.Group as={Col} sm={2} controlId="formGridUsuario">
+                    <Form.Label>Usuario</Form.Label>
+                    <Form.Control value={usuario} onChange={(e) => setUsuario(e.target.value)} type="text" placeholder="Enter Usuario" />
+                </Form.Group>
+
+                <Form.Group as={Col} sm={2} controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
                     <Form.Control value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" />
                 </Form.Group>
 
-                <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Group as={Col} sm={2} controlId="formGridPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
                 </Form.Group>

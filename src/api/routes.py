@@ -39,12 +39,24 @@ def get_hello():
 @api.route("/registro", methods=["POST"])
 def registro_post():
     body = request.json
-    if "autor" not in body:
-        return 'No tiene autor!', 400
-    if "nombre" not in body:
-        return 'No tiene nombre', 400
+    if "tipo_documento_id" not in body:
+        return 'Debe seleccionar el tipo de documento!', 400
+    if "cedula" not in body:
+        return 'Debe indicar el numero de cedula', 400
+    if "pnombre" not in body:
+        return 'Debe indicar el primer de nombre!', 400
+    if "papellido" not in body:
+        return 'Debe indicar el primer apellido', 400
+    if "genero" not in body:
+        return 'Debe indicar el genero!', 400
+    if "usuario" not in body:
+        return 'Debe indicar el nombre del usuario', 400
+    if "email" not in body:
+        return 'Debe indicar el correo electronico!', 400
+    if "password" not in body:
+        return 'Debe indicar la contraseña', 400
     else:
-        new_row = Diario.new_diary(body["nombre"], body["autor"])
+        new_row = User.new_registro_user(body["tipo_documento_id"], body["cedula"],body["pnombre"], body["papellido"],body["genero"], body["usuario"],body["email"], body["password"])
         if new_row == None:
             return 'Un error ha ocurrido, upps!', 500
         else:
