@@ -56,7 +56,7 @@ def registro_post():
     if "password" not in body:
         return 'Debe indicar la contraseña', 400
     else:
-        new_row = User.new_registro_user(body["tipo_documento_id"], body["cedula"],body["pnombre"], body["papellido"],body["genero"], body["usuario"],body["email"], body["password"])
+        new_row = User.new_registro_user(body["tipo_documento_id"], body["cedula"],body["pnombre"],body["snombre"], body["papellido"],body["sapellido"],body["genero"], body["usuario"],body["email"], body["password"])
         if new_row == None:
             return 'Un error ha ocurrido, upps!', 500
         else:

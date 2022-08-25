@@ -22,7 +22,7 @@ export const Registro = () =>{
 	let navigate = useNavigate();
 
     const handleClick = () => {
-		//actions.login(email,password);
+		actions.registro(identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password);
 	}
 
     if(store.token && store.token!="" && store.token != undefined) navigate('/');
