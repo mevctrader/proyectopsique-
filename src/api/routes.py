@@ -34,3 +34,13 @@ def get_hello():
     }
 
     return jsonify(dictonary)
+
+
+@api.route("/registro", methods=["POST"])
+def registro_post():
+    email = get_jwt_identity()
+    dictonary = {
+        "message": "Hello world  Email: " + email
+    }
+
+    return jsonify(dictonary)
