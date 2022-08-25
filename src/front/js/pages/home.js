@@ -12,8 +12,10 @@ export const Home = () => {
   }, [store.token]);
 
   return (
-    <div id="home-div" className="text-center mt-5">
-      <Carrusel />
-    </div> 
+    <div className="container-fluid ">
+      <div id="home-div" className="text-center row align-items-center text-dark">
+        <Carrusel />
+      </div>
+    </div>
   );
 };
