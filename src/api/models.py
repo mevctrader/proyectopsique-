@@ -10,8 +10,8 @@ from sqlalchemy import create_engine
 db = SQLAlchemy()
 Base = declarative_base()
 
-class Identificacion(db.Model):
-    __tablename__ = 'identificacion'
+class Tipo_Documento(db.Model):
+    __tablename__ = 'tipo_documento'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), unique=True, nullable=True)
 
@@ -31,16 +31,68 @@ class User(db.Model):
     snombre = db.Column(db.String(20), nullable=True)
     papellido = db.Column(db.String(20), nullable=False)
     sapellido = db.Column(db.String(20), nullable=True)
-    identificacion_id = db.Column(db.Integer, db.ForeignKey('identificacion.id'))
-    identificacions = db.relationship("Identificacion")
+    tipo_documento_id = db.Column(db.Integer, db.ForeignKey('tipo_documento.id'))
+    tipo_documentos = db.relationship("Tipo_Documento")
     cedula = db.Column(db.Integer, nullable=False)
-    genero_id = db.Column(db.String(30), nullable=False)
+    genero = db.Column(db.String(30), nullable=False)
     fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)
     roles = db.Column(db.String(20), unique=False, nullable=False) 
     is_active = db.Column(db.Boolean, unique=False, nullable=False) 
 
     def __repr__(self):
         return f'<User {self.email}>'
+
+    def __init__(self, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero_id, roles):
+        self.email = email
+        self.password = password
+        self.nombre_usuario = nombre_usuario
+        self.pnombre = pnombre
+        self.snombre = snombre
+        self.papellido = papellido
+        self.sapellido = sapellido
+        self.tipo_documento_id = tipo_documento_id
+        self.cedula = cedula
+        self.genero = genero
+        self.roles = roles
+
+    @classmethod
+    def new_registro_user(cls, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero, roles):
+        new_registro_user = cls(email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero, roles)
+        db.session.add(new_registro_user)
+        try:
+            db.session.commit()
+            return new_registro_user
+        except Exception as error:
+            print(error)
+            return None
+
+    def update(self, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero, roles):
+        self.email = email
+        self.password = password
+        self.nombre_usuario = nombre_usuario
+        self.pnombre = pnombre
+        self.snombre = snombre
+        self.papellido = papellido
+        self.sapellido = sapellido
+        self.tipo_documento_id = tipo_documento_id
+        self.cedula = cedula
+        self.genero = genero
+        self.roles = roles
+        try:
+            db.session.commit()
+            return self
+        except Exception as error:
+            print(error)
+            return False
+
+    def delete(self):
+        db.session.delete(self)
+        try:
+            db.session.commit()
+            return True
+        except Exception as error:
+            print(error)
+            return False
 
     def serialize(self):
         return {
@@ -51,8 +103,9 @@ class User(db.Model):
             "snombre": self.snombre,
             "papellido": self.papellido,
             "sapellido": self.sapellido,
-            "identificacion_id": self.identificacion_id,
-            "genero": self.genero_id,
+            "tipo_documento_id": self.tipo_documento_id,
+            "cedula": self.cedula,
+            "genero": self.genero,
             "roles": self.roles,
             # do not serialize the password, its a security breach
         }
