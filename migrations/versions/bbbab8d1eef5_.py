@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 1efb7e55c65c
+Revision ID: bbbab8d1eef5
 Revises: 
-Create Date: 2022-08-24 00:56:12.819952
+Create Date: 2022-08-24 23:53:47.483593
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '1efb7e55c65c'
+revision = 'bbbab8d1eef5'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -58,15 +58,17 @@ def upgrade():
     )
     op.create_table('post',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('titulo_post', sa.String(length=50), nullable=False),
     sa.Column('descripcion_post', sa.String(length=250), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
-    sa.Column('topico_id', sa.Integer(), nullable=True),
+    sa.Column('topico_id', sa.Integer(), nullable=False),
     sa.Column('fecha_registro', sa.DateTime(), nullable=False),
     sa.ForeignKeyConstraint(['topico_id'], ['topicos.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('descripcion_post'),
-    sa.UniqueConstraint('fecha_registro')
+    sa.UniqueConstraint('fecha_registro'),
+    sa.UniqueConstraint('titulo_post')
     )
     op.create_table('test_respuesta',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -82,9 +84,9 @@ def upgrade():
     op.create_table('comentarios',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('descripcion_comentarios', sa.String(length=250), nullable=False),
-    sa.Column('post_id', sa.Integer(), nullable=True),
+    sa.Column('post_id', sa.Integer(), nullable=False),
     sa.Column('fecha_registro', sa.DateTime(), nullable=False),
-    sa.Column('user_id', sa.Integer(), nullable=True),
+    sa.Column('user_id', sa.Integer(), nullable=False),
     sa.ForeignKeyConstraint(['post_id'], ['post.id'], ),
     sa.ForeignKeyConstraint(['user_id'], ['user.id'], ),
     sa.PrimaryKeyConstraint('id'),
