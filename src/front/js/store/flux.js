@@ -63,7 +63,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Ha habido un error al ingresar al login");
 				}
 			},
-			registro: async (identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password) => 
+			registro: async (identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password,confirmarpassword) => 
 			{
 				const opt={
 					method: "POST",
@@ -78,6 +78,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"usuario": usuario,
 						"email": email,
 						"password": password,
+						"confirmarpassword": confirmarpassword,
 					}),
 					headers: {
 						"Content-Type": "application/json"
@@ -86,7 +87,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
 				//console.log(baseurl);
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-k8f9n48xgjo.ws-us63.gitpod.io/api/token', opt)
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-k8f9n48xgjo.ws-us63.gitpod.io/api/registro', opt)
 					if(resp.status!==200) 
 					{
 						alert("No se pudo registrar los datos");
