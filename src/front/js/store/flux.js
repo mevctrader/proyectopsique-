@@ -47,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
 				//console.log(baseurl);
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-in9xmx853ff.ws-us62.gitpod.io/api/token', opt)
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-k8f9n48xgjo.ws-us63.gitpod.io/api/token', opt)
 					if(resp.status!==200) 
 					{
 						alert("Los datos ingresados no existen");
@@ -63,7 +63,45 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Ha habido un error al ingresar al login");
 				}
 			},
-
+			registro: async (identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password) => 
+			{
+				const opt={
+					method: "POST",
+					body: JSON.stringify({
+						"identificacion": identificacion,
+						"cedula": cedula,
+						"pnombre": pnombre,
+						"snombre": snombre,
+						"papellido": papellido,
+						"sapellido": sapellido,
+						"genero": genero,
+						"usuario": usuario,
+						"email": email,
+						"password": password,
+					}),
+					headers: {
+						"Content-Type": "application/json"
+					}
+				};
+				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
+				//console.log(baseurl);
+				try{
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-k8f9n48xgjo.ws-us63.gitpod.io/api/token', opt)
+					if(resp.status!==200) 
+					{
+						alert("No se pudo registrar los datos");
+						return false;
+					}
+					const data = await resp.json();
+					//console.log("This from backend:",data);
+					sessionStorage.setItem("token",data.access_token);
+					setStore({ token: data.access_token})
+					return true;
+				}
+				catch(error){
+					console.log("Ha habido un error al ingresar al login");
+				}
+			},
 			getMessage: async () => {
 				try{
 					// fetching data from the backend
