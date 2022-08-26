@@ -20,11 +20,12 @@ export const Registro = () =>{
     const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
     const [confirmarpassword, setConfPassword] = useState("");
+    const [checked, setChecked] = React.useState(1);
 
 	let navigate = useNavigate();
 
     const handleClick = () => {
-		actions.registro(identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password);
+		actions.registro(identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password,checked);
 	}
 
     if(store.token && store.token!="" && store.token != undefined) navigate('/');
@@ -96,6 +97,12 @@ export const Registro = () =>{
                     <Form.Label>Confirmar Contraseña</Form.Label>
                     <Form.Control value={confirmarpassword} onChange={(e) => setConfPassword(e.target.value)} type="password" placeholder="Password" />
                 </Form.Group>
+            </Row>
+            <Row className="mb-3">
+                <Form.Label>
+                    <input type="checkbox" value={checked} checked={checked} onChange={(e) => setChecked(e.target.value)} />
+                    <span>Activo</span>
+                </Form.Label>
             </Row>
             
             <Button variant="primary" onClick={handleClick}>

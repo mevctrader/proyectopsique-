@@ -47,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
 				//console.log(baseurl);
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-k8f9n48xgjo.ws-us63.gitpod.io/api/token', opt)
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-schma07udea.ws-us63.gitpod.io/api/token', opt)
 					if(resp.status!==200) 
 					{
 						alert("Los datos ingresados no existen");
@@ -63,7 +63,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Ha habido un error al ingresar al login");
 				}
 			},
-			registro: async (identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password) => 
+			registro: async (identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password,is_active) => 
 			{
 				const opt={
 					method: "POST",
@@ -78,7 +78,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"sapellido": sapellido,
 						"cedula": cedula,
 						"genero": genero,
-			
+						"is_active": is_active
 					}),
 					headers: {
 						"Content-Type": "application/json"
@@ -87,7 +87,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
 				//console.log(baseurl);
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-k8f9n48xgjo.ws-us63.gitpod.io/api/registro', opt)
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-schma07udea.ws-us63.gitpod.io/api/registro', opt)
 					if(resp.status!==200) 
 					{
 						alert("No se pudo registrar los datos");
@@ -95,11 +95,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 					const data = await resp.json();
 
-					if(data==200)
-					{
+					/*if(data==200)
+					{*/
 						alert("los datos se guardaron con exito")
-						return false;
-					}
+						//return false;
+					/*}*/
 					//console.log("This from backend:",data);
 					//sessionStorage.setItem("token",data.access_token);
 					//setStore({ token: data.access_token})
@@ -119,7 +119,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					}
 					//const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const resp = await fetch("https://3001-mevctrader-proyectopsiq-k8f9n48xgjo.ws-us63.gitpod.io/api/hello", opts)
+					const resp = await fetch("https://3001-mevctrader-proyectopsiq-schma07udea.ws-us63.gitpod.io/api/hello", opts)
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves
