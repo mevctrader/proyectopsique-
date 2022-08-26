@@ -19,7 +19,7 @@ api = Blueprint('api', __name__)
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    if email != "test" or password != "test":
+    if email != "test@gmail.com" or password != "test":
         return jsonify({"msg": "Bad email or password"}), 401
 
     access_token = create_access_token(identity=email)
@@ -45,14 +45,8 @@ def registro_post():
         return 'Debe indicar el numero de cedula', 400
     if "pnombre" not in body:
         return 'Debe indicar el primer de nombre!', 400
-    if "snombre" not in body:
-        return 'Debe indicar el primer de nombre!', 400
     if "papellido" not in body:
         return 'Debe indicar el primer apellido', 400
-    if "sapellido" not in body:
-        return 'Debe indicar el primer de nombre!', 400
-    if "genero" not in body:
-        return 'Debe indicar el genero!', 400
     if "usuario" not in body:
         return 'Debe indicar el nombre del usuario', 400
     if "email" not in body:
@@ -63,7 +57,7 @@ def registro_post():
         return 'Debe seleccionar el checkbox', 400
     else:
        
-        new_row = User.new_registro_user(body["email"], body["password"], body["usuario"], body["pnombre"],body["snombre"], body["papellido"],body["sapellido"],body["tipo_documento_id"], body["cedula"], body["genero"], body["is_active"])
+        new_row = User.new_registro_user(body["email"], body["password"], body["usuario"], body["pnombre"], body["papellido"],body["tipo_documento_id"], body["cedula"], body["is_active"])
 
         if new_row == None:
             return 'Un error ha ocurrido, upps!', 500

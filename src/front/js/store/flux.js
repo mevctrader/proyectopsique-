@@ -63,7 +63,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Ha habido un error al ingresar al login");
 				}
 			},
-			registro: async (identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password,is_active) => 
+			registro: async (identificacion,cedula,pnombre,papellido,usuario,email,password,is_active) => 
 			{
 				const opt={
 					method: "POST",
@@ -73,11 +73,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"password": password,
 						"usuario": usuario,
 						"pnombre": pnombre,
-						"snombre": snombre,
 						"papellido": papellido,
-						"sapellido": sapellido,
 						"cedula": cedula,
-						"genero": genero,
 						"is_active": is_active
 					}),
 					headers: {
