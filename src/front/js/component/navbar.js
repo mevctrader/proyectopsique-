@@ -12,7 +12,7 @@ export const Navbar = () => {
         <a className="navbar-brand" href="#">
           <img src={psiqueImageUrl} alt="" width="140" height="40" />
         </a>
-        <button
+        {/* <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -22,8 +22,8 @@ export const Navbar = () => {
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="container-fluid">
+        </button> */}
+        {/* <div className="container-fluid">
           <form className="d-flex" role="search">
             <input
               className="form-control me-2"
@@ -35,7 +35,7 @@ export const Navbar = () => {
               Buscar
             </button>
           </form>
-        </div>
+        </div> */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul id="menu" className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
@@ -64,7 +64,8 @@ export const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item dropdown">
-              <a id="menu-7"
+              <a
+                id="menu-7"
                 className="nav-link dropdown-toggle"
                 href="#"
                 role="button"
@@ -76,7 +77,9 @@ export const Navbar = () => {
               <ul className="dropdown-menu dropdown-menu-end">
                 {!store.token ? (
                   <Link id="menu-6" to="/login">
-                    <button className="btn btn-primary ms-2 mb-1">Log in</button>
+                    <button className="btn btn-primary ms-2 mb-1">
+                      Log in
+                    </button>
                   </Link>
                 ) : (
                   <button
@@ -90,8 +93,10 @@ export const Navbar = () => {
                   {/*<a className="dropdown-item" href="#">
                     Registrarse
                 </a>*/}
-                <Link id="menu-7" to="/registro">
-                    <button className="btn btn-success ms-2">Registrarse</button>
+                  <Link id="menu-7" to="/registro">
+                    <button className="btn btn-success ms-2">
+                      Registrarse
+                    </button>
                   </Link>
                 </li>
               </ul>

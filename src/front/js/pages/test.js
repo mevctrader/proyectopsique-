@@ -49,8 +49,8 @@ const Test = () => {
             </div>
             <div className="container mt-3">
               <label for="timely">
-                3. ¿sientes miedo si estas solo, a la oscuridad, o a que pase algo
-                imprevisto?{" "}
+                3. ¿sientes miedo si estas solo, a la oscuridad, o a que pase
+                algo imprevisto?{" "}
               </label>
               <div>
                 {" "}
@@ -116,6 +116,7 @@ const Test = () => {
               <label for="message">Comentarios Adicionales</label>{" "}
             </div>
             <textarea
+              cols="110"
               rows="4"
               name="message"
               id="message"
