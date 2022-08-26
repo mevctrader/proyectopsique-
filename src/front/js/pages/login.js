@@ -9,7 +9,7 @@ export const Login = () =>
 {
 	const userRef = useRef();
 	const errRef = useRef();
-	
+
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -27,31 +27,31 @@ export const Login = () =>
 		<div className="Auth-form-container">
 			<form className="Auth-form" onSubmit={handleClick}>
 				<div className="Auth-form-content">
-				<h3 className="Auth-form-title">Login</h3>
+				<h3 className="Auth-form-title">Acceso</h3>
 					{
 						store.token && store.token != "" && store.token != undefined ? (store.token) :
 						(
 							<>
 
 							<div className="form-group mt-3">
-								<label>Email:</label>
+								<label>Correo Electrónico:</label>
 								<input
 								type="email"
 								id="email"
 								className="form-control mt-1"
-								placeholder="Enter email"
+								placeholder="Introduce el correo electrónico"
 								autoComplete="off"
 								value={email} 
 								onChange={(e) => setEmail(e.target.value)} 
 								/>
 							</div>
 							<div className="form-group mt-3">
-								<label>Password:</label>
+								<label>Clave:</label>
 								<input
 								type="password"
 								id="password"
 								className="form-control mt-1"
-								placeholder="Enter password"
+								placeholder="Introduce la contraseña"
 								value={password} 
 								onChange={(e) => setPassword(e.target.value)} 
 								/>
@@ -62,7 +62,7 @@ export const Login = () =>
 								</button>
 							</div>
 							<p className="forgot-password text-right mt-2">
-								Forgot <a href="#">password?</a>
+								Olvidaste <a href="#">la Contraseña?</a>
 							</p>
 							</>
 
