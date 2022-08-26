@@ -45,8 +45,12 @@ def registro_post():
         return 'Debe indicar el numero de cedula', 400
     if "pnombre" not in body:
         return 'Debe indicar el primer de nombre!', 400
+    if "snombre" not in body:
+        return 'Debe indicar el primer de nombre!', 400
     if "papellido" not in body:
         return 'Debe indicar el primer apellido', 400
+    if "sapellido" not in body:
+        return 'Debe indicar el primer de nombre!', 400
     if "genero" not in body:
         return 'Debe indicar el genero!', 400
     if "usuario" not in body:
@@ -55,10 +59,12 @@ def registro_post():
         return 'Debe indicar el correo electronico!', 400
     if "password" not in body:
         return 'Debe indicar la contraseña', 400
-    if "confirmarpassword" not in body:
-        return 'Debe indicar la confirmacion contraseña', 400
+    if "is_active" not in body:
+        return 'Debe seleccionar el checkbox', 400
     else:
-        new_row = User.new_registro_user(body["tipo_documento_id"], body["cedula"],body["pnombre"],body["snombre"], body["papellido"],body["sapellido"],body["genero"], body["usuario"],body["email"], body["password"], body["confirmarpassword"])
+       
+        new_row = User.new_registro_user(body["email"], body["password"], body["usuario"], body["pnombre"],body["snombre"], body["papellido"],body["sapellido"],body["tipo_documento_id"], body["cedula"], body["genero"], body["is_active"])
+
         if new_row == None:
             return 'Un error ha ocurrido, upps!', 500
         else:

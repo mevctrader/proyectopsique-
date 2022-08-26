@@ -1,5 +1,6 @@
 import os
 import sys
+import datetime
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, ForeignKey, Integer, String, Numeric, DateTime
 from sqlalchemy.ext.declarative import declarative_base
@@ -35,14 +36,14 @@ class User(db.Model):
     tipo_documentos = db.relationship("Tipo_Documento")
     cedula = db.Column(db.Integer, nullable=False)
     genero = db.Column(db.String(30), nullable=False)
-    fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)
+    fecha_registro = db.Column(db.DateTime(), default=datetime.datetime.utcnow, nullable=False)
     roles = db.Column(db.String(20), unique=False, nullable=True) 
-    is_active = db.Column(db.Boolean, unique=False, nullable=True) 
+    is_active = db.Column(db.Boolean, nullable=False) 
 
     def __repr__(self):
         return f'<User {self.email}>'
 
-    def __init__(self, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero):
+    def __init__(self, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero, is_active):
         self.email = email
         self.password = password
         self.nombre_usuario = nombre_usuario
@@ -53,10 +54,11 @@ class User(db.Model):
         self.tipo_documento_id = tipo_documento_id
         self.cedula = cedula
         self.genero = genero
+        self.is_active = is_active
 
     @classmethod
-    def new_registro_user(cls, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero):
-        new_registro_user = cls(email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero)
+    def new_registro_user(cls, email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero, is_active):
+        new_registro_user = cls(email, password, nombre_usuario, pnombre, snombre, papellido, sapellido, tipo_documento_id, cedula, genero, is_active)
         db.session.add(new_registro_user)
         try:
             db.session.commit()

@@ -20,11 +20,12 @@ export const Registro = () =>{
     const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
     const [confirmarpassword, setConfPassword] = useState("");
+    const [checked, setChecked] = React.useState(1);
 
 	let navigate = useNavigate();
 
     const handleClick = () => {
-		actions.registro(identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password,confirmarpassword);
+		actions.registro(identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password,checked);
 	}
 
     if(store.token && store.token!="" && store.token != undefined) navigate('/');
@@ -37,10 +38,10 @@ export const Registro = () =>{
                 <Form.Label>Tipo de Documento:</Form.Label>
                 <Form.Select value={identificacion} onChange={(e) => setIdentificacion(e.target.value)} defaultValue="Seleccione...">
                     <option value={""}>SELECCIONE</option>
-                    <option value={"V"}>VENEZOLANO</option>
-                    <option value={"E"}>EXTRANJERO</option>
-                    <option value={"P"}>PASAPORTE</option>
-                    <option value={"J"}>JURIDICO</option>
+                    <option value={1}>VENEZOLANO</option>
+                    <option value={2}>EXTRANJERO</option>
+                    <option value={3}>PASAPORTE</option>
+                    <option value={4}>JURIDICO</option>
                 </Form.Select>
                 </Form.Group>
 
@@ -97,9 +98,15 @@ export const Registro = () =>{
                     <Form.Control value={confirmarpassword} onChange={(e) => setConfPassword(e.target.value)} type="password" placeholder="Password" />
                 </Form.Group>
             </Row>
+            <Row className="mb-3">
+                <Form.Label>
+                    <input type="checkbox" value={checked} checked={checked} onChange={(e) => setChecked(e.target.value)} />
+                    <span>Activo</span>
+                </Form.Label>
+            </Row>
             
-            <Button variant="primary" type="submit" onClick={handleClick}>
-                Registrar Datos
+            <Button variant="primary" onClick={handleClick}>
+                Guardar Datos
             </Button>
         </Container>
     </Form>
