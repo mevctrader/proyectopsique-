@@ -24,7 +24,7 @@ export const Registro = () =>{
 	let navigate = useNavigate();
 
     const handleClick = () => {
-		actions.registro(identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password,confirmarpassword);
+		actions.registro(identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password);
 	}
 
     if(store.token && store.token!="" && store.token != undefined) navigate('/');
@@ -37,10 +37,10 @@ export const Registro = () =>{
                 <Form.Label>Tipo de Documento:</Form.Label>
                 <Form.Select value={identificacion} onChange={(e) => setIdentificacion(e.target.value)} defaultValue="Seleccione...">
                     <option value={""}>SELECCIONE</option>
-                    <option value={"V"}>VENEZOLANO</option>
-                    <option value={"E"}>EXTRANJERO</option>
-                    <option value={"P"}>PASAPORTE</option>
-                    <option value={"J"}>JURIDICO</option>
+                    <option value={1}>VENEZOLANO</option>
+                    <option value={2}>EXTRANJERO</option>
+                    <option value={3}>PASAPORTE</option>
+                    <option value={4}>JURIDICO</option>
                 </Form.Select>
                 </Form.Group>
 
@@ -98,7 +98,7 @@ export const Registro = () =>{
                 </Form.Group>
             </Row>
             
-            <Button variant="primary" type="submit" onClick={handleClick}>
+            <Button variant="primary" onClick={handleClick}>
                 Registrar Datos
             </Button>
         </Container>

@@ -63,22 +63,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Ha habido un error al ingresar al login");
 				}
 			},
-			registro: async (identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password,confirmarpassword) => 
+			registro: async (identificacion,cedula,pnombre,snombre,papellido,sapellido,genero,usuario,email,password) => 
 			{
 				const opt={
 					method: "POST",
 					body: JSON.stringify({
 						"tipo_documento_id": identificacion,
-						"cedula": cedula,
+						"email": email,
+						"password": password,
+						"usuario": usuario,
 						"pnombre": pnombre,
 						"snombre": snombre,
 						"papellido": papellido,
 						"sapellido": sapellido,
+						"cedula": cedula,
 						"genero": genero,
-						"usuario": usuario,
-						"email": email,
-						"password": password,
-						"confirmarpassword": confirmarpassword,
+			
 					}),
 					headers: {
 						"Content-Type": "application/json"
