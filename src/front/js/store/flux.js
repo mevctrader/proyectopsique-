@@ -30,6 +30,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				sessionStorage.removeItem("token");
 				//console.log("Log out");
 				setStore({ token: null});
+				window.location = "/login"
  
 			},
 			login: async (email,password) => 
@@ -92,14 +93,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 					const data = await resp.json();
 
-					/*if(data==200)
-					{*/
-						alert("los datos se guardaron con exito")
-						//return false;
-					/*}*/
-					//console.log("This from backend:",data);
-					//sessionStorage.setItem("token",data.access_token);
-					//setStore({ token: data.access_token})
+					alert("los datos se guardaron con exito");
+					window.location = "/registro"
+				
 					return true;
 				}
 				catch(error){
