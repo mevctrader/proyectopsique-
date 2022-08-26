@@ -35,7 +35,7 @@ class User(db.Model):
     tipo_documentos = db.relationship("Tipo_Documento")
     cedula = db.Column(db.Integer, nullable=False)
     genero = db.Column(db.String(30), nullable=False)
-    fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)
+    fecha_registro = db.Column(db.DateTime(), nullable=True , unique=True)
     roles = db.Column(db.String(20), unique=False, nullable=True) 
     is_active = db.Column(db.Boolean, unique=False, nullable=True) 
 

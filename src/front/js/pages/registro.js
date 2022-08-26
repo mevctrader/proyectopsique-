@@ -99,7 +99,7 @@ export const Registro = () =>{
             </Row>
             
             <Button variant="primary" onClick={handleClick}>
-                Registrar Datos
+                Guardar Datos
             </Button>
         </Container>
     </Form>

@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			syncTokenFromSessionStore: () =>{
 				const token = sessionStorage.getItem("token");
-				console.log("aplication just loaded session storage token");
+				//console.log("aplication just loaded session storage token");
 				if(token && token !="" && token != undefined) setStore({ token: token});
  
 			},
@@ -95,7 +95,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 					const data = await resp.json();
 
-					console.log("This from backend:",data);
+					if(data==200)
+					{
+						alert("los datos se guardaron con exito")
+						return false;
+					}
+					//console.log("This from backend:",data);
 					//sessionStorage.setItem("token",data.access_token);
 					//setStore({ token: data.access_token})
 					return true;
@@ -114,7 +119,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					}
 					//const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const resp = await fetch("https://3001-mevctrader-proyectopsiq-in9xmx853ff.ws-us62.gitpod.io/api/hello", opts)
+					const resp = await fetch("https://3001-mevctrader-proyectopsiq-k8f9n48xgjo.ws-us63.gitpod.io/api/hello", opts)
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves
