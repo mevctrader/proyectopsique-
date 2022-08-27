@@ -49,9 +49,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//console.log(baseurl);
 				try{
 					const resp = await fetch('https://3001-mevctrader-proyectopsiq-schma07udea.ws-us63.gitpod.io/api/token', opt)
-					if(resp.status!==200) 
+					/*if(resp.status!==200) 
 					{
 						alert("Los datos ingresados no existen");
+						return false;
+					}*/
+					if(resp.status===404)
+					{
+						alert("Las credenciales no coinciden");
+						window.location = "/login"
 						return false;
 					}
 					const data = await resp.json();
