@@ -63,8 +63,10 @@ export const Carrusel = () => (
           id="texto-carrusel-1"
           className="carousel-caption d-none d-md-block"
         >
-          <h5>SALUD MENTAL</h5>
-          <p>Some representative placeholder content for the first slide.</p>
+          <h1>
+            <strong>SALUD MENTAL</strong>
+          </h1>
+          <p>BIENESTAR EMOCIONAL, PSICOLOGICO Y SOCIAL</p>
         </div>
       </div>
       <div className="carousel-item">

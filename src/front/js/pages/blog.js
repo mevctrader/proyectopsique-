@@ -82,7 +82,7 @@ const Blog = () => {
           >
             <div id="depresion" className="content">
               <div className="row">
-                <h2>Salud mental</h2>
+                <h2>Trastornos de la Afectividad</h2>
                 <General />
               </div>
             </div>
@@ -94,11 +94,9 @@ const Blog = () => {
             aria-labelledby="pills-depresion-tab"
             tabIndex="0"
           >
-            <div
-              className="row"
-            >
+            <div className="row">
               <h2>Depresion</h2>
-              <Depresion /> 
+              <Depresion />
             </div>
           </div>
           <div
@@ -108,9 +106,7 @@ const Blog = () => {
             aria-labelledby="pills-ansiedad-tab"
             tabIndex="0"
           >
-            <div
-              className="row"
-            >
+            <div className="row">
               <h2>Ansiedad</h2>
               <Ansiedad />
             </div>
@@ -122,9 +118,7 @@ const Blog = () => {
             aria-labelledby="pills-otro-tab"
             tabIndex="0"
           >
-            <div
-              className="row"
-            >
+            <div className="row">
               <h2>Otros</h2>
               <Otros />
             </div>

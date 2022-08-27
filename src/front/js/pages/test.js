@@ -2,7 +2,7 @@ import React from "react";
 
 const Test = () => {
   return (
-    <div className="">
+    <div className="container">
       <div id="test-div" className="container mt-3 mx-auto">
         <h1>
           <strong>Test de Ansiedad PSIENTO</strong>
