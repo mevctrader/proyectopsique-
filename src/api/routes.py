@@ -25,17 +25,11 @@ def create_token():
 
     search = User.query.filter_by(email=email).one_or_none()
 
-    #search = db.session.query(User).filter_by(User.email == email)
-    
-    #search = User.query.get(email)
     if search != None and search.password==password:
         access_token = create_access_token(identity=email)
         return jsonify({"access_token":access_token, "user":search.serialize()}), 200
     else:
         return 'Las credenciales no coinciden', 404 
-
-    #access_token = create_access_token(identity=email)
-    #return jsonify(access_token=access_token), 200
 
 @api.route("/hello", methods=["GET"])
 @jwt_required()

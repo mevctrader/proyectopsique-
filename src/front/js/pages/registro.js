@@ -16,8 +16,13 @@ export const Registro = () =>{
 	const [password, setPassword] = useState("");
     const [confirmarpassword, setConfPassword] = useState("");
     const [checked, setChecked] = React.useState(1);
-
 	let navigate = useNavigate();
+
+    const [shown, setShown] = React.useState(false);
+	const switchShown = () => setShown(!shown);
+
+    const [shownconfir, setShownconfir] = React.useState(false);
+	const switchShownconfir = () => setShownconfir(!shownconfir);
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -81,12 +86,22 @@ export const Registro = () =>{
                 <Row className="mb-3">
                     <Form.Group as={Col} sm={6} controlId="formGridPassword">
                         <Form.Label>Contraseña</Form.Label>
-                        <Form.Control value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
+                        <div className="input-group">
+                            <Form.Control value={password} onChange={(e) => setPassword(e.target.value)} type={shown ? 'text' : 'password'} placeholder="Password" />
+                            <div className="input-group-append">
+                                <button id="show_password" className="btn btn-primary" type="button" onClick={switchShown}> <span className={shown ? 'fa fa-eye-slash' : 'fa fa-eye'}></span> </button>
+                            </div>
+                        </div>
                     </Form.Group>
 
                     <Form.Group as={Col} sm={6} controlId="formGridConfirPassword">
                         <Form.Label>Confirmar Contraseña</Form.Label>
-                        <Form.Control value={confirmarpassword} onChange={(e) => setConfPassword(e.target.value)} type="password" placeholder="Password" />
+                            <div className="input-group">
+                                <Form.Control value={confirmarpassword} onChange={(e) => setConfPassword(e.target.value)} type={shownconfir ? 'text' : 'password'} placeholder="Password" />
+                                <div className="input-group-append">
+                                    <button id="show_password_conf" className="btn btn-primary" type="button" onClick={switchShownconfir} > <span className={shownconfir ? 'fa fa-eye-slash' : 'fa fa-eye'}></span> </button>
+                                </div>
+                            </div>
                     </Form.Group>
                 </Row>
             </div>
