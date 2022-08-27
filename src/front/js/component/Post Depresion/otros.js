@@ -37,7 +37,7 @@ const postinfo = [
     id: 4,
     title: "NEURODIVERGENCIA",
     image:
-      "https://www.neuronup.com/wp-content/uploads/2021/12/janko-ferlic-oWDRVgk04EA-unsplash-e1638984208912-400x300.jpg",
+      "https://www.neuronup.com/wp-content/uploads/2022/03/young-woman-doing-speech-therapy-with-kids-400x300.jpg",
     text: "La neurodiversidad o neurodivergencia es un concepto relacionado con la promoción de la idea de que la diversidad en las características humanas aparece como resultado de variaciones normales en el campo neurológico.2​3​4​ El término fue concebido por la comunidad autista para referirse a la neurología atípica del autismo, y se utiliza para desvincularse de lo relacionado con trastornos mentales. Sin embargo, ha llegado a utilizarse con problemas de salud mental como TDAH, dislexia y otros a pesar de que el equivalente al movimiento autista en la salud mental (movimiento de supervivientes de la psiquiatría) rechaza o limita la importancia de lo neurológico o cerebral por biologicismo e influencia de la industria farmacéutica.",
     modal: "modal16",
     modaltargeter: "#modal16",
