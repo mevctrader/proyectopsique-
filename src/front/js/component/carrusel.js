@@ -78,8 +78,10 @@ export const Carrusel = () => (
           height={"620px"}
         />
         <div className="carousel-caption d-none d-md-block">
-          <h5>PSICOLOGÍA EN LÍNEA</h5>
-          <p>Some representative placeholder content for the second slide.</p>
+          <h1>
+            <strong>PSICOLOGÍA EN LÍNEA</strong>
+          </h1>
+          <p>FORO DE ATENCIÓN 24/7</p>
         </div>
       </div>
       <div className="carousel-item">
@@ -91,8 +93,10 @@ export const Carrusel = () => (
           height={"620px"}
         />
         <div className="carousel-caption d-none d-md-block">
-          <h5>AYUDAME</h5>
-          <p>Some representative placeholder content for the third slide.</p>
+          <h1>
+            <strong>AYÚDAME</strong>
+          </h1>
+          <p>APOYO EMOCIONAL</p>
         </div>
       </div>
     </div>
