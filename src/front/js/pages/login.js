@@ -6,22 +6,23 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/app.css";
 
 export const Login = () => {
-  const userRef = useRef();
-  const errRef = useRef();
+	const userRef = useRef();
+	const errRef = useRef();
 
-  const { store, actions } = useContext(Context);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+	const { store, actions } = useContext(Context);
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	let navigate = useNavigate();
 
-  let navigate = useNavigate();
+	const [shown, setShown] = React.useState(false);
+	const switchShown = () => setShown(!shown);
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    actions.login(email, password);
-  };
+	const handleClick = (e) => {
+		e.preventDefault();
+		actions.login(email, password);
+	};
 
-  if (store.token && store.token != "" && store.token != undefined)
-    navigate("/");
+  if (store.token && store.token != "" && store.token != undefined)navigate("/");
   return (
     <div className="Auth-form-container">
       <form className="Auth-form" onSubmit={handleClick}>
@@ -45,14 +46,20 @@ export const Login = () => {
               </div>
               <div className="form-group mt-3">
                 <label>Clave:</label>
-                <input
-                  type="password"
-                  id="password"
-                  className="form-control mt-1"
-                  placeholder="Introduce la contraseña"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
+				<div className="input-group">
+					<input
+					type={shown ? 'text' : 'password'}
+					id="password"
+					className="form-control mt-1"
+					placeholder="Introduce la contraseña"
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+					/>
+		  			<div className="input-group-append">
+                        <button id="show_password" className="btn btn-primary" type="button" onClick={switchShown}> <span className={shown ? 'fa fa-eye-slash' : 'fa fa-eye'}></span> </button>
+                    </div>
+				</div>
+               
               </div>
               <div className="d-grid gap-2 mt-3">
                 <button className="btn btn-primary">Ingresar</button>
