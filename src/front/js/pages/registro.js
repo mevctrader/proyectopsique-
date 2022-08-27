@@ -97,7 +97,7 @@ export const Registro = () =>{
                     <Form.Group as={Col} sm={6} controlId="formGridConfirPassword">
                         <Form.Label>Confirmar Contraseña</Form.Label>
                             <div className="input-group">
-                                <Form.Control value={confirmarpassword} onChange={(e) => setConfPassword(e.target.value)} type={shownconfir ? 'text' : 'password'} placeholder="Password" />
+                                <Form.Control value={confirmarpassword} onChange={(e) => setConfPassword(e.target.value)} type={shownconfir ? 'text' : 'password'} placeholder="Confirmar Password" />
                                 <div className="input-group-append">
                                     <button id="show_password_conf" className="btn btn-primary" type="button" onClick={switchShownconfir} > <span className={shownconfir ? 'fa fa-eye-slash' : 'fa fa-eye'}></span> </button>
                                 </div>

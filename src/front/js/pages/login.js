@@ -19,7 +19,7 @@ export const Login = () => {
 	const [shown, setShown] = React.useState(false);
 	const switchShown = () => setShown(!shown);
 
-  const [isOpenChangePasswordModal, setIsOpenChangePasswordModal] = useState(false);
+  const [isOpenChangePasswordModal, setIsOpenChangePasswordModal] = React.useState(false);
   const openChangePasswordModal = () => setIsOpenChangePasswordModal(true);
   const closeChangePasswordModal = () => setIsOpenChangePasswordModal(false);
 
@@ -53,32 +53,30 @@ export const Login = () => {
               </div>
               <div className="form-group mt-3">
                 <label>Clave:</label>
-				<div className="input-group">
-					<input
-					type={shown ? 'text' : 'password'}
-					id="password"
-					className="form-control mt-1"
-					placeholder="Introduce la contraseña"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-					/>
-		  			<div className="input-group-append">
-                        <button id="show_password" className="btn btn-primary" type="button" onClick={switchShown}> <span className={shown ? 'fa fa-eye-slash' : 'fa fa-eye'}></span> </button>
-                    </div>
-				</div>
-               
+                <div className="input-group">
+                  <input
+                  type={shown ? 'text' : 'password'}
+                  id="password"
+                  className="form-control mt-1"
+                  placeholder="Introduce la contraseña"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <div className="input-group-append">
+                      <button id="show_password" className="btn btn-primary" type="button" onClick={switchShown}> <span className={shown ? 'fa fa-eye-slash' : 'fa fa-eye'}></span> </button>
+                  </div>
+                </div>
               </div>
               <div className="d-grid gap-2 mt-3">
                 <button className="btn btn-primary">Ingresar</button>
               </div>
-              <Button className="mt-1" variant="link" onClick={openChangePasswordModal}>
-                Olvidaste Contraseña?
-              </Button>
+              <p className="forgot-password text-right mt-2">
+                  Olvidaste <a href="#" onClick={openChangePasswordModal}> la Contraseña?</a>
+              </p>
               <ChangePassword 
-                  isOpen={isOpenChangePasswordModal}
-                  close={closeChangePasswordModal}
+                isOpen={isOpenChangePasswordModal}
+                close={closeChangePasswordModal}
               />
-
             </>
           )}
         </div>
