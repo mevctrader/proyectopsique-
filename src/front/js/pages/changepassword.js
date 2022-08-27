@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button";
 
 //import { useNavigate } from 'react-router-dom';
 
-export const ChangePassword = ( isOpen, close) =>{
+export const ChangePassword = ({isOpen, close}) =>{
     const { store, actions } = useContext(Context);
 	const [cbpassword, setCbpassword] = useState("");
     const [cbconfirmarpassword, setCbconfPassword] = useState("");
@@ -48,7 +48,7 @@ export const ChangePassword = ( isOpen, close) =>{
                         <Form.Group as={Col} sm={6} controlId="formGridConfirPassword">
                             <Form.Label>Confirmar Contraseña</Form.Label>
                                 <div className="input-group">
-                                    <Form.Control value={cbconfirmarpassword} onChange={(e) => setCbconfPassword(e.target.value)} type={shownconfir ? 'text' : 'password'} placeholder="Password" />
+                                    <Form.Control value={cbconfirmarpassword} onChange={(e) => setCbconfPassword(e.target.value)} type={shownconfir ? 'text' : 'password'} placeholder=" Confirmar Password" />
                                     <div className="input-group-append">
                                         <button id="show_password_conf" className="btn btn-primary" type="button" onClick={switchShownconfir} > <span className={shownconfir ? 'fa fa-eye-slash' : 'fa fa-eye'}></span> </button>
                                     </div>
@@ -60,10 +60,10 @@ export const ChangePassword = ( isOpen, close) =>{
 
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" >
+          <Button variant="secondary" onClick={close}>
             Cancelar
           </Button>
-          <Button variant="primary" >
+          <Button variant="primary" onClick={close}>
             Actualizar Contraseña
           </Button>
         </Modal.Footer>
