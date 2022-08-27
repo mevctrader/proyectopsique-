@@ -4,6 +4,8 @@ import "../../styles/home.css";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../styles/app.css";
+import { ChangePassword } from "./changepassword";
+import Button from "react-bootstrap/Button";
 
 export const Login = () => {
 	const userRef = useRef();
@@ -16,6 +18,11 @@ export const Login = () => {
 
 	const [shown, setShown] = React.useState(false);
 	const switchShown = () => setShown(!shown);
+
+  const [isOpenChangePasswordModal, setIsOpenChangePasswordModal] = useState(false);
+  const openChangePasswordModal = () => setIsOpenChangePasswordModal(true);
+  const closeChangePasswordModal = () => setIsOpenChangePasswordModal(false);
+
 
 	const handleClick = (e) => {
 		e.preventDefault();
@@ -64,9 +71,14 @@ export const Login = () => {
               <div className="d-grid gap-2 mt-3">
                 <button className="btn btn-primary">Ingresar</button>
               </div>
-              <p className="forgot-password text-right mt-2">
-                Olvidaste <a href="#">la Contraseña?</a>
-              </p>
+              <Button className="mt-1" variant="link" onClick={openChangePasswordModal}>
+                Olvidaste Contraseña?
+              </Button>
+              <ChangePassword 
+                  isOpen={isOpenChangePasswordModal}
+                  close={closeChangePasswordModal}
+              />
+
             </>
           )}
         </div>
