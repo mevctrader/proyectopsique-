@@ -6,13 +6,10 @@ import { Context } from "../store/appContext";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-//import { useNavigate } from 'react-router-dom';
-
-export const ChangePassword = ({isOpen, close}) =>{
+export const ChangePassword = ({isOpen, close, emails}) =>{
     const { store, actions } = useContext(Context);
 	const [cbpassword, setCbpassword] = useState("");
     const [cbconfirmarpassword, setCbconfPassword] = useState("");
-	//let navigate = useNavigate();
 
     const [shown, setShown] = React.useState(false);
 	const switchShown = () => setShown(!shown);
@@ -20,19 +17,21 @@ export const ChangePassword = ({isOpen, close}) =>{
     const [shownconfir, setShownconfir] = React.useState(false);
 	const switchShownconfir = () => setShownconfir(!shownconfir);
 
-    const HandleSubmit = (e) => {
-        e.preventDefault();
-        alert("cambiando contraseña");
-		/*actions.cambiopsw(cbpassword,cbconfirmarpassword);*/
+    //const [isLoading, setIsLoading] = useState(false);
+
+    const handleonclick = () => {
+        //setIsLoading(true)
+        actions.CambioPassw(emails,cbpassword);
+        //setIsLoading(false)
 	}
 
     return(
         <Modal show={isOpen} onHide={close}>
         <Modal.Header closeButton>
-          <Modal.Title className="Auth-form-title">Cambiar Contraseña</Modal.Title>
+          <Modal.Title className="Auth-form-title">Recuperar Contraseña</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <form onSubmit={HandleSubmit}>
+            <form>
                 <div className="form-group mt-3">
                     <Row className="mb-3">
                         <Form.Group as={Col} sm={6} controlId="formGridPassword">
@@ -60,12 +59,9 @@ export const ChangePassword = ({isOpen, close}) =>{
 
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={close}>
-            Cancelar
-          </Button>
-          <Button variant="primary" onClick={close}>
-            Actualizar Contraseña
-          </Button>
+            <Button variant="primary" onClick={handleonclick}>
+                Actualizar Contraseña
+            </Button>
         </Modal.Footer>
       </Modal>
     );

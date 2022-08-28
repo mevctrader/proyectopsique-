@@ -63,16 +63,9 @@ class User(db.Model):
             print(error)
             return None
 
-    def update(self, email, password, nombre_usuario, pnombre, papellido, tipo_documento_id, cedula):
+    def update(self, email, password):
         self.email = email
         self.password = password
-        self.nombre_usuario = nombre_usuario
-        self.pnombre = pnombre
-        self.snombre = snombre
-        self.papellido = papellido
-        self.sapellido = sapellido
-        self.tipo_documento_id = tipo_documento_id
-        self.cedula = cedula
         try:
             db.session.commit()
             return self
