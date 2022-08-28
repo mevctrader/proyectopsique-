@@ -21,6 +21,11 @@ export const ChangePassword = ({isOpen, close, emails}) =>{
 
     const handleonclick = () => {
         //setIsLoading(true)
+        if(!emails)
+        {
+            alert("Debe ingresar un email en el login y luego realice el cambio de contraseña.");
+            return false;
+        }
         actions.CambioPassw(emails,cbpassword);
         //setIsLoading(false)
 	}
