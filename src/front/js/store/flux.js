@@ -48,7 +48,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
 				//console.log(baseurl);
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-schma07udea.ws-us63.gitpod.io/api/token', opt)
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-5smhifvimie.ws-us63.gitpod.io/api/token', opt)
 					/*if(resp.status!==200) 
 					{
 						alert("Los datos ingresados no existen");
@@ -91,7 +91,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
 				//console.log(baseurl);
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-schma07udea.ws-us63.gitpod.io/api/registro', opt)
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-5smhifvimie.ws-us63.gitpod.io/api/registro', opt)
 					if(resp.status!==200) 
 					{
 						alert("No se pudo registrar los datos");
@@ -108,6 +108,39 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Ha habido un error al ingresar al login");
 				}
 			},
+			CambioPassw: async (email,cbpassword) => {
+
+				const opt={
+					method: "PATCH",
+					body: JSON.stringify({
+						"email": email,
+						"password": cbpassword
+					}),
+					headers: {
+						"Content-Type": "application/json"
+					}
+				};
+				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
+				//console.log(baseurl);
+				try{
+					const resp = await fetch('https://3001-mevctrader-proyectopsiq-5smhifvimie.ws-us63.gitpod.io/api/token', opt)
+					if(resp.status!==200) 
+					{
+						alert("No se pudo actualizar password");
+						return false;
+					}
+					const data = await resp.json();
+
+					alert("Se cambio el password con éxito.");
+					window.location = "/login"
+				
+					return true;
+				}
+				catch(error){
+					console.log("Ha habido un error al actualizar el password");
+				}
+
+			},
 			getMessage: async () => {
 				try{
 					// fetching data from the backend
@@ -118,7 +151,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					}
 					//const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const resp = await fetch("https://3001-mevctrader-proyectopsiq-schma07udea.ws-us63.gitpod.io/api/hello", opts)
+					const resp = await fetch("https://3001-mevctrader-proyectopsiq-5smhifvimie.ws-us63.gitpod.io/api/hello", opts)
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves
