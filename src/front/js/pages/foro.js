@@ -4,13 +4,13 @@ import Form from "react-bootstrap/Form";
 const Foro = () => {
   return (
     <div id="foro-div" className="container-fluid">
-      <div id="boton-post" className="container-fluid justify-content w-30 p-5">
+      <div id="boton-post" className="container-fluid justify-content w-30 p-3">
         <button
           type="button"
           className="btn btn-primary btn-lg"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
-          data-bs-whatever="@mdo"
+          data-bs-whatever="@prueba"
         >
           NUEVO POST
         </button>
@@ -76,7 +76,7 @@ const Foro = () => {
         </div>
       </div>
       <div className="d-flex flex-row col-12">
-        <div className="col-6 list-group justify-content w-25 p-5">
+        <div className="col-6 list-group justify-content w-25 p-3">
           <a className="list-group-item list-group-item-action disabled">
             <strong>TÓPICOS</strong>
           </a>
@@ -96,13 +96,13 @@ const Foro = () => {
             #AYUDAME
           </a>
         </div>
-        <div className="col-6 list-group justify-content w-30 p-5 ">
+        <div className="col-6 list-group justify-content w-20 p-3 ">
           <a href="#" className="list-group-item list-group-item-action">
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">PRIMERA PUBLICACIÓN</h5>
               <small className="text-muted">3 days ago</small>
             </div>
-            <p className="mb-1 cols-120">
+            <p className="mb-1">
               is simply dummy text of the printing and typesetting industry.
               Lorem Ipsum has been the industry's standard dummy text ever since
               the 1500s, when an unknown printer took a galley of type and
@@ -151,14 +151,6 @@ const Foro = () => {
               COMENTAR
             </button>
           </a>
-          {/* <a href="#" className="list-group-item list-group-item-action">
-            <div className="d-flex w-100 justify-content-between">
-              <h5 className="mb-1">List group item heading</h5>
-              <small className="text-muted">3 days ago</small>
-            </div>
-            <p className="mb-1">Some placeholder content in a paragraph.</p>
-            <small className="text-muted">And some muted small print.</small>
-          </a> */}
         </div>
       </div>
     </div>
