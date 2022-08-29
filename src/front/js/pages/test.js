@@ -3,7 +3,10 @@ import React from "react";
 const Test = () => {
   return (
     <div className="container">
-      <div id="test-div" className="container mt-3 mx-auto">
+      <div
+        id="test-div"
+        className="container mt-3 mb-3 mx-auto border border-dark border border-4"
+      >
         <h1>
           <strong>Test de Ansiedad PSIENTO</strong>
         </h1>
@@ -49,7 +52,7 @@ const Test = () => {
             </div>
             <div className="container mt-3">
               <label for="timely">
-                3. ¿sientes miedo si estas solo, a la oscuridad, o a que pase
+                3. ¿Sientes miedo si estas solo, a la oscuridad, o a que pase
                 algo imprevisto?{" "}
               </label>
               <div>
@@ -116,7 +119,7 @@ const Test = () => {
               <label for="message">Comentarios Adicionales</label>{" "}
             </div>
             <textarea
-              cols="110"
+              cols="120"
               rows="4"
               name="message"
               id="message"
