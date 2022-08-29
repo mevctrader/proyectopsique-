@@ -8,10 +8,18 @@
 #blog,
 #foro-div,
 #login-div,
-#registro-div,
 #test-div,
 #home-div {
   min-height: 87vh;
+}
+
+#blog .nav-link {
+  background-color: #5A6A7B;
+  color: white;
+}
+
+#registro-web {
+  min-height: 70vh;
 }
 
 #carouselExampleCaptions h1,
@@ -57,6 +65,11 @@
 #blog .btn {
   background-color: #a594f9;
   border: 1px solid #a594f9;
+}
+
+#registro-web .btn {
+  background-color: #FB9A4B;
+  border: 1px solid #FB9A4B;
 }
 
 #footer {

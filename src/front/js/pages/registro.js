@@ -32,7 +32,7 @@ export const Registro = () =>{
     if(store.token && store.token!="" && store.token != undefined) navigate('/');
 
     return(
-        <div className="Auth-form-container">
+        <div id="registro-web" className="Auth-form-container">
         <form className="Auth-form">
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Registrarse</h3>
@@ -41,11 +41,11 @@ export const Registro = () =>{
                 <Form.Group as={Col}  sm={6} controlId="formGridIdentificacion">
                 <Form.Label>Tipo de Documento:</Form.Label>
                 <Form.Select value={identificacion} onChange={(e) => setIdentificacion(e.target.value)} defaultValue="Seleccione...">
-                    <option value={""}>SELECCIONE</option>
-                    <option value={1}>VENEZOLANO</option>
-                    <option value={2}>EXTRANJERO</option>
-                    <option value={3}>PASAPORTE</option>
-                    <option value={4}>JURIDICO</option>
+                    <option value={""}>Seleccione</option>
+                    <option value={1}>Venezolano</option>
+                    <option value={2}>Extranjero</option>
+                    <option value={3}>Pasaporte</option>
+                    <option value={4}>Jurídico</option>
                 </Form.Select>
                 </Form.Group>
 
@@ -59,12 +59,12 @@ export const Registro = () =>{
                 <Row className="mb-3">
                     <Form.Group as={Col} sm={6} controlId="formGridPnombre">
                         <Form.Label>Primer Nombre</Form.Label>
-                        <Form.Control value={pnombre} onChange={(e) => setPnombre(e.target.value)} type="text" placeholder="Primer Nombre" />
+                        <Form.Control value={pnombre} onChange={(e) => setPnombre(e.target.value)} type="text" placeholder="Primer nombre" />
                     </Form.Group>
 
                     <Form.Group as={Col} sm={6} controlId="formGridPapellido">
                         <Form.Label>Primer Apellido</Form.Label>
-                        <Form.Control value={papellido} onChange={(e) => setPapellido(e.target.value)} type="text" placeholder="Primero Apellido" />
+                        <Form.Control value={papellido} onChange={(e) => setPapellido(e.target.value)} type="text" placeholder="Primer apellido" />
                     </Form.Group>
 
                 </Row>
@@ -72,13 +72,13 @@ export const Registro = () =>{
             <div className="form-group mt-3">
                 <Row className="mb-3">
                     <Form.Group as={Col} sm={6} controlId="formGridUsuario">
-                        <Form.Label>Usuario</Form.Label>
-                        <Form.Control value={usuario} onChange={(e) => setUsuario(e.target.value)} type="text" placeholder="Enter Usuario" />
+                        <Form.Label>Nombre de usuario</Form.Label>
+                        <Form.Control value={usuario} onChange={(e) => setUsuario(e.target.value)} type="text" placeholder="Ej: Tina03" />
                     </Form.Group>
 
                     <Form.Group as={Col} sm={6} controlId="formGridEmail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" />
+                        <Form.Control value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="email@ejemplo.com" />
                     </Form.Group>
                 </Row>
             </div>
@@ -87,7 +87,7 @@ export const Registro = () =>{
                     <Form.Group as={Col} sm={6} controlId="formGridPassword">
                         <Form.Label>Contraseña</Form.Label>
                         <div className="input-group">
-                            <Form.Control value={password} onChange={(e) => setPassword(e.target.value)} type={shown ? 'text' : 'password'} placeholder="Password" />
+                            <Form.Control value={password} onChange={(e) => setPassword(e.target.value)} type={shown ? 'text' : 'password'} placeholder="Contraseña" />
                             <div className="input-group-append">
                                 <button id="show_password" className="btn btn-primary" type="button" onClick={switchShown}> <span className={shown ? 'fa fa-eye-slash' : 'fa fa-eye'}></span> </button>
                             </div>
@@ -97,7 +97,7 @@ export const Registro = () =>{
                     <Form.Group as={Col} sm={6} controlId="formGridConfirPassword">
                         <Form.Label>Confirmar Contraseña</Form.Label>
                             <div className="input-group">
-                                <Form.Control value={confirmarpassword} onChange={(e) => setConfPassword(e.target.value)} type={shownconfir ? 'text' : 'password'} placeholder="Confirmar Password" />
+                                <Form.Control value={confirmarpassword} onChange={(e) => setConfPassword(e.target.value)} type={shownconfir ? 'text' : 'password'} placeholder="Confirmar contraseña" />
                                 <div className="input-group-append">
                                     <button id="show_password_conf" className="btn btn-primary" type="button" onClick={switchShownconfir} > <span className={shownconfir ? 'fa fa-eye-slash' : 'fa fa-eye'}></span> </button>
                                 </div>
