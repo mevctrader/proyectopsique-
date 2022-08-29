@@ -40,11 +40,13 @@ const Foro = () => {
                     <label for="recipient-name" className="col-form-label">
                       TÓPICO:
                     </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="recipient-name"
-                    />
+                    <input type="text" className="form-control" id="topico" />
+                  </div>
+                  <div className="mb-3">
+                    <label for="recipient-name" className="col-form-label">
+                      TÍTULO:
+                    </label>
+                    <input type="text" className="form-control" id="titulo" />
                   </div>
                   <div className="mb-3">
                     <label for="message-text" className="col-form-label">
