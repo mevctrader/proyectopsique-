@@ -9,22 +9,22 @@ const Foro = () => {
           type="button"
           className="btn btn-primary btn-lg"
           data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-          data-bs-whatever="@prueba"
+          data-bs-target="#nuevoPost"
+          data-bs-whatever="@nuevoPost"
         >
           NUEVO POST
         </button>
         <div
           className="modal fade"
-          id="exampleModal"
+          id="nuevoPost"
           tabindex="-1"
-          aria-labelledby="exampleModalLabel"
+          aria-labelledby="nuevoPostLabel"
           aria-hidden="true"
         >
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">
+                <h5 className="modal-title" id="nuevoPostLabel">
                   NUEVO POST
                 </h5>
                 <button
@@ -46,7 +46,11 @@ const Foro = () => {
                     <label for="recipient-name" className="col-form-label">
                       TÍTULO:
                     </label>
-                    <input type="text" className="form-control" id="titulo" />
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="tituloPost"
+                    />
                   </div>
                   <div className="mb-3">
                     <label for="message-text" className="col-form-label">
@@ -111,9 +115,6 @@ const Foro = () => {
             <small className="text-muted justify-content-between p-5">
               #Ansiedad
             </small>
-            <button type="button" className="btn btn-primary btn-sm">
-              COMENTAR
-            </button>
           </a>
           <a href="#" className="list-group-item list-group-item-action">
             <div className="d-flex w-100 justify-content-between">
@@ -129,9 +130,6 @@ const Foro = () => {
             <small className="text-muted justify-content-between p-5">
               #Depresion
             </small>
-            <button type="button" className="btn btn-primary btn-sm">
-              COMENTAR
-            </button>
           </a>
           <a href="#" className="list-group-item list-group-item-action">
             <div className="d-flex w-100 justify-content-between">
@@ -147,10 +145,74 @@ const Foro = () => {
             <small className="text-muted justify-content-between p-5">
               #Estres
             </small>
-            <button type="button" className="btn btn-primary btn-sm">
-              COMENTAR
-            </button>
           </a>
+          <button
+            type="button"
+            className="btn btn-primary btn-lg"
+            data-bs-toggle="modal"
+            data-bs-target="#comentarios"
+            data-bs-whatever="@comentarios"
+          >
+            COMENTAR
+          </button>
+          <div
+            className="modal fade"
+            id="comentarios"
+            tabindex="-1"
+            aria-labelledby="comentarios"
+            aria-hidden="true"
+          >
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="comentarios">
+                    NUEVO COMENTARIO
+                  </h5>
+                  <button
+                    type="button"
+                    className="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div className="modal-body">
+                  <form>
+                    <div className="mb-3">
+                      <label for="recipient-name" className="col-form-label">
+                        TÍTULO DEL POST
+                      </label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="recipient-name"
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label for="message-text" className="col-form-label">
+                        COMENTARIO:
+                      </label>
+                      <textarea
+                        className="form-control"
+                        id="message-text"
+                      ></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Cerrar
+                  </button>
+                  <button type="button" className="btn btn-primary">
+                    Enviar Comentario
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
