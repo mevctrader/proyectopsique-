@@ -53,8 +53,8 @@ export const Carrusel = () => (
     <div className="carousel-inner">
       <div className="carousel-item active">
         <img
-          src={psiqueImageUrl1}
-          className="d-block mx-auto"
+          src="https://pbs.twimg.com/media/FSfPoZRXsAAzLYK.jpg"
+          className="ratio ratio 16x9"
           alt="..."
           width={"auto"}
           height={"620px"}
@@ -71,8 +71,8 @@ export const Carrusel = () => (
       </div>
       <div className="carousel-item">
         <img
-          src={psiqueImageUrl4}
-          className="d-block mx-auto"
+          src="https://plus.telushealth.co/blogs/physician-pulse/wp-content/uploads/image-1200x500.jpg"
+          className="ratio ratio 16x9"
           alt="..."
           width={"auto"}
           height={"620px"}
@@ -86,8 +86,8 @@ export const Carrusel = () => (
       </div>
       <div className="carousel-item">
         <img
-          src={psiqueImageUrl3}
-          className="d-block mx-auto"
+          src="https://neuronpsicologia.com/wp-content/uploads/15.jpeg"
+          className="ratio ratio 16x9"
           alt="..."
           width={"auto"}
           height={"620px"}

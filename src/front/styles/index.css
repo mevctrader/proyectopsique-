@@ -23,7 +23,7 @@
   margin-top: 1000px;
 }
 
-#blog,
+/* #blog,
 #home-div {
   background: rgb(165, 148, 249);
   background: radial-gradient(
@@ -31,7 +31,7 @@
     rgba(165, 148, 249, 0.4) 0%,
     rgba(117, 98, 215, 0.4) 37%
   );
-}
+} */
 
 #test-div {
   background-color: rgb(165, 148, 249);
