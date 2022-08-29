@@ -51,7 +51,7 @@ export const Carrusel = () => (
       ></button>
     </div>
     <div className="carousel-inner">
-      <div className="carousel-item active">
+      <div className="carousel-item active p-0">
         <img
           src="https://pbs.twimg.com/media/FSfPoZRXsAAzLYK.jpg"
           className="ratio ratio 16x9"
