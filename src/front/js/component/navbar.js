@@ -72,7 +72,7 @@ export const Navbar = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Usuario
+                { store.user && store.user.pnombre+' '+store.user.papellido}
               </a>
               <ul className="dropdown-menu dropdown-menu-end">
                 {!store.token ? (
