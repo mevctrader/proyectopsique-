@@ -16,11 +16,11 @@ export const Navigationabar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/" to="/">Home</Nav.Link>
-            <Nav.Link href="/blog" to="/blog">Blog</Nav.Link>
-            <Nav.Link href="/videos" to="/videos">Videos</Nav.Link>
-            <Nav.Link href="/foro" to="/blog">Foro</Nav.Link>
-            <Nav.Link href="/test" to="/blog">Test</Nav.Link>
+            <Nav.Link href="/" to="/" className="mx-2">Home</Nav.Link>
+            <Nav.Link href="/blog" to="/blog" className="mx-2">Blog</Nav.Link>
+            <Nav.Link href="/videos" to="/videos" className="mx-2">Videos</Nav.Link>
+            <Nav.Link href="/foro" to="/blog" className="mx-2">Foro</Nav.Link>
+            <Nav.Link href="/test" to="/blog" className="mx-2">Test</Nav.Link>
           </Nav>
           <Nav>
             {!store.token ? (
