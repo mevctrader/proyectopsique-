@@ -5,6 +5,10 @@
   font-family: "Josefin Sans", sans-serif;
 }
 
+textarea {
+  resize: horizontal;
+}
+
 #blog,
 #foro-div,
 #login-div {
@@ -20,7 +24,7 @@
 }
 
 #blog .nav-link {
-  background-color: #5a6a7b;
+  background-color: #cae894;
   color: white;
 }
 

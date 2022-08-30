@@ -16,7 +16,7 @@ const Blog = () => {
           <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li className="nav-item" role="presentation">
               <button
-                className="nav-link active mx-2"
+                className="nav-link active mx-2 bg-success"
                 id="general"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-general"
@@ -30,7 +30,7 @@ const Blog = () => {
             </li>
             <li className="nav-item" role="presentation">
               <button
-                className="nav-link mx-2"
+                className="nav-link mx-2 bg-success"
                 id="depresion"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-depresion"
@@ -44,7 +44,7 @@ const Blog = () => {
             </li>
             <li className="nav-item" role="presentation">
               <button
-                className="nav-link mx-2"
+                className="nav-link mx-2 bg-success"
                 id="ansiedad"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-ansiedad"
@@ -58,7 +58,7 @@ const Blog = () => {
             </li>
             <li className="nav-item" role="presentation">
               <button
-                className="nav-link mx-2"
+                className="nav-link mx-2 bg-success"
                 id="otros"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-otro"
