@@ -137,7 +137,7 @@ export const Footer = () => (
       </div>
 
       <div className="d-flex flex-column flex-sm-row justify-content-between pt-1 mt-1">
-        <p>© 2022 PsientoWell, Inc. TODOS LOS DERECHOS RESERVADOS.</p>
+        <p>© 2022 PsientoWell, Inc. Todos los derechos reservados.</p>
         <ul className="list-unstyled d-flex">
           <li className="ms-3">
             <a
