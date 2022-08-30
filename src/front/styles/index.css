@@ -14,7 +14,7 @@
 }
 
 #blog .nav-link {
-  background-color: #5A6A7B;
+  background-color: #5a6a7b;
   color: white;
 }
 
@@ -68,12 +68,13 @@
 }
 
 #registro-web .btn {
-  background-color: #FB9A4B;
-  border: 1px solid #FB9A4B;
+  background-color: #fb9a4b;
+  border: 1px solid #fb9a4b;
 }
 
 #footer {
-  background-color: #5a6a7b;
+  background-color: #cae894;
+  /* background-color: #5a6a7b; */
 }
 
 #navbar {
