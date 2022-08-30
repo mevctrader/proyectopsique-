@@ -54,7 +54,7 @@ export const Footer = () => (
   //   </footer>
   // </div>
   <div id="footer" className="container-fluid">
-    <footer className="py-5">
+    <footer className="py-4">
       <div className="row">
         <div className="col mb-3">
           <a
@@ -136,7 +136,7 @@ export const Footer = () => (
         </div>
       </div>
 
-      <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 pb-5">
+      <div className="d-flex flex-column flex-sm-row justify-content-between py-1 my-1">
         <p>© 2022 PsientoWell, Inc. TODOS LOS DERECHOS RESERVADOS.</p>
         <ul className="list-unstyled d-flex">
           <li className="ms-3">

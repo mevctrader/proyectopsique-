@@ -30,9 +30,9 @@ const Foro = () => {
         </div>
         <div className="col-6 list-group justify-content w-20 p-3 ">
           <div>
-            <PostForo/>
+            <PostForo />
           </div>
-          <a href="#" className="list-group-item list-group-item-action">
+          {/* <a href="#" className="list-group-item list-group-item-action">
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">PRIMERA PUBLICACIÓN</h5>
               <small className="text-muted">3 days ago</small>
@@ -46,8 +46,8 @@ const Foro = () => {
             <small className="text-muted justify-content-between p-5">
               #Ansiedad
             </small>
-          </a>
-          <a href="#" className="list-group-item list-group-item-action">
+          </a> */}
+          {/* <a href="#" className="list-group-item list-group-item-action">
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">SEGUNDA PUBLICACIÓN</h5>
               <small className="text-muted">3 days ago</small>
@@ -61,8 +61,8 @@ const Foro = () => {
             <small className="text-muted justify-content-between p-5">
               #Depresion
             </small>
-          </a>
-          <a href="#" className="list-group-item list-group-item-action">
+          </a> */}
+          {/* <a href="#" className="list-group-item list-group-item-action">
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">TERCERA PUBLICACIÓN</h5>
               <small className="text-muted ">3 days ago</small>
@@ -76,8 +76,8 @@ const Foro = () => {
             <small className="text-muted justify-content-between p-5">
               #Estres
             </small>
-          </a>
-          <button
+          </a> */}
+          {/* <button
             type="button"
             className="btn btn-primary btn-lg"
             data-bs-toggle="modal"
@@ -85,8 +85,8 @@ const Foro = () => {
             data-bs-whatever="@comentarios"
           >
             COMENTAR
-          </button>
-          <div
+          </button> */}
+          {/* <div
             className="modal fade"
             id="comentarios"
             tabindex="-1"
@@ -143,7 +143,7 @@ const Foro = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
