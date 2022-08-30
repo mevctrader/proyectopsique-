@@ -1,6 +1,19 @@
-import React from "react";
+import React, {useState, useContext} from "react";
+import { Context } from "../store/appContext";
+import { useNavigate } from 'react-router-dom';
 
 export const ModalNuevoPost = () => {
+  const { store, actions } = useContext(Context);
+  const [topicos, setTopicos] = useState("");
+  const [tituloPosts, setTituloPosts] = useState("");
+  const [descripcionPost, setDescripcionPost] = useState("");
+
+  let navigate = useNavigate();
+
+  const handleclick = () =>{
+    actions.RegistroPost(topicos,tituloPosts,descripcionPost);
+  }
+
     return (
         <div id="boton-post" className="container-fluid justify-content w-30 p-3">
         <button
@@ -35,19 +48,28 @@ export const ModalNuevoPost = () => {
               <div className="modal-body">
                 <form>
                   <div className="mb-3">
-                    <label for="recipient-name" className="col-form-label">
-                      TÓPICO:
+                    <label for="topico" className="col-form-label">
+                      TÓPICOS:
                     </label>
-                    <input type="text" className="form-control" id="topico" />
+                    <select id="topico" value={topicos} onChange={(e) => setTopicos(e.target.value)} defaultValue="Seleccione...">
+                      <option value={""}>Seleccione</option>
+                      <option value={1}>ANSIEDAD</option>
+                      <option value={2}>ESTRES</option>
+                      <option value={3}>DEPRESION</option>
+                      <option value={4}>AYUDAME</option>
+                      <option value={5}>GENERAL</option>
+                   </select>
                   </div>
                   <div className="mb-3">
-                    <label for="recipient-name" className="col-form-label">
+                    <label for="tituloPost" className="col-form-label">
                       TÍTULO:
                     </label>
                     <input
                       type="text"
                       className="form-control"
                       id="tituloPost"
+                      value={tituloPosts} 
+                      onChange={(e) => setTituloPosts(e.target.value)}
                     />
                   </div>
                   <div className="mb-3">
@@ -57,6 +79,8 @@ export const ModalNuevoPost = () => {
                     <textarea
                       className="form-control"
                       id="message-text"
+                      value={descripcionPost} 
+                      onChange={(e) => setDescripcionPost(e.target.value)}
                     ></textarea>
                   </div>
                 </form>
@@ -69,7 +93,7 @@ export const ModalNuevoPost = () => {
                 >
                   Cerrar
                 </button>
-                <button type="button" className="btn btn-primary">
+                <button type="button" className="btn btn-primary" onClick={handleclick}>
                   Enviar Mensaje
                 </button>
               </div>

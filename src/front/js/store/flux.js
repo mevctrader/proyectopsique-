@@ -68,7 +68,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return true;
 				}
 				catch(error){
-					console.log("Ha habido un error al ingresar al login");
+					console.log("Hubo un error al ingresar al login");
 				}
 			},
 			registro: async (identificacion,cedula,pnombre,papellido,usuario,email,password,is_active) => 
@@ -108,7 +108,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return true;
 				}
 				catch(error){
-					console.log("Ha habido un error al ingresar al login");
+					console.log("Hubo un error al ingresar al login");
 				}
 			},
 			CambioPassw: async (email,cbpassword) => {
@@ -140,13 +140,49 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return true;
 				}
 				catch(error){
-					console.log("Ha habido un error al actualizar el password");
+					console.log("Hubo un error al actualizar el password");
+				}
+
+			},
+			RegistroPost: async (topicos,tituloPosts,descripcionPost) =>{
+
+				const opt={
+					method: "POST",
+					body: JSON.stringify({
+						"titulo_post": tituloPosts,
+						"descripcion_post": descripcionPost,
+						"topico_id": topicos
+					}),
+					headers: {
+						"Content-Type": "application/json"
+					}
+				};
+				
+				const baseurl = process.env.BACKEND_URL+"/api/foro"; 
+				/*console.log(baseurl);*/
+
+				try{
+					const resp = await fetch(baseurl, opt)
+					if(resp.status!==200) 
+					{
+						alert("No se pudo registrar los datos");
+						return false;
+					}
+					const data = await resp.json();
+
+					alert("los datos se guardaron con exito");
+					window.location = "/foro"
+				
+					return true;
+				}
+				catch(error){
+					console.log("Hubo un error al ingresar el posts");
 				}
 
 			},
 			getMessage: async () => {
 
-				const baseurl = process.env.BACKEND_URL||"/api/hello"; 
+				const baseurl = process.env.BACKEND_URL+"/api/hello"; 
 
 				try{
 					// fetching data from the backend

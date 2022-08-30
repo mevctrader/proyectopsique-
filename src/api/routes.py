@@ -51,7 +51,7 @@ def get_hello():
 
 
 @api.route("/registro", methods=["POST"])
-def registro_post():
+def registro_users():
     body = request.json
     if "tipo_documento_id" not in body:
         return 'Debe seleccionar el tipo de documento!', 400
@@ -78,3 +78,20 @@ def registro_post():
         else:
             return jsonify(new_row.serialize()), 200
 
+
+@api.route("/foro", methods=["POST"])
+def registro_posts():
+    body = request.json
+    if "topico_id" not in body:
+        return 'Debe seleccionar el topico!', 400
+    if "titulo_post" not in body:
+        return 'Debe indicar el titulo del nuevo posts', 400
+    if "descripcion_post" not in body:
+        return 'Debe indicar la descripcion del posts!', 400
+    else:
+        new_row = Post.new_registro_posts(body["topico_id"], body["titulo_post"], body["descripcion_post"])
+
+        if new_row == None:
+            return 'Un error ha ocurrido, upps!', 500
+        else:
+            return jsonify(new_row.serialize()), 200

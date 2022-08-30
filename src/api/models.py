@@ -142,7 +142,44 @@ class Post(db.Model):
     users = db.relationship("User")
     topico_id = db.Column(db.Integer, db.ForeignKey('topicos.id'), nullable=False)
     topicos = db.relationship("Topicos")
-    fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)
+    fecha_registro = db.Column(db.DateTime(), default=datetime.datetime.utcnow, nullable=False)
+
+    def __init__(self, titulo_post, descripcion_post, user_id, topico_id):
+        self.titulo_post = titulo_post
+        self.descripcion_post = descripcion_post
+        self.user_id = user_id
+        self.topico_id = topico_id
+
+    @classmethod
+    def new_registro_posts(cls, titulo_post, descripcion_post, user_id, topico_id):
+        new_registro_posts = cls(titulo_post, descripcion_post, user_id, topico_id)
+        db.session.add(new_registro_posts)
+        try:
+            db.session.commit()
+            return new_registro_posts
+        except Exception as error:
+            print(error)
+            return None
+
+    def update(self, titulo_post, descripcion_post,topico_id):
+        self.titulo_post = titulo_post
+        self.descripcion_post = descripcion_post
+        self.topico_id = topico_id
+        try:
+            db.session.commit()
+            return self
+        except Exception as error:
+            print(error)
+            return False
+
+    def delete(self):
+        db.session.delete(self)
+        try:
+            db.session.commit()
+            return True
+        except Exception as error:
+            print(error)
+            return False
 
     def serialize(self):
         return {
