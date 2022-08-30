@@ -40,12 +40,12 @@ export const Registro = () =>{
                 <Row className="mb-3">
                 <Form.Group as={Col}  sm={6} controlId="formGridIdentificacion">
                 <Form.Label>Tipo de Documento:</Form.Label>
-                <Form.Select value={identificacion} onChange={(e) => setIdentificacion(e.target.value)} defaultValue="Seleccione...">
+                <Form.Select defaultValue={identificacion} onChange={(e) => setIdentificacion(e.target.value)}>
                     <option value={""}>Seleccione</option>
                     <option value={1}>Venezolano</option>
                     <option value={2}>Extranjero</option>
-                    <option value={3}>Pasaporte</option>
-                    <option value={4}>Jurídico</option>
+                    <option value={3}>Jurídico</option>
+                    <option value={4}>Pasaporte</option>
                 </Form.Select>
                 </Form.Group>
 

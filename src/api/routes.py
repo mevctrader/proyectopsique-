@@ -3,10 +3,11 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 import os
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Posts
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import verify_jwt_in_request
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 
@@ -39,6 +40,15 @@ def create_token():
         else:
             return 'No se pudo actualizar el password', 500
 
+@api.route("/token", methods=["GET"])
+@jwt_required()
+def protected():
+    # Access the identity of the current user with get_jwt_identity
+    current_user_id = get_jwt_identity()
+    user = User.query.get(current_user_id)
+    
+    return jsonify({"id": user.id, "username": user.username }), 200
+
 @api.route("/hello", methods=["GET"])
 @jwt_required()
 def get_hello():
@@ -51,7 +61,7 @@ def get_hello():
 
 
 @api.route("/registro", methods=["POST"])
-def registro_post():
+def registro_users():
     body = request.json
     if "tipo_documento_id" not in body:
         return 'Debe seleccionar el tipo de documento!', 400
@@ -78,3 +88,24 @@ def registro_post():
         else:
             return jsonify(new_row.serialize()), 200
 
+
+@api.route("/foro", methods=["POST"])
+def registro_posts():
+    bodyp = request.json
+    if "titulo_post" not in bodyp:
+        return 'Debe indicar el titulo del nuevo posts', 400
+    if "descripcion_post" not in bodyp:
+        return 'Debe indicar la descripcion del posts!', 400
+    if "topico_id" not in bodyp:
+        return 'Debe seleccionar el topico!', 400
+    else:
+        verify_jwt_in_request()
+        current_user_id = get_jwt_identity()
+        #user = User.query.get(current_user_id)
+
+        new_row_post = Posts.new_registro_posts(bodyp["titulo_post"], bodyp["descripcion_post"], bodyp["topico_id"])
+
+        if new_row_post == None:
+            return 'Un error ha ocurrido, upps!', 500
+        else:
+            return jsonify(new_row_post.serialize()), 200
