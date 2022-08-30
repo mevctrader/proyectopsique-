@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			user: null,
 			message: null,
 			demo: [
 				{
@@ -45,10 +46,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"Content-Type": "application/json"
 					}
 				};
-				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
+				const baseurl = process.env.BACKEND_URL||"/api/token"; 
 				//console.log(baseurl);
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-5smhifvimie.ws-us63.gitpod.io/api/token', opt)
+					const resp = await fetch(baseurl, opt)
 					/*if(resp.status!==200) 
 					{
 						alert("Los datos ingresados no existen");
@@ -88,10 +89,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"Content-Type": "application/json"
 					}
 				};
-				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
-				//console.log(baseurl);
+				
+				const baseurl = process.env.BACKEND_URL+"/api/registro"; 
+				/*console.log(baseurl);*/
+
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-5smhifvimie.ws-us63.gitpod.io/api/registro', opt)
+					const resp = await fetch(baseurl, opt)
 					if(resp.status!==200) 
 					{
 						alert("No se pudo registrar los datos");
@@ -120,10 +123,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"Content-Type": "application/json"
 					}
 				};
-				//const baseurl = process.env.BACKEND_URL||"/api/token"; 
+				const baseurl = process.env.BACKEND_URL+"/api/token"; 
 				//console.log(baseurl);
 				try{
-					const resp = await fetch('https://3001-mevctrader-proyectopsiq-5smhifvimie.ws-us63.gitpod.io/api/token', opt)
+					const resp = await fetch(baseurl, opt)
 					if(resp.status!==200) 
 					{
 						alert("No se pudo actualizar password");
@@ -142,6 +145,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			},
 			getMessage: async () => {
+
+				const baseurl = process.env.BACKEND_URL||"/api/hello"; 
+
 				try{
 					// fetching data from the backend
 					const store = getStore();
@@ -151,7 +157,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						}
 					}
 					//const resp = await fetch(process.env.BACKEND_URL + "/api/hello")
-					const resp = await fetch("https://3001-mevctrader-proyectopsiq-5smhifvimie.ws-us63.gitpod.io/api/hello", opts)
+					const resp = await fetch(baseurl, opts)
 					const data = await resp.json()
 					setStore({ message: data.message })
 					// don't forget to return something, that is how the async resolves
