@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import { ModalNuevoPost } from "../component/nuevoPost";
+import { PostForo } from "../component/postForo";
 
 const Foro = () => {
   return (
@@ -28,6 +29,9 @@ const Foro = () => {
           </a>
         </div>
         <div className="col-6 list-group justify-content w-20 p-3 ">
+          <div>
+            <PostForo/>
+          </div>
           <a href="#" className="list-group-item list-group-item-action">
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">PRIMERA PUBLICACIÓN</h5>
