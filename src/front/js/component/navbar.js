@@ -41,22 +41,16 @@ export const Navigationabar = () => {
               <Nav.Link href="/login"><Button variant="outline-success">Login</Button></Nav.Link>
 
             ) : (
-              
-              <NavDropdown title={ store.user && store.user.pnombre+' '+store.user.papellido} id="collasible-nav-dropdown">
-                <NavDropdown.Item href="#"><Button
-                    onClick={() => actions.logout()}
-                    variant="outline-success"
-                    defaultValue="Cerrar Sesión"
-                  >
-                    Cerrar Sesión
-                  </Button></NavDropdown.Item>
-
-              </NavDropdown>
-             
-                )}
-            <Nav.Link href="/registro">
-              <Button variant="outline-success">registrarse</Button>
-            </Nav.Link>
+              <Nav.Link href="/login"><Button onClick={() => actions.logout()} variant="outline-success"> Cerrar Sesión</Button></Nav.Link>
+            )}
+          </Nav>
+          <Nav>
+            {!store.token ? (
+              <Nav.Link href="/registro">
+                <Button variant="outline-success">registrarse</Button>
+              </Nav.Link>
+              ) : null
+            }
           </Nav>
         </Navbar.Collapse>
         {/*/<div className="collapse navbar-collapse" id="navbarSupportedContent">
