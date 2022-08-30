@@ -54,10 +54,10 @@ export const Carrusel = () => (
       <div className="carousel-item active p-0">
         <img
           src="https://pbs.twimg.com/media/FSfPoZRXsAAzLYK.jpg"
-          className="ratio ratio 16x9"
+          className=""
           alt="..."
-          width={"auto"}
-          height={"620px"}
+          width={"100%"}
+          height={"100%"}
         />
         <div
           id="texto-carrusel-1"
@@ -72,10 +72,10 @@ export const Carrusel = () => (
       <div className="carousel-item">
         <img
           src="https://plus.telushealth.co/blogs/physician-pulse/wp-content/uploads/image-1200x500.jpg"
-          className="ratio ratio 16x9"
+          className=""
           alt="..."
-          width={"auto"}
-          height={"620px"}
+          width={"100%"}
+          height={"100%"}
         />
         <div className="carousel-caption d-none d-md-block">
           <h1>
@@ -87,10 +87,10 @@ export const Carrusel = () => (
       <div className="carousel-item">
         <img
           src="https://neuronpsicologia.com/wp-content/uploads/15.jpeg"
-          className="ratio ratio 16x9"
+          className=""
           alt="..."
-          width={"auto"}
-          height={"620px"}
+          width={"100%"}
+          height={"100%"}
         />
         <div className="carousel-caption d-none d-md-block">
           <h1>
