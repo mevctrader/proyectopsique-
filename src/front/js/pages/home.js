@@ -12,8 +12,8 @@ export const Home = () => {
   }, [store.token]);
 
   return (
-    <div className="container-fluid ">
-      <div id="home-div" className="text-center row align-items-center text-dark">
+    <div className="container-fluid px-0">
+      <div className="text-center row align-items-center text-dark">
         <Carrusel />
       </div>
     </div>
