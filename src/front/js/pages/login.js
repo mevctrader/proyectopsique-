@@ -28,11 +28,18 @@ export const Login = () => {
 	const handleClick = (e) => {
 		e.preventDefault();
 
-    let isValid = true;
+    /*let isValid = true;
 
     if (!email) {
+      e.preventDefault();
       isValid = false;
-      setErrormsgem("Debe ingresar el email.")
+      setErrormsgem("Debe ingresar el email.");
+      return
+    }
+    else
+    {
+      setErrormsgem("");
+
     }
 
     if (typeof email !== "undefined") {
@@ -48,7 +55,7 @@ export const Login = () => {
       isValid = false;
       setErrormsgps("Debe ingresar el password.")
       return
-    }
+    }*/
 
 		actions.login(email, password);
 	};
