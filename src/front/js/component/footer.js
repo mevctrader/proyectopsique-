@@ -54,7 +54,7 @@ export const Footer = () => (
   //   </footer>
   // </div>
   <div id="footer" className="container-fluid">
-    <footer className="py-4">
+    <footer className="pt-4">
       <div className="row">
         <div className="col mb-3">
           <a
@@ -103,7 +103,7 @@ export const Footer = () => (
         </div>
 
         <div className="col-6 col-md-2 mb-3">
-          <h5>DATOS DE CONTACTO</h5>
+          <h5>Datos de contacto</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2">
               <a className="nav-link p-0 text-muted">PsientoWell@gmail.com</a>
@@ -136,7 +136,7 @@ export const Footer = () => (
         </div>
       </div>
 
-      <div className="d-flex flex-column flex-sm-row justify-content-between py-1 my-1">
+      <div className="d-flex flex-column flex-sm-row justify-content-between pt-1 mt-1">
         <p>© 2022 PsientoWell, Inc. TODOS LOS DERECHOS RESERVADOS.</p>
         <ul className="list-unstyled d-flex">
           <li className="ms-3">
