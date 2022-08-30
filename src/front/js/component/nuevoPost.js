@@ -4,14 +4,14 @@ import { useNavigate } from 'react-router-dom';
 
 export const ModalNuevoPost = () => {
   const { store, actions } = useContext(Context);
-  const [topicos, setTopicos] = useState("");
   const [tituloPosts, setTituloPosts] = useState("");
   const [descripcionPost, setDescripcionPost] = useState("");
+  const [topicos, setTopicos] = useState("");
 
   let navigate = useNavigate();
 
   const handleclick = () =>{
-    actions.RegistroPost(topicos,tituloPosts,descripcionPost);
+    actions.RegistroPost(tituloPosts,descripcionPost,topicos);
   }
 
     return (
@@ -48,7 +48,7 @@ export const ModalNuevoPost = () => {
               <div className="modal-body">
                 <form>
                   <div className="mb-3">
-                    <label for="topico" className="col-form-label">
+                    <label className="col-form-label">
                       TÓPICOS:
                     </label>
                     <select id="topico" defaultValue={topicos} onChange={(e) => setTopicos(e.target.value)}>
@@ -61,7 +61,7 @@ export const ModalNuevoPost = () => {
                    </select>
                   </div>
                   <div className="mb-3">
-                    <label for="tituloPost" className="col-form-label">
+                    <label className="col-form-label">
                       TÍTULO:
                     </label>
                     <input
@@ -73,7 +73,7 @@ export const ModalNuevoPost = () => {
                     />
                   </div>
                   <div className="mb-3">
-                    <label for="message-text" className="col-form-label">
+                    <label className="col-form-label">
                       MENSAJE:
                     </label>
                     <textarea

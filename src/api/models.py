@@ -138,7 +138,7 @@ class Posts(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     titulo_post = db.Column(db.String(50), unique=True, nullable=False)
     descripcion_post = db.Column(db.String(250), unique=True, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     users = db.relationship("User")
     topico_id = db.Column(db.Integer, db.ForeignKey('topicos.id'), nullable=False)
     topicos = db.relationship("Topicos")
@@ -151,11 +151,11 @@ class Posts(db.Model):
 
     @classmethod
     def new_registro_posts(cls, titulo_post, descripcion_post, topico_id):
-        new_registroposts = cls(titulo_post, descripcion_post, topico_id)
-        db.session.add(new_registroposts)
+        new_posts = cls(titulo_post, descripcion_post, topico_id)
+        db.session.add(new_posts)
         try:
             db.session.commit()
-            return new_registroposts
+            return new_posts
         except Exception as error:
             print(error)
             return None

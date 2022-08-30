@@ -3,10 +3,11 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 import os
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User
+from api.models import db, User, Posts
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
+from flask_jwt_extended import verify_jwt_in_request
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 
@@ -98,8 +99,11 @@ def registro_posts():
     if "topico_id" not in bodyp:
         return 'Debe seleccionar el topico!', 400
     else:
+        verify_jwt_in_request()
+        current_user_id = get_jwt_identity()
+        #user = User.query.get(current_user_id)
 
-        new_row_post = Posts.new_registroposts(bodyp["titulo_post"], bodyp["descripcion_post"],bodyp["topico_id"])
+        new_row_post = Posts.new_registro_posts(bodyp["titulo_post"], bodyp["descripcion_post"], bodyp["topico_id"])
 
         if new_row_post == None:
             return 'Un error ha ocurrido, upps!', 500
