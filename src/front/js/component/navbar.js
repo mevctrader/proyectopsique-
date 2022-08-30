@@ -24,7 +24,7 @@ export const Navigationabar = () => {
           </Nav>
           <Nav>
             {!store.token ? (
-              <Nav.Link href="/login" className="text-success"><Button variant="outline-success"><FaUser /> Login</Button></Nav.Link>
+              <Nav.Link href="/login"><Button variant="outline-success"><FaUser /> Login</Button></Nav.Link>
 
             ) : (
               <Nav.Link href="/login"><Button onClick={() => actions.logout()} variant="outline-success"> Cerrar Sesión</Button></Nav.Link>
@@ -33,7 +33,7 @@ export const Navigationabar = () => {
           <Nav>
             {!store.token ? (
               <Nav.Link href="/registro">
-                <Button variant="outline-success"><FaUser /> registrarse</Button>
+                <Button variant="outline-success"><FaUser /> Registrarse</Button>
               </Nav.Link>
               ) : null
             }
