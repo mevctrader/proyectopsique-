@@ -46,7 +46,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"Content-Type": "application/json"
 					}
 				};
-				const baseurl = process.env.BACKEND_URL||"/api/token"; 
+				const baseurl = process.env.BACKEND_URL+"/api/token"; 
 				//console.log(baseurl);
 				try{
 					const resp = await fetch(baseurl, opt)
@@ -144,7 +144,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
-			RegistroPost: async (topicos,tituloPosts,descripcionPost) =>{
+			RegistroPost: async (tituloPosts,descripcionPost,topicos) =>{
 
 				const opt={
 					method: "POST",

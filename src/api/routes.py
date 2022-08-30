@@ -39,6 +39,15 @@ def create_token():
         else:
             return 'No se pudo actualizar el password', 500
 
+@api.route("/token", methods=["GET"])
+@jwt_required()
+def protected():
+    # Access the identity of the current user with get_jwt_identity
+    current_user_id = get_jwt_identity()
+    user = User.query.get(current_user_id)
+    
+    return jsonify({"id": user.id, "username": user.username }), 200
+
 @api.route("/hello", methods=["GET"])
 @jwt_required()
 def get_hello():
@@ -81,17 +90,18 @@ def registro_users():
 
 @api.route("/foro", methods=["POST"])
 def registro_posts():
-    body = request.json
-    if "topico_id" not in body:
-        return 'Debe seleccionar el topico!', 400
-    if "titulo_post" not in body:
+    bodyp = request.json
+    if "titulo_post" not in bodyp:
         return 'Debe indicar el titulo del nuevo posts', 400
-    if "descripcion_post" not in body:
+    if "descripcion_post" not in bodyp:
         return 'Debe indicar la descripcion del posts!', 400
+    if "topico_id" not in bodyp:
+        return 'Debe seleccionar el topico!', 400
     else:
-        new_row = Post.new_registro_posts(body["topico_id"], body["titulo_post"], body["descripcion_post"])
 
-        if new_row == None:
+        new_row_post = Posts.new_registroposts(bodyp["titulo_post"], bodyp["descripcion_post"],bodyp["topico_id"])
+
+        if new_row_post == None:
             return 'Un error ha ocurrido, upps!', 500
         else:
-            return jsonify(new_row.serialize()), 200
+            return jsonify(new_row_post.serialize()), 200

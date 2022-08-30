@@ -12,12 +12,20 @@ import Videos from "./pages/videos";
 import Foro from "./pages/foro";
 import Test from "./pages/test";
 import { Footer } from "./component/footer";
-import { Navbar } from "./component/navbar";
+import { Navigationabar } from "./component/navbar";
 //import { carrusel } from "./component/carrusel";
 import { Registro } from "./pages/registro";
+import { useMediaQuery } from 'react-responsive'
 
 //create your first component
 const Layout = () => {
+
+  const isDesktopOrLaptop = useMediaQuery({ minWidth: 1224 })
+  const isBigScreen = useMediaQuery({ minWidth: 1824 })
+  const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 })
+  const isPortrait = useMediaQuery({ orientation: 'portrait' })
+  const isRetina = useMediaQuery({ minResolution: '2dppx' })
+
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
   // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
@@ -26,7 +34,7 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
-          <Navbar id="Navbar" />
+          <Navigationabar id="Navbar" />
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Demo />} path="/demo" />

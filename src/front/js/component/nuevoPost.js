@@ -51,7 +51,7 @@ export const ModalNuevoPost = () => {
                     <label for="topico" className="col-form-label">
                       TÓPICOS:
                     </label>
-                    <select id="topico" value={topicos} onChange={(e) => setTopicos(e.target.value)} defaultValue="Seleccione...">
+                    <select id="topico" defaultValue={topicos} onChange={(e) => setTopicos(e.target.value)}>
                       <option value={""}>Seleccione</option>
                       <option value={1}>ANSIEDAD</option>
                       <option value={2}>ESTRES</option>

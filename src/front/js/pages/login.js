@@ -12,8 +12,9 @@ export const Login = () => {
 	const { store, actions } = useContext(Context);
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-  const [errorMsgem, setErrormsgem] = useState("");
-  const [errorMsgps, setErrormsgps] = useState("");
+  const [passwordError, setpasswordError] = useState("");
+  const [emailError, setemailError] = useState("");
+
 
 	let navigate = useNavigate();
 
@@ -24,39 +25,35 @@ export const Login = () => {
   const openChangePasswordModal = () => setIsOpenChangePasswordModal(true);
   const closeChangePasswordModal = () => setIsOpenChangePasswordModal(false);
 
+  const handleValidation = (event) => {
+    let formIsValid = true;
+
+    if (!email.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
+      formIsValid = false;
+      setemailError("El correo electrónico es invalido.");
+      return false;
+    } else {
+      setemailError("");
+      formIsValid = true;
+    }
+
+    /*if (!password.match(/^[a-zA-Z]{8,22}$/)) {
+      formIsValid = false;
+      setpasswordError(
+        "Only Letters and length must best min 8 Chracters and Max 22 Chracters"
+      );
+      return false;
+    } else {
+      setpasswordError("");
+      formIsValid = true;
+    }*/
+
+    return formIsValid;
+  };
 
 	const handleClick = (e) => {
 		e.preventDefault();
-
-    /*let isValid = true;
-
-    if (!email) {
-      e.preventDefault();
-      isValid = false;
-      setErrormsgem("Debe ingresar el email.");
-      return
-    }
-    else
-    {
-      setErrormsgem("");
-
-    }
-
-    if (typeof email !== "undefined") {
-          
-      var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-      if (!pattern.test(email)) {
-        isValid = false;
-        setErrormsgem("Debe ingresar un email válido....")
-      }
-    }
-
-    if (!password) {
-      isValid = false;
-      setErrormsgps("Debe ingresar el password.")
-      return
-    }*/
-
+    handleValidation();
 		actions.login(email, password);
 	};
 
@@ -78,10 +75,13 @@ export const Login = () => {
                   className="form-control mt-1"
                   placeholder="Introduce el correo electrónico"
                   autoComplete="off"
+                  aria-describedby="emailHelp"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <div className="text-danger">{errorMsgem}</div>
+                 <small id="emailHelp" className="text-danger form-text">
+                  {emailError}
+                </small>
               </div>
               <div className="form-group mt-3">
                 <label>Clave:</label>
@@ -98,8 +98,9 @@ export const Login = () => {
                       <button id="show_password" className="btn btn-primary" type="button" onClick={switchShown}> <span className={shown ? 'fa fa-eye-slash' : 'fa fa-eye'}></span> </button>
                   </div>
                 </div>
-                <FormText className="text-danger">{"\n"}{errorMsgps}</FormText>
-
+                <small id="passworderror" className="text-danger form-text">
+                  {passwordError}
+                </small>
               </div>
               <div className="d-grid gap-2 mt-3">
                 <button className="btn btn-primary">Ingresar</button>

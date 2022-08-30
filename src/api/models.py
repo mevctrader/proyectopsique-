@@ -133,30 +133,29 @@ class Topicos(db.Model):
             "nombre_tema": self.nombre_tema,
         }
 
-class Post(db.Model):
+class Posts(db.Model):
     __tablename__ = 'post'
     id = db.Column(db.Integer, primary_key=True)
     titulo_post = db.Column(db.String(50), unique=True, nullable=False)
     descripcion_post = db.Column(db.String(250), unique=True, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
     users = db.relationship("User")
     topico_id = db.Column(db.Integer, db.ForeignKey('topicos.id'), nullable=False)
     topicos = db.relationship("Topicos")
     fecha_registro = db.Column(db.DateTime(), default=datetime.datetime.utcnow, nullable=False)
 
-    def __init__(self, titulo_post, descripcion_post, user_id, topico_id):
+    def __init__(self, titulo_post, descripcion_post, topico_id):
         self.titulo_post = titulo_post
         self.descripcion_post = descripcion_post
-        self.user_id = user_id
         self.topico_id = topico_id
 
     @classmethod
-    def new_registro_posts(cls, titulo_post, descripcion_post, user_id, topico_id):
-        new_registro_posts = cls(titulo_post, descripcion_post, user_id, topico_id)
-        db.session.add(new_registro_posts)
+    def new_registro_posts(cls, titulo_post, descripcion_post, topico_id):
+        new_registroposts = cls(titulo_post, descripcion_post, topico_id)
+        db.session.add(new_registroposts)
         try:
             db.session.commit()
-            return new_registro_posts
+            return new_registroposts
         except Exception as error:
             print(error)
             return None
@@ -186,8 +185,7 @@ class Post(db.Model):
             "id": self.id,
             "titulo_post": self.titulo_post,
             "descripcion_post": self.descripcion_post,
-            "topico_id": self.topico_id,
-            "user_id": self.user_id,
+            "topico_id": self.topico_id
         }
 
 class Comentarios(db.Model):
@@ -195,7 +193,7 @@ class Comentarios(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     descripcion_comentarios = db.Column(db.String(250), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)
-    posts = db.relationship("Post")
+    posts = db.relationship("Posts")
     fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)
     users = db.relationship("User")
