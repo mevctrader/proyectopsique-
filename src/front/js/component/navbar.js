@@ -8,7 +8,7 @@ export const Navigationabar = () => {
   const { store, actions } = useContext(Context);
 
   return (
-    <Navbar id="navbar" className="navbar navbar-expand-lg">
+    <Navbar id="navbar" className="navbar navbar-expand-lg text-dark">
       <Container>
         <Navbar.Brand href="#">
           <img src={psiqueImageUrl} alt="" width="140" height="40" />
@@ -16,24 +16,24 @@ export const Navigationabar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/" to="/" className="mx-2">Home</Nav.Link>
-            <Nav.Link href="/blog" to="/blog" className="mx-2">Blog</Nav.Link>
-            <Nav.Link href="/videos" to="/videos" className="mx-2">Videos</Nav.Link>
-            <Nav.Link href="/foro" to="/blog" className="mx-2">Foro</Nav.Link>
-            <Nav.Link href="/test" to="/blog" className="mx-2">Test</Nav.Link>
+            <Nav.Link id="menu-nav-1" href="/" to="/" className="mx-2">Home</Nav.Link>
+            <Nav.Link id="menu-nav-2" href="/blog" to="/blog" className="mx-2">Blog</Nav.Link>
+            <Nav.Link id="menu-nav-3" href="/videos" to="/videos" className="mx-2">Videos</Nav.Link>
+            <Nav.Link id="menu-nav-4" href="/foro" to="/blog" className="mx-2">Foro</Nav.Link>
+            <Nav.Link id="menu-nav-5" href="/test" to="/blog" className="mx-2">Test</Nav.Link>
           </Nav>
           <Nav>
             {!store.token ? (
-              <Nav.Link href="/login"><Button variant="outline-success"><FaUser /> Login</Button></Nav.Link>
+              <Nav.Link href="/login"><Button id="boton-nav-1" variant="outline-success"><FaUser /> Login</Button></Nav.Link>
 
             ) : (
-              <Nav.Link href="/login"><Button onClick={() => actions.logout()} variant="outline-success"> Cerrar Sesión</Button></Nav.Link>
+              <Nav.Link href="/login"><Button id="boton-nav-2" onClick={() => actions.logout()} variant="outline-success"> Cerrar Sesión</Button></Nav.Link>
             )}
           </Nav>
           <Nav>
             {!store.token ? (
               <Nav.Link href="/registro">
-                <Button variant="outline-success"><FaUser /> Registrarse</Button>
+                <Button id="boton-nav-3" variant="outline-success"><FaUser /> Registrarse</Button>
               </Nav.Link>
               ) : null
             }
