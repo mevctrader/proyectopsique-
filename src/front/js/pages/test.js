@@ -2,14 +2,11 @@ import React from "react";
 
 const Test = () => {
   return (
-    <div className="container">
-      <div
-        id="test-div"
-        className="container mt-3 mb-3 mx-auto border border-dark border border-4"
-      >
-        <h1>
-          <strong>Test de Ansiedad PSIENTO</strong>
-        </h1>
+    <div id="test-div" className="container-fluid pb-5">
+      <h1 className="row justify-content-center m-0 pt-3 mb-3">
+        <strong className="col-auto">Test de Ansiedad Psiento</strong>
+      </h1>
+      <div className="rounded bg-white container shadow">
         <form
           id="fs-frm"
           name="survey-form"
