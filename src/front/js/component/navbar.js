@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { Context } from "../store/appContext";
 import psiqueImageUrl from "../../img/Psiento1.png";
-import { FaUser, FaHome, FaBlog, FaVideo, FaComment } from "react-icons/fa";
+import { FaUser, FaHome, FaBlog, FaVideo, FaComment, FaPenAlt } from "react-icons/fa";
 
 export const Navigationabar = () => {
   const { store, actions } = useContext(Context);
@@ -38,6 +38,7 @@ export const Navigationabar = () => {
               Foro
             </Nav.Link>
             <Nav.Link id="menu-nav-5" href="/test" to="/blog" className="mx-2">
+              <FaPenAlt className="me-1"/>
               Test
             </Nav.Link>
           </Nav>

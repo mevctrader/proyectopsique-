@@ -106,7 +106,7 @@ export const Login = () => {
                 <button className="btn btn-primary">Ingresar</button>
               </div>
               <p className="forgot-password text-right mt-2">
-              Olvidaste la Contraseña? <a href="#" onClick={openChangePasswordModal}>Recupérala</a>
+              ¿Olvidaste la Contraseña? <a href="#" onClick={openChangePasswordModal}>Recupérala</a>
               </p>
               <ChangePassword 
                 isOpen={isOpenChangePasswordModal}
