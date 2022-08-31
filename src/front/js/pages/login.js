@@ -59,7 +59,7 @@ export const Login = () => {
 
   if (store.token && store.token != "" && store.token != undefined)navigate("/");
   return (
-    <div className="Auth-form-container">
+    <div className="Auth-form-container" id="login-div">
       <form className="Auth-form" onSubmit={handleClick}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Acceso</h3>
@@ -89,7 +89,7 @@ export const Login = () => {
                   <input
                   type={shown ? 'text' : 'password'}
                   id="password"
-                  className="form-control mt-1"
+                  className="form-control"
                   placeholder="Introduce la contraseña"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

@@ -23,26 +23,7 @@ textarea {
 #menu-nav-3,
 #menu-nav-4,
 #menu-nav-5 {
-  color: black;
-}
-
-#boton-nav-1,
-#boton-nav-2,
-#boton-nav-3 {
-  border: 2px solid #a594f9;
-  background-color: #a594f9;
-  color: black;
-  padding: 8px 16px;
-  font-size: 1.8vh;
-  cursor: pointer;
-}
-
-#boton-nav-1:hover,
-#boton-nav-2:hover,
-#boton-nav-3:hover {
-  border: 2px solid #7562d7;
-  background-color: #7562d7;
-  color: white;
+  color: rgb(104, 104, 104);
 }
 
 #test-div {
@@ -103,7 +84,15 @@ textarea {
   border: 1px solid #a594f9;
 }
 
-#registro-web .btn {
+#login-div a {
+  color: #a594f9;
+}
+
+#login-div a:active {
+  color: #7562d7;
+}
+
+#registro-web .btn, #login-div .btn {
   background-color: #a594f9;
   border: 1px solid #a594f9;
 }
@@ -115,25 +104,6 @@ textarea {
 
 #navbar {
   background-color: #cae894;
-}
-
-#menu-1,
-#menu-2,
-#menu-3,
-#menu-4,
-#menu-5,
-#menu-6,
-#menu-7 {
-  color: black;
-}
-#menu-1:active,
-#menu-2:active,
-#menu-3:active,
-#menu-4:active,
-#menu-5:active,
-#menu-6:active,
-#menu-7:active {
-  text-decoration: underline;
 }
 
 #buscar {
