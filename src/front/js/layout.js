@@ -13,7 +13,6 @@ import Foro from "./pages/foro";
 import Test from "./pages/test";
 import { Footer } from "./component/footer";
 import { Navigationabar } from "./component/navbar";
-//import { carrusel } from "./component/carrusel";
 import { Registro } from "./pages/registro";
 import { useMediaQuery } from 'react-responsive'
 
