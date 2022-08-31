@@ -66,12 +66,12 @@ export const Carrusel = () => (
           <h1>
             <strong>SALUD MENTAL</strong>
           </h1>
-          <p>BIENESTAR EMOCIONAL, PSICOLOGICO Y SOCIAL</p>
+          <p>BIENESTAR EMOCIONAL, PSICOLÓGICO Y SOCIAL</p>
         </div>
       </div>
       <div className="carousel-item">
         <img
-          src="https://plus.telushealth.co/blogs/physician-pulse/wp-content/uploads/image-1200x500.jpg"
+          src="https://www.bu.edu/met/files/2021/05/ms-hc-conc-vdhc-hero-1200x500.jpg"
           className=""
           alt="..."
           width={"100%"}
@@ -86,7 +86,7 @@ export const Carrusel = () => (
       </div>
       <div className="carousel-item">
         <img
-          src="https://neuronpsicologia.com/wp-content/uploads/15.jpeg"
+          src="https://www.ivanesalud.com/wp-content/uploads/2021/02/enlace-manos-grupal-unidad-dia-ivane-salud-valencia.jpg"
           className=""
           alt="..."
           width={"100%"}

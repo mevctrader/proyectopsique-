@@ -3,6 +3,14 @@ import psiqueImageUrl from "../../img/Psiento1.png";
 import instagramLogo from "../../img/instagram-svgrepo-com-01.png";
 import twitterLogo from "../../img/twitter-svgrepo-com-01.png";
 import mailLogo from "../../img/mail_FILL1_wght400_GRAD0_opsz48-01.png";
+import {
+  FaUser,
+  FaBlog,
+  FaVideo,
+  FaComment,
+  FaHouseUser,
+  FaClipboardCheck,
+} from "react-icons/fa";
 
 export const Footer = () => (
   // <div
@@ -76,26 +84,31 @@ export const Footer = () => (
           <ul className="nav flex-column">
             <li className="nav-item mb-2">
               <a href="#" className="nav-link p-0 text-muted">
+                <FaHouseUser />
                 Inicio
               </a>
             </li>
             <li className="nav-item mb-2">
               <a href="/blog" className="nav-link p-0 text-muted">
+                <FaBlog />
                 Blog
               </a>
             </li>
             <li className="nav-item mb-2">
               <a href="/videos" className="nav-link p-0 text-muted">
+                <FaVideo />
                 Videos
               </a>
             </li>
             <li className="nav-item mb-2">
               <a href="foro" className="nav-link p-0 text-muted">
+                <FaComment />
                 Foro
               </a>
             </li>
             <li className="nav-item mb-2">
               <a href="test" className="nav-link p-0 text-muted">
+                <FaClipboardCheck />
                 Test de Ansiedad
               </a>
             </li>
@@ -103,7 +116,7 @@ export const Footer = () => (
         </div>
 
         <div className="col-6 col-md-2 mb-3">
-          <h5>Datos de contacto</h5>
+          <h5>Datos de Contacto</h5>
           <ul className="nav flex-column">
             <li className="nav-item mb-2">
               <a className="nav-link p-0 text-muted">PsientoWell@gmail.com</a>
@@ -116,7 +129,7 @@ export const Footer = () => (
 
         <div className="col-md-5 offset-md-1 mb-3">
           <form>
-            <h5>Suscribete con Nosotros</h5>
+            <h5>Suscríbete con Nosotros</h5>
             <p>Informacion importante diaria para compartir con todos.</p>
             <div className="d-flex flex-column flex-sm-row w-100 gap-2">
               <label for="newsletter1" className="visually-hidden">

@@ -2,7 +2,14 @@ import React, { useContext } from "react";
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { Context } from "../store/appContext";
 import psiqueImageUrl from "../../img/Psiento1.png";
-import { FaUser, FaHome, FaBlog, FaVideo, FaComment, FaPenAlt } from "react-icons/fa";
+import {
+  FaUser,
+  FaBlog,
+  FaVideo,
+  FaComment,
+  FaHouseUser,
+  FaClipboardCheck,
+} from "react-icons/fa";
 
 export const Navigationabar = () => {
   const { store, actions } = useContext(Context);
@@ -17,11 +24,11 @@ export const Navigationabar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link id="menu-nav-1" href="/" to="/" className="mx-2">
-              <FaHome className="me-1" />
+              <FaHouseUser />
               Home
             </Nav.Link>
             <Nav.Link id="menu-nav-2" href="/blog" to="/blog" className="mx-2">
-              <FaBlog className="me-1" />
+              <FaBlog />
               Blog
             </Nav.Link>
             <Nav.Link
@@ -30,18 +37,19 @@ export const Navigationabar = () => {
               to="/videos"
               className="mx-2"
             >
-              <FaVideo className="me-1" />
+              <FaVideo />
               Videos
             </Nav.Link>
             <Nav.Link id="menu-nav-4" href="/foro" to="/blog" className="mx-2">
-              <FaComment className="me-1" />
+              <FaComment />
               Foro
             </Nav.Link>
             <Nav.Link id="menu-nav-5" href="/test" to="/blog" className="mx-2">
-              <FaPenAlt className="me-1"/>
+              <FaClipboardCheck />
               Test
             </Nav.Link>
           </Nav>
+          {store.user && store.user.pnombre + " " + store.user.papellido}
           <Nav>
             {!store.token ? (
               <Nav.Link href="/login">

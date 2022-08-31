@@ -2,27 +2,35 @@ import React from "react";
 
 const Test = () => {
   return (
-    <div id="test-div" className="container-fluid pb-5">
-      <h1 className="row justify-content-center m-0 pt-3 mb-3">
-        <strong className="col-auto">Test de Ansiedad Psiento</strong>
+    <div id="test-div" className="container-fluid pb-5 ">
+      <h1 className="row justify-content-center m-0 pt-3 mb-3 ">
+        <strong className="col-auto">TEST DE ANSIEDAD PSIENTO</strong>
       </h1>
-      <div className="rounded bg-white container shadow">
+      <div className="rounded bg-white container shadow-lg">
         <form
           id="fs-frm"
           name="survey-form"
           accept-charset="utf-8"
-          action="https://formspree.io/f/{form_id}"
+          action="https://formspree.io/f/xnqrnydn"
           method="post"
         >
           <fieldset id="fs-frm-inputs">
             <div className="container mt-3">
               <label for="timely">
-                1. ¿Tienes preocupaciones constantes, angustia al pensar,
-                imaginar determinadas cosas o anticipar lo peor en distintas
-                circunstancias?
+                <strong>
+                  1. ¿TIENES PREOCUPACIONES CONSTANTES, ANGUSTIA AL PENSAR,
+                  IMAGINAR DETERMINADAS COSAS O ANTICIPAR LO PEOR EN DISTINTAS
+                  CIRCUNSTANCIAS?
+                </strong>
               </label>
               <div>
-                <select className="select" placeholder="Example placeholder" name="timely" id="timely" required="">
+                <select
+                  className="select"
+                  placeholder="Example placeholder"
+                  name="timely"
+                  id="timely"
+                  required=""
+                >
                   <option value="" selected="" disabled="">
                     Responde
                   </option>
@@ -33,10 +41,11 @@ const Test = () => {
             </div>
             <div className="container mt-3">
               <label for="timely">
-                2. ¿Sientes temblores, ganas de llorar o sensación de alarma?
+                <strong>
+                  2. ¿SIENTES TEMBLORES, GANAS DE LLORAR O SENSACIÓN DE ALARMA?
+                </strong>
               </label>
               <div>
-                
                 <select name="quality" id="quality" required="">
                   <option value="" selected="" disabled="">
                     Responde
@@ -48,11 +57,12 @@ const Test = () => {
             </div>
             <div className="container mt-3">
               <label for="timely">
-                3. ¿Sientes miedo si estas solo, a la oscuridad, o a que pase
-                algo imprevisto?
+                <strong>
+                  3. ¿SIENTES MIEDO SI ESTAS SOLO, A LA OSCURIDAD, O A QUE PASE
+                  ALGO IMPREVISTO?
+                </strong>
               </label>
               <div>
-                
                 <select name="quality" id="quality" required="">
                   <option value="" selected="" disabled="">
                     Responde
@@ -64,11 +74,12 @@ const Test = () => {
             </div>
             <div className="container mt-3">
               <label for="timely">
-                4. ¿Sufres de insomnio o sientes incapacidad para poder
-                descansar?
+                <strong>
+                  4. ¿SUFRES DE INSOMNIO O SIENTES INCAPACIDAD PARA PODER
+                  DESCANSAR?
+                </strong>
               </label>
               <div>
-                
                 <select name="quality" id="quality" required="">
                   <option value="" selected="" disabled="">
                     Responde
@@ -80,11 +91,12 @@ const Test = () => {
             </div>
             <div className="container mt-3">
               <label for="timely">
-                5. ¿Tienes dificultad para decidir, concentrarte, reflexionar o
-                fallos de memoria?
+                <strong>
+                  5. ¿TIENES DIFICULTAD PARA DECIDIR, CONCENTRARTE, REFLEXIONAR
+                  O SUFRES DE FALLOS DE MEMORIA?
+                </strong>
               </label>
               <div>
-                
                 <select name="quality" id="quality" required="">
                   <option value="" selected="" disabled="">
                     Responde
@@ -96,8 +108,10 @@ const Test = () => {
             </div>
             <div className="container mt-3">
               <label for="timely">
-                6. ¿Tienes desánimo, te levantas con negatividad y tienes la
-                sensación de que va a ser un mal día?
+                <strong>
+                  6. ¿TIENES DESÁNIMO, TE LEVANTAS CON NEGATIVIDAD Y TIENES LA
+                  SENSACIÓN DE QUE VA A SER UN MAL DÍA?
+                </strong>
               </label>
               <div>
                 <select name="quality" id="quality" required="">
@@ -112,7 +126,12 @@ const Test = () => {
           </fieldset>
           <div className="container mt-3">
             <div>
-              <label for="message">Comentarios Adicionales</label>
+              <label for="message">
+                <strong>
+                  POR FAVOR AQUÍ PUEDES EXPRESAR CUALQUIER DETALLE ADICIONAL DE
+                  ¿CÓMO TE SIENTES AL MOMENTO DE RESPONDER ESTE TEST?
+                </strong>
+              </label>
             </div>
             <textarea
               cols="120"
