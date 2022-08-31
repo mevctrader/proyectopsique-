@@ -23,39 +23,31 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       syncTokenFromSessionStore: async () => {
         const token = sessionStorage.getItem("token");
-		const store = getStore();
-        //console.log("aplication just loaded session storage token");
+		    const store = getStore();
         if (token && token != "" && token != undefined)
           setStore({ token: token});
 
-		  const opt = {
-			method: "GET",
-			headers: {
-				Authorization: "Bearer " + store.token,
-			  },
-		  };
-		  const baseurl = process.env.BACKEND_URL + "/api/token";
-		  //console.log(baseurl);
-		  try {
-			const resp = await fetch(baseurl, opt);
-		
-			if (resp.status === 404) {
-			  alert("Las credenciales no coinciden");
-			  //window.location = "/login";
-			  return false;
-			}
-			const data = await resp.json();
-			//console.log("This from backend:",data);
-			//sessionStorage.setItem("user", data.user);
-			setStore({ user: data.user });
-			return true;
-		  } catch (error) {
-			console.log("Hubo un error al consultar al login");
-		  }
+        const opt = {
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + store.token,
+          },
+        };
+        const baseurl = process.env.BACKEND_URL + "/api/token";
+
+        try 
+        {
+          const resp = await fetch(baseurl, opt);
+          const data = await resp.json();
+          setStore({ user: data.user });
+          return true;
+
+        } catch (error) {
+        console.log("Hubo un error al consultar al login");
+        }
       },
       logout: () => {
         sessionStorage.removeItem("token");
-        //console.log("Log out");
         setStore({ token: null });
         window.location = "/login";
       },
@@ -71,21 +63,15 @@ const getState = ({ getStore, getActions, setStore }) => {
           },
         };
         const baseurl = process.env.BACKEND_URL + "/api/token";
-        //console.log(baseurl);
         try {
           const resp = await fetch(baseurl, opt);
-          /*if(resp.status!==200) 
-					{
-						alert("Los datos ingresados no existen");
-						return false;
-					}*/
+
           if (resp.status === 404) {
             alert("Las credenciales no coinciden");
-            window.location = "/login";
+            window.location = "/";
             return false;
           }
           const data = await resp.json();
-          //console.log("This from backend:",data);
           sessionStorage.setItem("token", data.access_token);
           setStore({ token: data.access_token, user: data.user });
           return true;
@@ -132,7 +118,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           const data = await resp.json();
 
           alert("los datos se guardaron con exito");
-          window.location = "/registro";
+          window.location = "/login";
 
           return true;
         } catch (error) {
@@ -169,13 +155,13 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
       RegistroPost: async (tituloPosts, descripcionPost,emailp, topicos) => {
-		console.log()
+		      console.log("emailp "+emailp)
         const opt = {
           method: "POST",
           body: JSON.stringify({
             titulo_post: tituloPosts,
             descripcion_post: descripcionPost,
-			user_id: emailp,
+			      user_id: emailp,
             topico_id: topicos,
           }),
           headers: {
@@ -193,10 +179,9 @@ const getState = ({ getStore, getActions, setStore }) => {
             return false;
           }
           const data = await resp.json();
-		  console.Console.log("data ", data);
+		      console.Console.log("data ", data);
 
           alert("los datos se guardaron con exito");
-		  //setStore({ user: data.user });
           window.location = "/foro";
 
           return true;
