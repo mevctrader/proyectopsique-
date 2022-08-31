@@ -103,7 +103,8 @@ textarea {
 }
 
 #navbar {
-  background-color: #cae894;
+  background: rgb(202,232,148);
+  background: radial-gradient(circle, rgba(202,232,148,1) 0%, rgba(181,231,93,1) 100%); 
 }
 
 #buscar {
