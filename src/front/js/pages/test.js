@@ -17,9 +17,11 @@ const Test = () => {
           <fieldset id="fs-frm-inputs">
             <div className="container mt-3">
               <label for="timely">
-                1. ¿TIENES PREOCUPACIONES CONSTANTES, ANGUSTIA AL PENSAR,
-                IMAGINAR DETERMINADAS COSAS O ANTICIPAR LO PEOR EN DISTINTAS
-                CIRCUNSTANCIAS?
+                <strong>
+                  1. ¿TIENES PREOCUPACIONES CONSTANTES, ANGUSTIA AL PENSAR,
+                  IMAGINAR DETERMINADAS COSAS O ANTICIPAR LO PEOR EN DISTINTAS
+                  CIRCUNSTANCIAS?
+                </strong>
               </label>
               <div>
                 <select
@@ -39,7 +41,9 @@ const Test = () => {
             </div>
             <div className="container mt-3">
               <label for="timely">
-                2. ¿SIENTES TEMBLORES, GANAS DE LLORAR O SENSACIÓN DE ALARMA?
+                <strong>
+                  2. ¿SIENTES TEMBLORES, GANAS DE LLORAR O SENSACIÓN DE ALARMA?
+                </strong>
               </label>
               <div>
                 <select name="quality" id="quality" required="">
@@ -53,8 +57,10 @@ const Test = () => {
             </div>
             <div className="container mt-3">
               <label for="timely">
-                3. ¿SIENTES MIEDO SI ESTAS SOLO, A LA OSCURIDAD, O A QUE PASE
-                ALGO IMPREVISTO?
+                <strong>
+                  3. ¿SIENTES MIEDO SI ESTAS SOLO, A LA OSCURIDAD, O A QUE PASE
+                  ALGO IMPREVISTO?
+                </strong>
               </label>
               <div>
                 <select name="quality" id="quality" required="">
@@ -68,8 +74,10 @@ const Test = () => {
             </div>
             <div className="container mt-3">
               <label for="timely">
-                4. ¿SUFRES DE INSOMNIO O SIENTES INCAPACIDAD PARA PODER
-                DESCANSAR?
+                <strong>
+                  4. ¿SUFRES DE INSOMNIO O SIENTES INCAPACIDAD PARA PODER
+                  DESCANSAR?
+                </strong>
               </label>
               <div>
                 <select name="quality" id="quality" required="">
@@ -83,8 +91,10 @@ const Test = () => {
             </div>
             <div className="container mt-3">
               <label for="timely">
-                5. ¿TIENES DIFICULTAD PARA DECIDIR, CONCENTRARTE, REFLEXIONAR O
-                SUFRES DE FALLOS DE MEMORIA?
+                <strong>
+                  5. ¿TIENES DIFICULTAD PARA DECIDIR, CONCENTRARTE, REFLEXIONAR
+                  O SUFRES DE FALLOS DE MEMORIA?
+                </strong>
               </label>
               <div>
                 <select name="quality" id="quality" required="">
@@ -98,8 +108,10 @@ const Test = () => {
             </div>
             <div className="container mt-3">
               <label for="timely">
-                6. ¿TIENES DESÁNIMO, TE LEVANTAS CON NEGATIVIDAD Y TIENES LA
-                SENSACIÓN DE QUE VA A SER UN MAL DÍA?
+                <strong>
+                  6. ¿TIENES DESÁNIMO, TE LEVANTAS CON NEGATIVIDAD Y TIENES LA
+                  SENSACIÓN DE QUE VA A SER UN MAL DÍA?
+                </strong>
               </label>
               <div>
                 <select name="quality" id="quality" required="">
@@ -115,8 +127,10 @@ const Test = () => {
           <div className="container mt-3">
             <div>
               <label for="message">
-                POR FAVOR AQUÍ PUEDES EXPRESAR CUALQUIER DETALLE ADICIONAL DE
-                ¿CÓMO TE SIENTES AL MOMENTO DE RESPONDER ESTE TEST?
+                <strong>
+                  POR FAVOR AQUÍ PUEDES EXPRESAR CUALQUIER DETALLE ADICIONAL DE
+                  ¿CÓMO TE SIENTES AL MOMENTO DE RESPONDER ESTE TEST?
+                </strong>
               </label>
             </div>
             <textarea
