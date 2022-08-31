@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useReducer } from "react";
 import { Container, Nav, Navbar, Button  } from "react-bootstrap";
 import { Context } from "../store/appContext";
 import psiqueImageUrl from "../../img/Psiento1.png";
@@ -22,6 +22,7 @@ export const Navigationabar = () => {
             <Nav.Link href="/foro" to="/blog" className="mx-2">Foro</Nav.Link>
             <Nav.Link href="/test" to="/blog" className="mx-2">Test</Nav.Link>
           </Nav>
+          {store.user && store.user.pnombre+' '+store.user.papellido}
           <Nav>
             {!store.token ? (
               <Nav.Link href="/login"><Button variant="outline-success"><FaUser /> Login</Button></Nav.Link>
