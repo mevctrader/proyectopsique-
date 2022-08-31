@@ -41,6 +41,7 @@ export const Navigationabar = () => {
               Test
             </Nav.Link>
           </Nav>
+          {store.user && store.user.pnombre+' '+store.user.papellido}
           <Nav>
             {!store.token ? (
               <Nav.Link href="/login">

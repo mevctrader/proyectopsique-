@@ -144,14 +144,15 @@ class Posts(db.Model):
     topicos = db.relationship("Topicos")
     fecha_registro = db.Column(db.DateTime(), default=datetime.datetime.utcnow, nullable=False)
 
-    def __init__(self, titulo_post, descripcion_post, topico_id):
+    def __init__(self, titulo_post, descripcion_post,user_id, topico_id):
         self.titulo_post = titulo_post
         self.descripcion_post = descripcion_post
+        self.user_id = user_id
         self.topico_id = topico_id
 
     @classmethod
-    def new_registro_posts(cls, titulo_post, descripcion_post, topico_id):
-        new_posts = cls(titulo_post, descripcion_post, topico_id)
+    def new_registro_posts(cls, titulo_post, descripcion_post, user_id, topico_id):
+        new_posts = cls(titulo_post, descripcion_post, user_id, topico_id)
         db.session.add(new_posts)
         try:
             db.session.commit()
@@ -185,6 +186,7 @@ class Posts(db.Model):
             "id": self.id,
             "titulo_post": self.titulo_post,
             "descripcion_post": self.descripcion_post,
+            "user_id": self.user_id,
             "topico_id": self.topico_id
         }
 
