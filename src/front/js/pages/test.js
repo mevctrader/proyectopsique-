@@ -2,11 +2,11 @@ import React from "react";
 
 const Test = () => {
   return (
-    <div id="test-div" className="container-fluid pb-5">
-      <h1 className="row justify-content-center m-0 pt-3 mb-3">
-        <strong className="col-auto">Test de Ansiedad Psiento</strong>
+    <div id="test-div" className="container-fluid pb-5 ">
+      <h1 className="row justify-content-center m-0 pt-3 mb-3 ">
+        <strong className="col-auto">TEST DE ANSIEDAD PSIENTO</strong>
       </h1>
-      <div className="rounded bg-white container shadow">
+      <div className="rounded bg-white container shadow-lg">
         <form
           id="fs-frm"
           name="survey-form"
