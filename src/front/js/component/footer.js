@@ -141,7 +141,7 @@ export const Footer = () => (
                 className="form-control"
                 placeholder="Email address"
               />
-              <button className="btn btn-primary" type="button">
+              <button className="btn btn-success" type="button">
                 Subscribete
               </button>
             </div>

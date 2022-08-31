@@ -5,17 +5,27 @@
   font-family: "Josefin Sans", sans-serif;
 }
 
-#blog,
+textarea {
+  resize: horizontal;
+}
+
 #foro-div,
-#login-div,
-#test-div {
+#login-div {
   min-height: 87vh;
 }
 
+<<<<<<< HEAD
+=======
+#blog {
+  min-height: 80vh;
+}
+
+>>>>>>> b130e160c17ec68358976564a111103b5e11076e
 #menu-nav-1, #menu-nav-2, #menu-nav-3, #menu-nav-4, #menu-nav-5 {
   color: black;
 }
 
+<<<<<<< HEAD
 #boton-nav-1, #boton-nav-2, #boton-nav-3 {
   border: 2px solid #a594f9;
   background-color: #a594f9;
@@ -29,10 +39,14 @@
   border: 2px solid #7562d7;
   background-color: #7562d7;
   color: white;
+=======
+#test-div {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+>>>>>>> b130e160c17ec68358976564a111103b5e11076e
 }
 
 #blog .nav-link {
-  background-color: #5a6a7b;
+  background-color: #cae894;
   color: white;
 }
 
