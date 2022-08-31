@@ -11,12 +11,12 @@ const Blog = () => {
       id="blog"
       className="row wrap m-0 container-fluid justify-content-center p-0"
     >
-      <div className="row justify-content-center mt-3 px-2">
+      <div className="row justify-content-center mt-3 px-2 pb-4">
         <div className="col-auto">
           <ul className="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
             <li className="nav-item px-0" role="presentation">
               <button
-                className="nav-link active mx-2 bg-success"
+                className="nav-link btn active mx-2 btn"
                 id="general"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-general"
@@ -30,7 +30,7 @@ const Blog = () => {
             </li>
             <li className="nav-item px-0" role="presentation">
               <button
-                className="nav-link mx-2 bg-success"
+                className="nav-link btn mx-2"
                 id="depresion"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-depresion"
@@ -44,7 +44,7 @@ const Blog = () => {
             </li>
             <li className="nav-item px-0" role="presentation">
               <button
-                className="nav-link mx-2 bg-success"
+                className="nav-link btn mx-2"
                 id="ansiedad"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-ansiedad"
@@ -58,7 +58,7 @@ const Blog = () => {
             </li>
             <li className="nav-item px-0" role="presentation">
               <button
-                className="nav-link mx-2 bg-success pt-xs-2"
+                className="nav-link btn mx-2 pt-xs-2"
                 id="otros"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-otro"

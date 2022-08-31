@@ -10,12 +10,9 @@ textarea {
 }
 
 #foro-div,
-#login-div {
-  min-height: 87vh;
-}
-
+#login-div,
 #blog {
-  min-height: 80vh;
+  min-height: 87vh;
 }
 
 #menu-nav-1,
