@@ -13,10 +13,10 @@ const Blog = () => {
     >
       <div className="row justify-content-center mt-3 px-2">
         <div className="col-auto">
-          <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li className="nav-item" role="presentation">
+          <ul className="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+            <li className="nav-item px-0" role="presentation">
               <button
-                className="nav-link active mx-2"
+                className="nav-link active mx-2 bg-success"
                 id="general"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-general"
@@ -28,9 +28,9 @@ const Blog = () => {
                 General
               </button>
             </li>
-            <li className="nav-item" role="presentation">
+            <li className="nav-item px-0" role="presentation">
               <button
-                className="nav-link mx-2"
+                className="nav-link mx-2 bg-success"
                 id="depresion"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-depresion"
@@ -42,9 +42,9 @@ const Blog = () => {
                 Depresión
               </button>
             </li>
-            <li className="nav-item" role="presentation">
+            <li className="nav-item px-0" role="presentation">
               <button
-                className="nav-link mx-2"
+                className="nav-link mx-2 bg-success"
                 id="ansiedad"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-ansiedad"
@@ -56,9 +56,9 @@ const Blog = () => {
                 Ansiedad
               </button>
             </li>
-            <li className="nav-item" role="presentation">
+            <li className="nav-item px-0" role="presentation">
               <button
-                className="nav-link mx-2"
+                className="nav-link mx-2 bg-success pt-xs-2"
                 id="otros"
                 data-bs-toggle="pill"
                 data-bs-target="#pills-otro"
