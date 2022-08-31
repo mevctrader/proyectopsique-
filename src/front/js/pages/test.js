@@ -119,9 +119,9 @@ const Test = () => {
               rows="4"
               name="message"
               id="message"
-              placeholder="Insertar Comentario."
+              placeholder="¡Inserta cualquier información extra que consideres importante!"
               required=""
-              className="w-75"
+              className="w-100"
             ></textarea>
           </div>
           <div className="container mt-3 pb-5">
@@ -134,7 +134,7 @@ const Test = () => {
             <input
               type="submit"
               value="Enviar Respuestas"
-              className="btn btn-primary"
+              className="btn btn-success"
             />
           </div>
         </form>
