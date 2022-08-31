@@ -14,7 +14,7 @@ const Test = () => {
           id="fs-frm"
           name="survey-form"
           accept-charset="utf-8"
-          action="https://formspree.io/f/{form_id}"
+          action="https://formspree.io/f/xnqrnydn"
           method="post"
         >
           <fieldset id="fs-frm-inputs">
