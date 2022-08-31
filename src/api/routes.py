@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 import os
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Posts
+from api.models import db, User, Posts, Tipo_Documento, Test_Respuesta, Topicos
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -121,3 +121,24 @@ def registro_posts():
             return 'Un error ha ocurrido, upps!', 500
         else:
             return jsonify(new_row_post.serialize()), 200
+
+@api.route("/tipodocumento", methods=["GET"])
+def get_tipodocument():
+    all_tipodocument = Tipo_Documento.query.all()
+    return jsonify(
+        [ tp_documentos.serialize() for tp_documentos in all_tipodocument]
+    ), 200
+
+@api.route("/testpreguntas", methods=["GET"])
+def get_tpreguntas():
+    all_tpreguntas = Test_Respuesta.query.all()
+    return jsonify(
+        [ tpreguntas.serialize() for tpreguntas in all_tpreguntas]
+    ), 200
+
+@api.route("/topicos", methods=["GET"])
+def get_topicos():
+    all_topicos = Topicos.query.all()
+    return jsonify(
+        [ topicos.serialize() for topicos in all_topicos]
+    ), 200
