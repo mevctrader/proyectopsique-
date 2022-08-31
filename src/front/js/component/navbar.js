@@ -17,11 +17,11 @@ export const Navigationabar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link id="menu-nav-1" href="/" to="/" className="mx-2">
-              <FaHome />
+              <FaHome className="me-1" />
               Home
             </Nav.Link>
             <Nav.Link id="menu-nav-2" href="/blog" to="/blog" className="mx-2">
-              <FaBlog />
+              <FaBlog className="me-1" />
               Blog
             </Nav.Link>
             <Nav.Link
@@ -30,11 +30,11 @@ export const Navigationabar = () => {
               to="/videos"
               className="mx-2"
             >
-              <FaVideo />
+              <FaVideo className="me-1" />
               Videos
             </Nav.Link>
             <Nav.Link id="menu-nav-4" href="/foro" to="/blog" className="mx-2">
-              <FaComment />
+              <FaComment className="me-1" />
               Foro
             </Nav.Link>
             <Nav.Link id="menu-nav-5" href="/test" to="/blog" className="mx-2">
