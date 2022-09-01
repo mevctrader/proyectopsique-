@@ -13,7 +13,7 @@ export const ModalNuevoPost = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(
     store.token && store.token != "" && store.token != undefined ? true:
-       alert("Si deseas Registrar un Post debe ingresar a la opción Login e ingrese con su usuario y contraseña. Luego intente nuevamente registrar el post.")
+       alert("Si deseas crear un post, debes iniciar sesión en la sección de Login. Luego, intenta nuevamente crear el post.")
     );
 
   //let navigate = useNavigate();
@@ -26,7 +26,7 @@ export const ModalNuevoPost = () => {
 
   return (
     <>
-      <div id="boton-post" className="container justify-content w-30 p-3">
+      <div id="boton-post">
         <Button variant="success" onClick={handleShow}>
         Registrar Post
         </Button>
