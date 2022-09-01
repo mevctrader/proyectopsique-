@@ -71,7 +71,7 @@ export const Carrusel = () => (
       </div>
       <div className="carousel-item">
         <img
-          src="https://www.bu.edu/met/files/2021/05/ms-hc-conc-vdhc-hero-1200x500.jpg"
+          src="https://outsourceworkers.com.au/wp-content/uploads/2020/07/Custom-Database-Business-Knowledge-Image-in-Outsource-Workers-Healthcare-Online-Database-Information-on-Tablet.jpg"
           className=""
           alt="..."
           width={"100%"}
@@ -79,14 +79,14 @@ export const Carrusel = () => (
         />
         <div className="carousel-caption d-none d-md-block">
           <h1>
-            <strong>PSICOLOGÍA EN LÍNEA</strong>
+            <strong>APOYO EN LÍNEA</strong>
           </h1>
           <p>FORO DE ATENCIÓN 24/7</p>
         </div>
       </div>
       <div className="carousel-item">
         <img
-          src="https://www.ivanesalud.com/wp-content/uploads/2021/02/enlace-manos-grupal-unidad-dia-ivane-salud-valencia.jpg"
+          src="https://images.ctfassets.net/tfxr30ndr1hr/2iWT9JG8TElxZDBuleNkxG/f15c853c899c972d867b3c02e4c03b3b/Children______s_Mental_Health_1200x500.jpg"
           className=""
           alt="..."
           width={"100%"}

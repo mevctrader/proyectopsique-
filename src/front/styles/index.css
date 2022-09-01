@@ -54,14 +54,14 @@ textarea {
   );
 }
 
-#test-div {
-  background-color: white);
+/* #test-div {
+  background-color: rgb(165, 148, 249);
   background: radial-gradient(
     circle,
     rgba(165, 148, 249, 0.4) 0%,
     rgba(117, 98, 215, 0.4) 37%
   );
-}
+} */
 
 .crop-text-2 {
   -webkit-line-clamp: 4;
@@ -89,7 +89,8 @@ textarea {
   color: #7562d7;
 }
 
-#registro-web .btn, #login-div .btn {
+#registro-web .btn,
+#login-div .btn {
   background-color: #a594f9;
   border: 1px solid #a594f9;
 }
@@ -100,8 +101,12 @@ textarea {
 }
 
 #navbar {
-  background: rgb(202,232,148);
-  background: radial-gradient(circle, rgba(202,232,148,1) 0%, rgba(181,231,93,1) 100%); 
+  background: rgb(202, 232, 148);
+  background: radial-gradient(
+    circle,
+    rgba(202, 232, 148, 1) 0%,
+    rgba(181, 231, 93, 1) 100%
+  );
 }
 
 #buscar {

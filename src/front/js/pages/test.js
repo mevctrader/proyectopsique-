@@ -6,7 +6,7 @@ const Test = () => {
       <h1 className="row justify-content-center m-0 pt-3 pb-1 mb-0 ">
         <strong className="col-auto">TEST DE ANSIEDAD PSIENTO</strong>
       </h1>
-      <h5 className="row text-justify mx-5">
+      <h5 className="row text-justify mx-5 px-5">
         El bienestar mental es la habilidad de manejar la vida y sus múltiples
         tensiones y desafíos. El TEST DE ANSIEDAD por lo tanto, es una
         fotografía de su auto-percepción junto a varias dimensiones de la
