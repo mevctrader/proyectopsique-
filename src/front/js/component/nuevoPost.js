@@ -1,7 +1,5 @@
-import React, {useState, useContext, Component} from "react";
+import React, {useState, useContext} from "react";
 import { Context } from "../store/appContext";
-import { useNavigate } from 'react-router-dom';
-import Alert from 'react-bootstrap/Alert';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';

@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      consultapost: [],
       tipodocumento: [],
       topicos: [],
       user: null,
@@ -23,6 +24,27 @@ const getState = ({ getStore, getActions, setStore }) => {
       exampleFunction: () => {
         getActions().changeColor(0, "green");
       },
+      MostrarPosts: async() =>{
+        const opt = {
+          method: "GET", 
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        const baseurl = process.env.BACKEND_URL + "/api/foro";
+        try 
+          {
+            const resp = await fetch(baseurl, opt);
+            const data = await resp.json();
+            console.log(data);
+            setStore({ consultapost: data});
+            return true;
+  
+          } catch (error) {
+          console.log("Hubo un error al consultar los posts");
+          }
+
+      },
       MostrarTipoDocumentos: async () =>{
         const opt = {
           method: "GET", 
@@ -42,8 +64,6 @@ const getState = ({ getStore, getActions, setStore }) => {
           } catch (error) {
           console.log("Hubo un error al consultar el tipo de documento");
           }
-
-
       },
       MostrarTopicos: async () => {
         const opt = {
