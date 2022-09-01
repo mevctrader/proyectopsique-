@@ -14,7 +14,7 @@ textarea {
   min-height: 87vh;
 }
 
-#foro-div {
+#foro-div, #test-div, #blog {
   min-height: 65vh;
   background: rgb(185,184,189);
   background: radial-gradient(circle, rgba(185,184,189,0.6978992280505952) 0%, rgba(222,220,235,0.7595238779105392) 37%); 
@@ -50,14 +50,14 @@ textarea {
   margin-top: 1000px;
 }
 
-#blog {
+/* #blog {
   background: rgb(165, 148, 249);
   background: radial-gradient(
     circle,
     rgba(165, 148, 249, 0.4) 0%,
     rgba(117, 98, 215, 0.4) 37%
   );
-}
+} */
 
 /* #test-div {
   background-color: rgb(165, 148, 249);

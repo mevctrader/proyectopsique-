@@ -10,7 +10,7 @@ export const PostForo = () => {
         <>
         {
             store.consultapost.map(elemento =>{
-                return <Card border="success" style={{ width: '18rem' }}>
+                return <Card>
                     <Card.Header>Tópicos: {elemento.topicos.nombre_tema}</Card.Header>
                     <Card.Body>
                     <Card.Title>Titulo: {elemento.titulo_post}</Card.Title>
