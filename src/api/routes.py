@@ -90,37 +90,30 @@ def registro_users():
             return jsonify(new_row.serialize()), 200
 
 
-@api.route("/foro", methods=["POST"])
+@api.route("/foro", methods=["POST","GET"])
 def registro_posts():
-    bodyp = request.json
-    verify_jwt_in_request()
-    current_user_id = get_jwt_identity()
-
-    if "titulo_post" not in bodyp:
-        return 'Debe indicar el titulo del nuevo posts', 400
-    if "descripcion_post" not in bodyp:
-        return 'Debe indicar la descripcion del posts!', 400
-    if "user_id" in bodyp:
-        return current_user_id, 400
-    if "topico_id" not in bodyp:
-        return 'Debe seleccionar el topico!', 400
-    else:
-        #verify_jwt_in_request()
-        #current_user_id = get_jwt_identity()
-        #user = User.query.get(current_user_id)
-        #email = request.json.get("email", None)
-        #search = User.query.filter_by(email=email).one_or_none()
-        #usuario=search.email
-        ##current_user_id = get_jwt_identity()
-        #search = User.query.filter_by(email=current_user_id).one_or_none()
-    
-
-        new_row_post = Posts.new_registro_posts(bodyp["titulo_post"], bodyp["descripcion_post"], bodyp["user_id"], bodyp["topico_id"])
-
-        if new_row_post == None:
-            return 'Un error ha ocurrido, upps!', 500
+    if request.method == 'POST':
+        bodyp = request.json
+        if "titulo_post" not in bodyp:
+            return 'Debe indicar el titulo del nuevo posts', 400
+        if "descripcion_post" not in bodyp:
+            return 'Debe indicar la descripcion del posts!', 400
+        if "user_id" not in bodyp:
+            return "Debe indicar el correo", 400
+        if "topico_id" not in bodyp:
+            return 'Debe seleccionar el topico!', 400
         else:
-            return jsonify(new_row_post.serialize()), 200
+            new_row_post = Posts.new_registro_posts(bodyp["titulo_post"], bodyp["descripcion_post"], bodyp["user_id"], bodyp["topico_id"])
+
+            if new_row_post == None:
+                return 'Un error ha ocurrido, upps!', 500
+            else:
+                return jsonify(new_row_post.serialize()), 200
+    elif request.method == 'GET':
+        all_posts = Posts.query.all()
+        return jsonify(
+            [ posts.serialize() for posts in all_posts]
+        ), 200
 
 @api.route("/tipodocumento", methods=["GET"])
 def get_tipodocument():

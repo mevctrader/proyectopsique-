@@ -1,6 +1,8 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      tipodocumento: [],
+      topicos: [],
       user: null,
       message: null,
       demo: [
@@ -20,6 +22,49 @@ const getState = ({ getStore, getActions, setStore }) => {
       // Use getActions to call a function within a fuction
       exampleFunction: () => {
         getActions().changeColor(0, "green");
+      },
+      MostrarTipoDocumentos: async () =>{
+        const opt = {
+          method: "GET", 
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+          const baseurl = process.env.BACKEND_URL + "/api/tipodocumento";
+  
+          try 
+          {
+            const resp = await fetch(baseurl, opt);
+            const data = await resp.json();
+            setStore({ tipodocumento: data});
+            return true;
+  
+          } catch (error) {
+          console.log("Hubo un error al consultar el tipo de documento");
+          }
+
+
+      },
+      MostrarTopicos: async () => {
+        const opt = {
+          method: "GET", 
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+          const baseurl = process.env.BACKEND_URL + "/api/topicos";
+  
+          try 
+          {
+            const resp = await fetch(baseurl, opt);
+            const data = await resp.json();
+            setStore({ topicos: data});
+            return true;
+  
+          } catch (error) {
+          console.log("Hubo un error al consultar los topicos");
+          }
+
       },
       syncTokenFromSessionStore: async () => {
         const token = sessionStorage.getItem("token");
@@ -154,17 +199,22 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log("Hubo un error al actualizar el password");
         }
       },
-      RegistroPost: async (tituloPosts, descripcionPost,emailp, topicos) => {
-		      console.log("emailp "+emailp)
+      RegistroPost: async (tituloPosts, descripcionPost,iduser, topicos) => {
+		    //console.log("iduser "+iduser)
+        const token = sessionStorage.getItem("token");
+        if (token && token != "" && token != undefined)
+        setStore({ token: token});
+        const store = getStore();
         const opt = {
           method: "POST",
           body: JSON.stringify({
             titulo_post: tituloPosts,
             descripcion_post: descripcionPost,
-			      user_id: emailp,
+            user_id: iduser,
             topico_id: topicos,
           }),
           headers: {
+            Authorization: "Bearer " + store.token,
             "Content-Type": "application/json",
           },
         };
@@ -179,8 +229,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             return false;
           }
           const data = await resp.json();
-		      console.Console.log("data ", data);
-
           alert("los datos se guardaron con exito");
           window.location = "/foro";
 

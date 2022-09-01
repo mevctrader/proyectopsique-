@@ -1,23 +1,86 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, Component} from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from 'react-router-dom';
 import Alert from 'react-bootstrap/Alert';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 export const ModalNuevoPost = () => {
   const { store, actions } = useContext(Context);
   const [tituloPosts, setTituloPosts] = useState("");
   const [descripcionPost, setDescripcionPost] = useState("");
-  const [topicos, setTopicos] = useState("");
+  const [topicos, setTopicos] = useState([]);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(
+    store.token && store.token != "" && store.token != undefined ? true:
+       alert("Si deseas Registrar un Post debe ingresar a la opción Login e ingrese con su usuario y contraseña. Luego intente nuevamente registrar el post.")
+    );
 
-  let navigate = useNavigate();
+  //let navigate = useNavigate();
 
   const handleclick = () =>{
-    const emailp=store.user && store.user.email
+    const iduser=store.user && store.user.id
 
-    actions.RegistroPost(tituloPosts,descripcionPost,emailp,topicos);
+    actions.RegistroPost(tituloPosts,descripcionPost,iduser,topicos);
   }
 
   return (
+    <>
+      <div id="boton-post" className="container justify-content w-30 p-3">
+        <Button variant="success" onClick={handleShow}>
+        Registrar Post
+        </Button>
+      </div>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Agregar Post</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mb-3" controlId="selecttopicos">
+              <Form.Label>Tópicos</Form.Label>
+              <Form.Select defaultValue={topicos} aria-label="Default select example" onChange={(e) => setTopicos(e.target.value)}>
+              <option value={""}>Seleccione</option>
+              {
+                store.topicos.map(elemento =>{
+                  return <option key={elemento.id} value={elemento.id}>{elemento.nombre_tema}</option>
+                })
+              }           
+              </Form.Select>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="titulopost">
+              <Form.Label>Titulo</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="titulo"
+                autoFocus
+                value={tituloPosts} 
+                onChange={(e) => setTituloPosts(e.target.value)}
+              />
+            </Form.Group>
+            <Form.Group
+              className="mb-3"
+              controlId="descripcionpost"
+            >
+              <Form.Label>Descripción</Form.Label>
+              <Form.Control value={descripcionPost} onChange={(e) => setDescripcionPost(e.target.value)} as="textarea" rows={3} />
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleclick}>
+           Registrar Datos
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+  /*return (
     store.token && store.token != "" && store.token != undefined ?
       (
         <>
@@ -114,5 +177,5 @@ export const ModalNuevoPost = () => {
           <p>Si deseas Registrar un Post debe ingresar al opción:{' '}
           <Alert.Link href="#">Login</Alert.Link> con su usuario y clave.</p>
         </Alert>)
-  )
+  )*/
 }
