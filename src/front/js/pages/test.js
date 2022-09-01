@@ -3,19 +3,21 @@ import React from "react";
 const Test = () => {
   return (
     <div id="test-div" className="container-fluid pb-5 ">
-      <h1 className="row justify-content-center m-0 pt-3 pb-1 mb-0 ">
-        <strong className="col-auto">TEST DE ANSIEDAD PSIENTO</strong>
-      </h1>
-      <h5 className="row text-justify mx-5 px-5">
-        El bienestar mental es la habilidad de manejar la vida y sus múltiples
-        tensiones y desafíos. El TEST DE ANSIEDAD por lo tanto, es una
-        fotografía de su auto-percepción junto a varias dimensiones de la
-        función mental que determinan su bienestar mental. No es una medida de
-        felicidad o satisfacción con la vida. Por ejemplo, usted puede estar
-        viviendo circunstancias muy difíciles o tristes y aún así contar con
-        todos los mecanismos para enfrentarlas lo mejor posible, y por lo tanto
-        tener un alto nivel de bienestar mental.
-      </h5>
+      <div className="row justify-content-center">
+        <h1 className="row justify-content-center m-0 pt-3 pb-1 mb-0 ">
+          <strong className="col-auto">TEST DE ANSIEDAD PSIENTO</strong>
+        </h1>
+        <h5 className="row text-justify w-75 py-3">
+          El bienestar mental es la habilidad de manejar la vida y sus múltiples
+          tensiones y desafíos. El TEST DE ANSIEDAD por lo tanto, es una
+          fotografía de su auto-percepción junto a varias dimensiones de la
+          función mental que determinan su bienestar mental. No es una medida de
+          felicidad o satisfacción con la vida. Por ejemplo, usted puede estar
+          viviendo circunstancias muy difíciles o tristes y aún así contar con
+          todos los mecanismos para enfrentarlas lo mejor posible, y por lo
+          tanto tener un alto nivel de bienestar mental.
+        </h5>
+      </div>
       <div className="rounded bg-white container shadow-lg">
         <form
           id="fs-frm"
@@ -24,19 +26,18 @@ const Test = () => {
           action="https://formspree.io/f/xnqrnydn"
           method="post"
         >
-          <label className="m-0 pt-3 mb-3 " for="email-address">
-            Direccion Email :
-          </label>
-          <input
-            type="email"
-            name="_replyto"
-            id="email-address"
-            placeholder="email@domain.tld"
-            required=""
-          />
-
           <fieldset id="fs-frm-inputs">
             <div className="container mt-3">
+              <label className="m-0 pt-3 mb-3 " for="email-address">
+                Direccion Email: 
+              </label>
+              <input
+                type="email"
+                name="_replyto"
+                id="email-address"
+                placeholder="email@domain.tld"
+                required=""
+              />
               <label for="timely">
                 <strong>
                   1. ¿TIENES PREOCUPACIONES CONSTANTES, ANGUSTIA AL PENSAR,
