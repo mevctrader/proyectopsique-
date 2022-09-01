@@ -11,7 +11,7 @@ const Foro = () => {
       id="foro-div"
       className="container-fluid row p-0 m-0"
     >
-      <div className="col-sm-2 bg-info">
+      <div className="col-sm-3 col-lg-2 bg-info">
         <div className="col-auto p-3 text-center">
           <ModalNuevoPost />
         </div>
@@ -36,7 +36,7 @@ const Foro = () => {
           </a>
         </div>
       </div>
-      <div className="col-sm-10 row p-0 m-0">
+      <div className="col-sm-9 col-lg-10 row p-0 m-0">
           <div className="col-md-3 py-2">
             <Card border="success">
               <Card.Header>Tópicos: Ansiedd</Card.Header>
