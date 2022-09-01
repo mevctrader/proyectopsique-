@@ -14,6 +14,17 @@ const Test = () => {
           action="https://formspree.io/f/xnqrnydn"
           method="post"
         >
+          <label className="m-0 pt-3 mb-3 " for="email-address">
+            Direccion Email:
+          </label>
+          <input
+            type="email"
+            name="_replyto"
+            id="email-address"
+            placeholder="email@domain.tld"
+            required=""
+          />
+
           <fieldset id="fs-frm-inputs">
             <div className="container mt-3">
               <label for="timely">
