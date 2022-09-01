@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const Registro = () =>{
     const { store, actions } = useContext(Context);
-    const [identificacion, setIdentificacion] = useState("");
+    const [identificacion, setIdentificacion] = useState([]);
 	const [cedula, setCedula] = useState("");
     const [pnombre, setPnombre] = useState("");
     const [papellido, setPapellido] = useState("");
@@ -41,11 +41,12 @@ export const Registro = () =>{
                 <Form.Group as={Col}  sm={6} controlId="formGridIdentificacion">
                 <Form.Label>Tipo de Documento:</Form.Label>
                 <Form.Select defaultValue={identificacion} onChange={(e) => setIdentificacion(e.target.value)}>
-                    <option value={""}>Seleccione</option>
-                    <option value={1}>Venezolano</option>
-                    <option value={2}>Extranjero</option>
-                    <option value={3}>Jurídico</option>
-                    <option value={4}>Pasaporte</option>
+                <option value={""}>Seleccione</option>
+                {
+                    store.tipodocumento.map(elemento =>{
+                    return <option key={elemento.id} value={elemento.id}>{elemento.name_identif}</option>
+                    })
+                }   
                 </Form.Select>
                 </Form.Group>
 
