@@ -187,7 +187,8 @@ class Posts(db.Model):
             "titulo_post": self.titulo_post,
             "descripcion_post": self.descripcion_post,
             "user_id": self.user_id,
-            "topico_id": self.topico_id
+            "topico_id": self.topico_id,
+            "topicos": self.topicos.serialize()
         }
 
 class Comentarios(db.Model):
