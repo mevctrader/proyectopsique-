@@ -9,10 +9,13 @@ textarea {
   resize: horizontal;
 }
 
-#foro-div,
 #login-div,
 #blog {
   min-height: 87vh;
+}
+
+#foro-div {
+  min-height: 65vh;
 }
 
 #menu-nav-1,
