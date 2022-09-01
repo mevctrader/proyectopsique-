@@ -1,8 +1,6 @@
 import React, {useState, useContext} from "react";
 import { Context } from "../store/appContext";
-
 import { ComentarioIndividual } from "./comentarioInd";
-import Table from 'react-bootstrap/Table';
 import Card from 'react-bootstrap/Card';
 
 export const PostForo = () => {
@@ -23,31 +21,7 @@ export const PostForo = () => {
             })
         }
         </>
-        /*
-            <div>
-            <Table responsive="sm">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>TITULO</th>
-                    <th>DESCRIPCIÓN</th>
-                    <th>TÓPICOS</th>
-                </tr>
-                </thead>
-                <tbody>
-                    {
-                        store.consultapost.map(elemento =>{
-                        return  <tr><td>{elemento.id}</td>
-                        <td>{elemento.titulo_post}</td>
-                        <td>{elemento.descripcion_post}</td>
-                        <td>{elemento.topicos.nombre_tema}</td></tr>
-
-                        })
-                    }
-                
-                </tbody>
-            </Table>
-            </div>*/
+      
                 /*
                 <div>
                     <div id="" className="bg-warning">
