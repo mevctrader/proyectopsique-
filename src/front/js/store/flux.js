@@ -161,7 +161,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
           if (resp.status === 404) {
             alert("Las credenciales no coinciden");
-            window.location = "/";
+            window.location = "/login";
             return false;
           }
           const data = await resp.json();
