@@ -6,24 +6,6 @@ import Badge from "react-bootstrap/Badge";
 
 const Foro = () => {
   const { store, actions } = useContext(Context);
-  /*const [comentarios, setComentatios] = useState("");
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);*/
-
-  //const usuarios=store.todosuser && store.todosuser.nombre_usuario
-
-  /*const handleclick = (e) =>{
-    e.preventDefault();
-
-    const iduser=store.user && store.user.id
-    const idposts=store.consultapost && store.consultapost.id
-
-		actions.RegistroComentarios(comentarios,idposts,iduser);
-
-  }*/
-
   return (
     <div id="foro-div" className="container-fluid row p-0 m-0">
         <div className="col-sm-3 col-lg-2 row justify-content-center">
