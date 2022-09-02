@@ -40,7 +40,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           {
             const resp = await fetch(baseurl, opt);
             const data = await resp.json();
-            console.log("todos comentarios", data)
+            //console.log("todos comentarios", data)
             setStore({ comentarios: data});
             return true;
   
@@ -64,7 +64,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           {
             const resp = await fetch(baseurl, opt);
             const data = await resp.json();
-            console.log("consulta posts ",data);
+            //console.log("consulta posts ",data);
             setStore({ consultapost: data});
             return true;
   
