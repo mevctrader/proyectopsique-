@@ -28,6 +28,11 @@ const Foro = () => {
   return (
     <div id="foro-div" className="container-fluid row p-0 m-0">
       <div className="col-sm-2 bg-info">
+        <div
+          id="foro-div"
+          className="container-fluid row p-0 m-0"
+        >
+      <div className="col-sm-3 col-lg-2">
         <div className="col-auto p-3 text-center">
           <ModalNuevoPost />
         </div>
@@ -82,6 +87,7 @@ const Foro = () => {
             })
             }
         </>
+
       </div>
     </div>
   );
