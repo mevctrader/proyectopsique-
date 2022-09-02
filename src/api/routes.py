@@ -3,7 +3,7 @@ This module takes care of starting the API Server, Loading the DB and Adding the
 """
 import os
 from flask import Flask, request, jsonify, url_for, Blueprint
-from api.models import db, User, Posts, Tipo_Documento, Test_Respuesta, Topicos
+from api.models import db, User, Posts, Tipo_Documento, Test_Respuesta, Topicos, Comentarios
 from api.utils import generate_sitemap, APIException
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
@@ -135,3 +135,26 @@ def get_topicos():
     return jsonify(
         [ topicos.serialize() for topicos in all_topicos]
     ), 200
+    
+@api.route("/comentarios", methods=["POST","GET"])
+def comentarios_p():
+    if request.method == 'POST':
+        body = request.json
+        if "descripcion_comentarios" not in body:
+            return 'Debe indicar la descripcion del comentario', 400
+        if "post_id" not in body:
+            return 'Debe indicar el id del posts!', 400
+        if "user_id" not in body:
+            return "Debe indicar el id del usuario", 400
+        else:
+            new_row_commentarios = Comentarios.new_registro_comm(body["descripcion_comentarios"], body["post_id"], body["user_id"])
+
+            if new_row_commentarios == None:
+                return 'Un error ha ocurrido, upps!', 500
+            else:
+                return jsonify(new_row_commentarios.serialize()), 200
+    elif request.method == 'GET':
+        all_commt = Comentarios.query.all()
+        return jsonify(
+            [ coment.serialize() for coment in all_commt]
+        ), 200

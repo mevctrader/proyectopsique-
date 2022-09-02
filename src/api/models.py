@@ -188,7 +188,8 @@ class Posts(db.Model):
             "descripcion_post": self.descripcion_post,
             "user_id": self.user_id,
             "topico_id": self.topico_id,
-            "topicos": self.topicos.serialize()
+            "topicos": self.topicos.serialize(),
+            "comentarios": [comentario.serialize() for comentario in self.comentarios]
         }
 
 class Comentarios(db.Model):
@@ -196,17 +197,52 @@ class Comentarios(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     descripcion_comentarios = db.Column(db.String(250), nullable=False)
     post_id = db.Column(db.Integer, db.ForeignKey('post.id'), nullable=False)
-    posts = db.relationship("Posts")
-    fecha_registro = db.Column(db.DateTime(), nullable=False , unique=True)
+    posts = db.relationship("Posts", backref="comentarios")
+    fecha_registro = db.Column(db.DateTime(), default=datetime.datetime.utcnow, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)
     users = db.relationship("User")
+
+    def __init__(self, descripcion_comentarios, post_id, user_id):
+        self.descripcion_comentarios = descripcion_comentarios
+        self.post_id = post_id
+        self.user_id = user_id
+
+    @classmethod
+    def new_registro_comm(cls, descripcion_comentarios, post_id, user_id):
+        new_registro_comm = cls(descripcion_comentarios, post_id, user_id)
+        db.session.add(new_registro_comm)
+        try:
+            db.session.commit()
+            return new_registro_comm
+        except Exception as error:
+            print(error)
+            return None
+
+    def update(self, descripcion_comentarios):
+        self.descripcion_comentarios = descripcion_comentarios
+        try:
+            db.session.commit()
+            return self
+        except Exception as error:
+            print(error)
+            return False
+
+    def delete(self):
+        db.session.delete(self)
+        try:
+            db.session.commit()
+            return True
+        except Exception as error:
+            print(error)
+            return False
 
     def serialize(self):
         return {
             "id": self.id,
             "descripcion_comentarios": self.descripcion_comentarios,
             "post_id": self.post_id,
-            "user_id": self.user_id
+            "user_id": self.user_id,
+            "users": self.users.serialize()
         }
 ## Draw from SQLAlchemy base
 #try:

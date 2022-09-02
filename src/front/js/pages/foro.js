@@ -1,16 +1,32 @@
-import React from "react";
-import Form from "react-bootstrap/Form";
+import React, { useState, useContext } from "react";
 import { ModalNuevoPost } from "../component/nuevoPost";
-import { PostForo } from "../component/postForo";
-import { PostForoPrueba } from "../component/postForoPrueba";
 import Card from "react-bootstrap/Card";
+import { Context } from "../store/appContext";
+import Badge from "react-bootstrap/Badge";
 
 const Foro = () => {
+  const { store, actions } = useContext(Context);
+  /*const [comentarios, setComentatios] = useState("");
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);*/
+
+  //const usuarios=store.todosuser && store.todosuser.nombre_usuario
+
+  /*const handleclick = (e) =>{
+    e.preventDefault();
+
+    const iduser=store.user && store.user.id
+    const idposts=store.consultapost && store.consultapost.id
+
+		actions.RegistroComentarios(comentarios,idposts,iduser);
+
+  }*/
+
+
   return (
-    <div
-      id="foro-div"
-      className="container-fluid row p-0 m-0"
-    >
+    <div id="foro-div" className="container-fluid row p-0 m-0">
       <div className="col-sm-2 bg-info">
         <div className="col-auto p-3 text-center">
           <ModalNuevoPost />
@@ -37,112 +53,37 @@ const Foro = () => {
         </div>
       </div>
       <div className="col-sm-10 row p-0 m-0">
-          <div className="col-md-3 py-2">
-            <Card border="success">
-              <Card.Header>Tópicos: Ansiedd</Card.Header>
-              <Card.Body>
-                <Card.Title>Titulo: Tengo ansiedad</Card.Title>
-                <Card.Text>
-                  Descripción: Ayuda tengo demasiada ansiedad ojala salgamos
-                  bien help
-                </Card.Text>
-                <Card.Link href="#">Leer Más</Card.Link>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-3 py-2">
-            <Card border="success">
-              <Card.Header>Tópicos: Ansiedd</Card.Header>
-              <Card.Body>
-                <Card.Title>Titulo: Tengo ansiedad</Card.Title>
-                <Card.Text>
-                  Descripción: Ayuda tengo demasiada ansiedad ojala salgamos
-                  bien help
-                </Card.Text>
-                <Card.Link href="#">Leer Más</Card.Link>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-3 py-2">
-            <Card border="success">
-              <Card.Header>Tópicos: Ansiedd</Card.Header>
-              <Card.Body>
-                <Card.Title>Titulo: Tengo ansiedad</Card.Title>
-                <Card.Text>
-                  Descripción: Ayuda tengo demasiada ansiedad ojala salgamos
-                  bien help
-                </Card.Text>
-                <Card.Link href="#">Leer Más</Card.Link>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-3 py-2">
-            <Card border="success">
-              <Card.Header>Tópicos: Ansiedd</Card.Header>
-              <Card.Body>
-                <Card.Title>Titulo: Tengo ansiedad</Card.Title>
-                <Card.Text>
-                  Descripción: Ayuda tengo demasiada ansiedad ojala salgamos
-                  bien help
-                </Card.Text>
-                <Card.Link href="#">Leer Más</Card.Link>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-3 py-2">
-            <Card border="success">
-              <Card.Header>Tópicos: Ansiedd</Card.Header>
-              <Card.Body>
-                <Card.Title>Titulo: Tengo ansiedad</Card.Title>
-                <Card.Text>
-                  Descripción: Ayuda tengo demasiada ansiedad ojala salgamos
-                  bien help
-                </Card.Text>
-                <Card.Link href="#">Leer Más</Card.Link>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-3 py-2">
-            <Card border="success">
-              <Card.Header>Tópicos: Ansiedd</Card.Header>
-              <Card.Body>
-                <Card.Title>Titulo: Tengo ansiedad</Card.Title>
-                <Card.Text>
-                  Descripción: Ayuda tengo demasiada ansiedad ojala salgamos
-                  bien help
-                </Card.Text>
-                <Card.Link href="#">Leer Más</Card.Link>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-3 py-2">
-            <Card border="success">
-              <Card.Header>Tópicos: Ansiedd</Card.Header>
-              <Card.Body>
-                <Card.Title>Titulo: Tengo ansiedad</Card.Title>
-                <Card.Text>
-                  Descripción: Ayuda tengo demasiada ansiedad ojala salgamos
-                  bien help
-                </Card.Text>
-                <Card.Link href="#">Leer Más</Card.Link>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-3 py-2">
-            <Card border="success">
-              <Card.Header>Tópicos: Ansiedd</Card.Header>
-              <Card.Body>
-                <Card.Title>Titulo: Tengo ansiedad</Card.Title>
-                <Card.Text>
-                  Descripción: Ayuda tengo demasiada ansiedad ojala salgamos
-                  bien help
-                </Card.Text>
-                <Card.Link href="#">Leer Más</Card.Link>
-              </Card.Body>
-            </Card>
-          </div>
-        </div>
+        <>
+          {
+            store.consultapost.map((elemento) => {
+              return (
+                <div className="col-md-3 py-2">
+                  <Card>
+                    <Card.Header>
+                      Tópico: {elemento.topicos.nombre_tema}
+                    </Card.Header>
+                    <Card.Body>
+                      <Card.Title>Titulo: {elemento.titulo_post}</Card.Title>
+                      <Card.Text>
+                        {elemento.descripcion_post}...{" "}
+                        <Card.Link href="#">más</Card.Link>
+                      </Card.Text>
+                      Ver{" "}
+                      <Card.Link href="#">
+                        <Badge bg="secondary">0</Badge>
+                      </Card.Link>{" "}
+                      Comentarios..
+                      <Card.Text>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </div>
+              );
+            })
+            }
+        </>
       </div>
+    </div>
   );
 };
 

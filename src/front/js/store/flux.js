@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      comentarios: null,
       consultapost: [],
       tipodocumento: [],
       topicos: [],
@@ -24,11 +25,38 @@ const getState = ({ getStore, getActions, setStore }) => {
       exampleFunction: () => {
         getActions().changeColor(0, "green");
       },
-      MostrarPosts: async() =>{
+      MostrarTodosComentarios: async () =>{
+        const store = getStore();
         const opt = {
           method: "GET", 
           headers: {
             "Content-Type": "application/json",
+            Authorization: "Bearer " + store.token
+          },
+        };
+          const baseurl = process.env.BACKEND_URL + "/api/comentarios";
+  
+          try 
+          {
+            const resp = await fetch(baseurl, opt);
+            const data = await resp.json();
+            console.log("todos comentarios", data)
+            setStore({ comentarios: data});
+            return true;
+  
+          } catch (error) {
+          console.log("Hubo un error al consultar todos los comentarios");
+          }
+
+      },
+      MostrarPosts: async() =>{
+        const store = getStore();
+
+        const opt = {
+          method: "GET", 
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + store.token
           },
         };
         const baseurl = process.env.BACKEND_URL + "/api/foro";
@@ -36,7 +64,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           {
             const resp = await fetch(baseurl, opt);
             const data = await resp.json();
-            console.log(data);
+            console.log("consulta posts ",data);
             setStore({ consultapost: data});
             return true;
   
@@ -220,7 +248,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
       RegistroPost: async (tituloPosts, descripcionPost,iduser, topicos) => {
-		    //console.log("iduser "+iduser)
         const token = sessionStorage.getItem("token");
         if (token && token != "" && token != undefined)
         setStore({ token: token});
@@ -256,6 +283,43 @@ const getState = ({ getStore, getActions, setStore }) => {
         } catch (error) {
           console.log("Hubo un error al ingresar el posts");
         }
+      },
+      RegistroComentarios: async (comentarios,idposts,iduser) => {
+        const token = sessionStorage.getItem("token");
+        if (token && token != "" && token != undefined)
+        setStore({ token: token});
+        const store = getStore();
+        const opt = {
+          method: "POST",
+          body: JSON.stringify({
+            descripcion_comentarios: comentarios,
+            post_id: idposts,
+            user_id: iduser
+          }),
+          headers: {
+            Authorization: "Bearer " + store.token,
+            "Content-Type": "application/json",
+          },
+        };
+
+        const baseurl = process.env.BACKEND_URL + "/api/comentarios";
+        /*console.log(baseurl);*/
+
+        try {
+          const resp = await fetch(baseurl, opt);
+          if (resp.status !== 200) {
+            alert("No se pudo registrar los datos");
+            return false;
+          }
+          const data = await resp.json();
+          alert("los datos se guardaron con exito");
+          window.location = "/foro";
+
+          return true;
+        } catch (error) {
+          console.log("Hubo un error al ingresar el comentario");
+        }
+
       },
       getMessage: async () => {
         const baseurl = process.env.BACKEND_URL + "/api/hello";
